@@ -1,0 +1,53 @@
+cmake:
+  application:
+    configuration-dir: /home/elias/zephyrproject/applications/cruise_control
+    source-dir: /home/elias/zephyrproject/applications/cruise_control
+  board:
+    name: esp32_devkitc_wroom
+    qualifiers: esp32/procpu
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /home/elias/zephyrproject/zephyr/dts/bindings
+    files:
+     - /home/elias/zephyrproject/zephyr/boards/espressif/esp32_devkitc_wroom/esp32_devkitc_wroom_procpu.dts
+     - /home/elias/zephyrproject/applications/cruise_control/boards/esp32_devkit_wroom.overlay
+    include-dirs:
+     - /home/elias/zephyrproject/modules/hal/atmel/include
+     - /home/elias/zephyrproject/modules/hal/gigadevice/include
+     - /home/elias/zephyrproject/modules/hal/microchip/dts
+     - /home/elias/zephyrproject/modules/hal/nuvoton/dts
+     - /home/elias/zephyrproject/modules/hal/nxp/dts
+     - /home/elias/zephyrproject/modules/hal/stm32/dts
+     - /home/elias/zephyrproject/zephyr/include
+     - /home/elias/zephyrproject/zephyr/include/zephyr
+     - /home/elias/zephyrproject/zephyr/dts/common
+     - /home/elias/zephyrproject/zephyr/dts/x86
+     - /home/elias/zephyrproject/zephyr/dts/xtensa
+     - /home/elias/zephyrproject/zephyr/dts/sparc
+     - /home/elias/zephyrproject/zephyr/dts/riscv
+     - /home/elias/zephyrproject/zephyr/dts/posix
+     - /home/elias/zephyrproject/zephyr/dts/nios2
+     - /home/elias/zephyrproject/zephyr/dts/arm64
+     - /home/elias/zephyrproject/zephyr/dts/arm
+     - /home/elias/zephyrproject/zephyr/dts/arc
+     - /home/elias/zephyrproject/zephyr/dts
+    user-files:
+     - /home/elias/zephyrproject/applications/cruise_control/boards/esp32_devkit_wroom.overlay
+  kconfig:
+    files:
+     - /home/elias/zephyrproject/zephyr/boards/espressif/esp32_devkitc_wroom/esp32_devkitc_wroom_procpu_defconfig
+     - /home/elias/zephyrproject/applications/cruise_control/prj.conf
+    user-files:
+     - /home/elias/zephyrproject/applications/cruise_control/prj.conf
+  toolchain:
+    name: zephyr
+    path: /home/elias/zephyr-sdk-0.17.0
+  zephyr:
+    version: 4.0.99
+    zephyr-base: /home/elias/zephyrproject/zephyr
+version: 0.1.0
+west:
+  command: /home/elias/zephyrproject/.venv/bin/west build -b esp32_devkitc_wroom/esp32/procpu -p
+  topdir: /home/elias/zephyrproject
+  version: 1.3.0
