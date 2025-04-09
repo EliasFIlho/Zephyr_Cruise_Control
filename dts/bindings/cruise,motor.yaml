@@ -1,0 +1,13 @@
+description: |
+    This binding provides resources required to use the pwm API with a generic application: This will be used to controll a motor later so now will be like this
+compatible: "cruise,motor"
+
+properties:
+  pwms:
+    type: phandle-array
+    required: true
+    description: |
+      PWM pins that will be used for generating and capturing a pulse-width
+      modulated signal. The pin at the first index will be used for signal
+      generation while the pin at the second index will be used for capuring
+      the generated signal.

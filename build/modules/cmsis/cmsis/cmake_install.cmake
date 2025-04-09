@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/elias/zephyrproject/applications/cruise_control/build/modules/cmsis/cmsis/CMSIS/cmake_install.cmake")
+  include("/home/elias/zephyrproject/cruise_control/build/modules/cmsis/cmsis/CMSIS/cmake_install.cmake")
 endif()
 

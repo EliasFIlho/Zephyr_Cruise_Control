@@ -588,6 +588,7 @@ KEEP(*(SORT(.__device_deps_pass2*)));
 __device_deps_end = .;
  } > drom0_0_seg AT > FLASH
 gpio_driver_api_area : ALIGN_WITH_INPUT { _gpio_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._gpio_driver_api.static.*))); _gpio_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
+pwm_driver_api_area : ALIGN_WITH_INPUT { _pwm_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._pwm_driver_api.static.*))); _pwm_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 shared_irq_driver_api_area : ALIGN_WITH_INPUT { _shared_irq_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._shared_irq_driver_api.static.*))); _shared_irq_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 crypto_driver_api_area : ALIGN_WITH_INPUT { _crypto_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._crypto_driver_api.static.*))); _crypto_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 adc_driver_api_area : ALIGN_WITH_INPUT { _adc_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._adc_driver_api.static.*))); _adc_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
@@ -636,7 +637,6 @@ mspi_driver_api_area : ALIGN_WITH_INPUT { _mspi_driver_api_list_start = .; KEEP(
 peci_driver_api_area : ALIGN_WITH_INPUT { _peci_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._peci_driver_api.static.*))); _peci_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 ps2_driver_api_area : ALIGN_WITH_INPUT { _ps2_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._ps2_driver_api.static.*))); _ps2_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 ptp_clock_driver_api_area : ALIGN_WITH_INPUT { _ptp_clock_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._ptp_clock_driver_api.static.*))); _ptp_clock_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
-pwm_driver_api_area : ALIGN_WITH_INPUT { _pwm_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._pwm_driver_api.static.*))); _pwm_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 regulator_parent_driver_api_area : ALIGN_WITH_INPUT { _regulator_parent_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._regulator_parent_driver_api.static.*))); _regulator_parent_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 regulator_driver_api_area : ALIGN_WITH_INPUT { _regulator_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._regulator_driver_api.static.*))); _regulator_driver_api_list_end = .; } > drom0_0_seg AT > FLASH
 reset_driver_api_area : ALIGN_WITH_INPUT { _reset_driver_api_list_start = .; KEEP(*(SORT_BY_NAME(._reset_driver_api.static.*))); _reset_driver_api_list_end = .; } > drom0_0_seg AT > FLASH

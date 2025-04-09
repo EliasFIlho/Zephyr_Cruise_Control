@@ -218,7 +218,12 @@
 			interrupt-parent = < &intc >;
 			clocks = < &rtc 0xa >;
 			#pwm-cells = < 0x3 >;
-			status = "disabled";
+			status = "okay";
+			pinctrl-0 = < &mcpwm0_default >;
+			pinctrl-names = "default";
+			prescale = < 0x7 >;
+			prescale-timer0 = < 0x63 >;
+			phandle = < 0xf >;
 		};
 		mcpwm1: mcpwm@3ff6c000 {
 			compatible = "espressif,esp32-mcpwm";
@@ -248,7 +253,7 @@
 				ngpios = < 0x20 >;
 				gpio-reserved-ranges = < 0x6 0x6 >, < 0x14 0x1 >, < 0x18 0x1 >, < 0x1c 0x4 >;
 				status = "okay";
-				phandle = < 0x7 >;
+				phandle = < 0x8 >;
 			};
 			gpio1: gpio@3ff44800 {
 				compatible = "espressif,esp32-gpio";
@@ -260,7 +265,7 @@
 				ngpios = < 0x8 >;
 				gpio-reserved-ranges = < 0x5 0x2 >;
 				status = "okay";
-				phandle = < 0x8 >;
+				phandle = < 0x9 >;
 			};
 		};
 		touch: touch@3ff48858 {
@@ -472,14 +477,14 @@
 				power-state-name = "standby";
 				min-residency-us = < 0xc8 >;
 				exit-latency-us = < 0x3c >;
-				phandle = < 0xc >;
+				phandle = < 0xd >;
 			};
 			deep_sleep: deep_sleep {
 				compatible = "zephyr,power-state";
 				power-state-name = "soft-off";
 				min-residency-us = < 0x7d0 >;
 				exit-latency-us = < 0xd4 >;
-				phandle = < 0xd >;
+				phandle = < 0xe >;
 			};
 		};
 	};
@@ -540,7 +545,7 @@
 			};
 		};
 		spim2_default: spim2_default {
-			phandle = < 0xa >;
+			phandle = < 0xb >;
 			group1 {
 				pinmux = < 0xff824c >, < 0x47fce >, < 0x5ffcf >;
 			};
@@ -550,7 +555,7 @@
 			};
 		};
 		spim3_default: spim3_default {
-			phandle = < 0xb >;
+			phandle = < 0xc >;
 			group1 {
 				pinmux = < 0xff9013 >, < 0x1fffd2 >, < 0x227fc5 >;
 			};
@@ -560,12 +565,23 @@
 			};
 		};
 		i2c0_default: i2c0_default {
-			phandle = < 0x9 >;
+			phandle = < 0xa >;
 			group1 {
 				pinmux = < 0xf0795 >, < 0xe8756 >;
 				bias-pull-up;
 				drive-open-drain;
 				output-high;
+			};
+		};
+		mcpwm0_default: mcpwm0_default {
+			phandle = < 0x7 >;
+			group1 {
+				pinmux = < 0x107fc2 >;
+				input-enable;
+			};
+			group2 {
+				pinmux = < 0xff9b4e >;
+				output-enable;
 			};
 		};
 	};
@@ -577,10 +593,8 @@
 			zephyr,code = < 0xb >;
 		};
 	};
-	leds {
-		compatible = "gpio-leds";
-		led_0: led_0 {
-			gpios = < &gpio0 0x2 0x0 >;
-		};
+	motor: motor {
+		compatible = "cruise,motor";
+		pwms = < &mcpwm0 0x0 0x0 0x0 >, < &mcpwm0 0x6 0x0 0x0 >;
 	};
 };

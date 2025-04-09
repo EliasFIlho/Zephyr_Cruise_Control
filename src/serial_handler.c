@@ -11,13 +11,13 @@ static struct buffer rx_buffer;
 static void uart_cb_function(const struct device *dev, void *user_data){
     
     
-    uint8_t c;
     if(!uart_irq_update(uart_dev)){
         return;
     }
     if(!uart_irq_rx_ready(uart_dev)){
         return;
     }else{
+        uint8_t c;
         while(uart_fifo_read(uart_dev,&c,1) == 1){
             if ((c == '\n' || c == '\r') && rx_buffer.pos > 0){
                 rx_buffer.buffer[rx_buffer.pos] = '\0';
@@ -57,7 +57,6 @@ bool serial_init(){
 	}else{
         printk("Callback seted\n");
     }
-    uart_irq_tx_enable(uart_dev);
     uart_irq_rx_enable(uart_dev);
 
     return true;

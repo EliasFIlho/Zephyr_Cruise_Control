@@ -1627,6 +1627,11 @@ DT_COMPAT_CIRRUS_CS47L63 := cirrus,cs47l63
 config DT_HAS_CIRRUS_CS47L63_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_CIRRUS_CS47L63))
 
+DT_COMPAT_CRUISE_MOTOR := cruise,motor
+
+config DT_HAS_CRUISE_MOTOR_ENABLED
+	def_bool $(dt_compat_enabled,$(DT_COMPAT_CRUISE_MOTOR))
+
 DT_COMPAT_CURRENT_SENSE_AMPLIFIER := current-sense-amplifier
 
 config DT_HAS_CURRENT_SENSE_AMPLIFIER_ENABLED

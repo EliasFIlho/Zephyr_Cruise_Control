@@ -865,14 +865,37 @@
  status = "okay";
 };
 # 0 "<command-line>" 2
-# 1 "/home/elias/zephyrproject/applications/cruise_control/boards/esp32_devkit_wroom.overlay" 1
+# 1 "/home/elias/zephyrproject/cruise_control/boards/esp32_devkit_wroom.overlay" 1
 /{
-    leds {
-        compatible = "gpio-leds";
-        led_0:led_0 {
-            gpios = <&gpio0 2 (0 << 0)>;
+
+    motor:motor{
+        compatible = "cruise,motor";
+        pwms = <&mcpwm0 0 0 (0 << 0)>,
+         <&mcpwm0 6 0 (0 << 0)>;
+    };
+};
+
+&pinctrl {
+    mcpwm0_default: mcpwm0_default {
+        group1 {
+            pinmux = <(((2 & 0x3FU) << 0U) | ((0x1FFU & 0x1FFU) << 6U) | ((32 & 0x1FFU) << 15U))>;
+            input-enable;
+        };
+        group2 {
+            pinmux = <(((14 & 0x3FU) << 0U) | ((109 & 0x1FFU) << 6U) | ((0x1FFU & 0x1FFU) << 15U))>;
+            output-enable;
+
         };
     };
+};
+
+
+&mcpwm0 {
+    pinctrl-0 = <&mcpwm0_default>;
+    pinctrl-names = "default";
+    prescale = <7>;
+    prescale-timer0 = <99>;
+    status = "okay";
 };
 # 0 "<command-line>" 2
 # 1 "/home/elias/zephyrproject/zephyr/misc/empty_file.c"

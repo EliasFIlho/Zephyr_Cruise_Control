@@ -62,7 +62,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
       
       The C compiler identification is GNU, found in:
-        /home/elias/zephyrproject/applications/cruise_control/build/CMakeFiles/3.28.3/CompilerIdC/CMakeCCompilerId.o
+        /home/elias/zephyrproject/cruise_control/build/CMakeFiles/3.28.3/CompilerIdC/CMakeCCompilerId.o
       
   -
     kind: "message-v1"
@@ -113,7 +113,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
       
       The CXX compiler identification is GNU, found in:
-        /home/elias/zephyrproject/applications/cruise_control/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
+        /home/elias/zephyrproject/cruise_control/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
       
   -
     kind: "message-v1"

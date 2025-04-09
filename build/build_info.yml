@@ -1,17 +1,18 @@
 cmake:
   application:
-    configuration-dir: /home/elias/zephyrproject/applications/cruise_control
-    source-dir: /home/elias/zephyrproject/applications/cruise_control
+    configuration-dir: /home/elias/zephyrproject/cruise_control
+    source-dir: /home/elias/zephyrproject/cruise_control
   board:
     name: esp32_devkitc_wroom
     qualifiers: esp32/procpu
     revision: 
   devicetree:
     bindings-dirs:
+     - /home/elias/zephyrproject/cruise_control/dts/bindings
      - /home/elias/zephyrproject/zephyr/dts/bindings
     files:
      - /home/elias/zephyrproject/zephyr/boards/espressif/esp32_devkitc_wroom/esp32_devkitc_wroom_procpu.dts
-     - /home/elias/zephyrproject/applications/cruise_control/boards/esp32_devkit_wroom.overlay
+     - /home/elias/zephyrproject/cruise_control/boards/esp32_devkit_wroom.overlay
     include-dirs:
      - /home/elias/zephyrproject/modules/hal/atmel/include
      - /home/elias/zephyrproject/modules/hal/gigadevice/include
@@ -19,6 +20,7 @@ cmake:
      - /home/elias/zephyrproject/modules/hal/nuvoton/dts
      - /home/elias/zephyrproject/modules/hal/nxp/dts
      - /home/elias/zephyrproject/modules/hal/stm32/dts
+     - /home/elias/zephyrproject/cruise_control/dts
      - /home/elias/zephyrproject/zephyr/include
      - /home/elias/zephyrproject/zephyr/include/zephyr
      - /home/elias/zephyrproject/zephyr/dts/common
@@ -33,13 +35,13 @@ cmake:
      - /home/elias/zephyrproject/zephyr/dts/arc
      - /home/elias/zephyrproject/zephyr/dts
     user-files:
-     - /home/elias/zephyrproject/applications/cruise_control/boards/esp32_devkit_wroom.overlay
+     - /home/elias/zephyrproject/cruise_control/boards/esp32_devkit_wroom.overlay
   kconfig:
     files:
      - /home/elias/zephyrproject/zephyr/boards/espressif/esp32_devkitc_wroom/esp32_devkitc_wroom_procpu_defconfig
-     - /home/elias/zephyrproject/applications/cruise_control/prj.conf
+     - /home/elias/zephyrproject/cruise_control/prj.conf
     user-files:
-     - /home/elias/zephyrproject/applications/cruise_control/prj.conf
+     - /home/elias/zephyrproject/cruise_control/prj.conf
   toolchain:
     name: zephyr
     path: /home/elias/zephyr-sdk-0.17.0

@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/elias/zephyrproject/applications/cruise_control/build/modules/hal_renesas/zephyr/cmake_install.cmake")
+  include("/home/elias/zephyrproject/cruise_control/build/modules/hal_renesas/zephyr/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/elias/zephyrproject/applications/cruise_control/build/modules/hal_renesas/drivers/cmake_install.cmake")
+  include("/home/elias/zephyrproject/cruise_control/build/modules/hal_renesas/drivers/cmake_install.cmake")
 endif()
 

@@ -1,8 +1,31 @@
 /{
-    leds {
-        compatible = "gpio-leds";
-        led_0:led_0 {
-            gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+ 
+    motor:motor{
+        compatible = "cruise,motor";
+        pwms = <&mcpwm0 0 0 PWM_POLARITY_NORMAL>,
+		       <&mcpwm0 6 0 PWM_POLARITY_NORMAL>;
+    };
+};
+
+&pinctrl {
+    mcpwm0_default: mcpwm0_default {
+        group1 {
+            pinmux = <MCPWM0_OUT0A_GPIO2>;
+            input-enable;
+        };
+        group2 {
+            pinmux = <MCPWM0_CAP0_GPIO14>;
+            output-enable;
+
         };
     };
+};
+
+
+&mcpwm0 {
+    pinctrl-0 = <&mcpwm0_default>;
+    pinctrl-names = "default";
+    prescale = <7>;
+    prescale-timer0 = <99>;
+    status = "okay";
 };
