@@ -1,25 +1,28 @@
-#include "signal_capture.h"
+#include "motor.h"
 
 static const struct pwm_dt_spec pwm = PWM_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor), 0);
-static const struct pwm_dt_spec cap = PWM_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor), 1);
-
+static const struct gpio_dt_spec forward_pin = GPIO_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor_pins),gpios,0);
+static const struct gpio_dt_spec backward_pin = GPIO_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor_pins),gpios,1);
 
 static uint32_t current_rpm = 0;
 
-static void capture_handler(const struct device *dev, uint32_t channel, uint32_t period_cycles, uint32_t pulse_cycles, int status, void *user_data)
-{
-    if (status != 0)
-    {
-        printk("Error to capture - status: [%d]", status);
-    }
-    else
-    {
 
-        double frequency = 1.0 / ((double)period_cycles / (double)DEVICE_FREQUENCY_HZ);
-        double rpm = (frequency * 60.0) / (SHAFT_REVOLUTION_RATIO);
-        // double duty = ((double)pulse_cycles / (double)period_cycles) * 100.0;
-        current_rpm = (uint32_t)rpm;
-        printk("RPM from cap 0: %f\n", rpm);
+
+
+static bool is_direction_pins_ready(){
+    if((!device_is_ready(forward_pin.port)) || (!device_is_ready(forward_pin.port))){
+        printk("Error to config direction pin");
+        return false;
+    }else{
+        if((gpio_pin_configure_dt(&forward_pin,GPIO_OUTPUT) != 0) ||(gpio_pin_configure_dt(&backward_pin,GPIO_OUTPUT) != 0)){
+            printk("Error to config direction pin output");
+            return false;
+        }else{
+            printk("Direction pin enabled");
+            return true;
+
+        }
+        
     }
 }
 
@@ -28,6 +31,7 @@ static bool is_pwm_ready()
     if (device_is_ready(pwm.dev))
     {
         printk("Looks like he is ready!!\nDevice channel: {%d}\nDevice period: {%d}\n", pwm.channel, pwm.period);
+        return true;
     }
     else
     {
@@ -35,47 +39,31 @@ static bool is_pwm_ready()
         return false;
     }
 
-    if (device_is_ready(cap.dev))
-    {
-        printk("Looks like out is ready!!\nDevice channel: {%d}\nDevice period: {%d}\n", cap.channel, cap.period);
-    }
-    else
-    {
-        printk("F out is not ready yet\n");
-        return false;
-    }
+}
+
+
+// TODO: Handle error and send to caller
+bool set_motor_direction_forward(){
+    gpio_pin_set_dt(&backward_pin,GPIO_ACTIVE_LOW);
+    gpio_pin_set_dt(&forward_pin,GPIO_ACTIVE_HIGH);
     return true;
 }
 
-bool init_pwms()
+bool set_motor_direction_backward(){
+    gpio_pin_set_dt(&backward_pin,GPIO_ACTIVE_HIGH);
+    gpio_pin_set_dt(&forward_pin,GPIO_ACTIVE_LOW);
+    return true;
+}
+
+bool init_motor()
 {
-    if (!is_pwm_ready())
+    if ((!is_pwm_ready()) || (!is_direction_pins_ready()))
     {
         printk("PWM Init Error");
         return false;
     }
     else
     {
-        int ret = pwm_configure_capture(cap.dev, cap.channel, (PWM_CAPTURE_TYPE_BOTH | PWM_CAPTURE_MODE_CONTINUOUS), capture_handler, NULL);
-        if (ret != 0)
-        {
-            return false;
-        }
-        else
-        {
-            // no if without else
-        }
-
-        ret = pwm_enable_capture(cap.dev, cap.channel);
-        if (ret != 0)
-        {
-            return false;
-        }
-        else
-        {
-            // no if without else
-        }
-
         return true;
     }   
 }

@@ -10,5 +10,5 @@ project(cruise_control)
 target_sources(app PRIVATE 
     src/main.c
     src/serial_handler.c
-    src/signal_capture.c
+    src/motor.c
 )

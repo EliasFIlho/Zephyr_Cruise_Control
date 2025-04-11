@@ -1,10 +1,22 @@
 /{
- 
-    motor:motor{
+
+    motor: motor{
         compatible = "cruise,motor";
         pwms = <&mcpwm0 0 0 PWM_POLARITY_NORMAL>,
-		       <&mcpwm0 6 0 PWM_POLARITY_NORMAL>;
+               <&mcpwm0 6 0 PWM_POLARITY_NORMAL>;
+
+        motor_pins: pins {
+            gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>,
+                    <&gpio0 18 	GPIO_ACTIVE_HIGH>;
+            label = "motor_pins";
+        };
+
     };
+
+    aliases {
+        qdec0 = &pcnt;
+    };
+
 };
 
 &pinctrl {
@@ -13,10 +25,13 @@
             pinmux = <MCPWM0_OUT0A_GPIO2>;
             input-enable;
         };
-        group2 {
-            pinmux = <MCPWM0_CAP0_GPIO14>;
-            output-enable;
+    };
 
+    pcnt_default: pcnt_default {
+        group1 {
+            pinmux = <PCNT0_CH0SIG_GPIO14>,
+                     <PCNT0_CH0CTRL_GPIO15>;
+            bias-pull-up;
         };
     };
 };
@@ -28,4 +43,26 @@
     prescale = <7>;
     prescale-timer0 = <99>;
     status = "okay";
+};
+
+
+&pcnt {
+    pinctrl-0 = <&pcnt_default>;
+    pinctrl-names = "default";
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+    unit0@0 {
+        reg = <0>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+        filter = <100>;
+        channelA@0 {
+            reg = <0>;
+            sig-pos-mode = <2>;
+            sig-neg-mode = <1>;
+            ctrl-h-mode = <0>;
+            ctrl-l-mode = <1>;
+        };
+    };
 };

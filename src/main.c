@@ -2,7 +2,7 @@
 #include <zephyr/sys/printk.h>
 #include <zephyr/device.h>  
 #include "serial_handler.h"
-#include "signal_capture.h"
+#include "motor.h"
 #include <stdlib.h>
 
 #define q_msg_size 32
@@ -18,17 +18,21 @@ int main(void) {
         printk("Serial got some error\n");
     }
 
-    if(init_pwms()){
+    if(init_motor()){
         printk("PWM started");
     }else{
         printk("Error to start pwm");
     }
+    
     set_pwm_pulse_output_percent(0);
 
     while (1) {
         if(k_msgq_get(&uart_queue,&tx_buf,K_NO_WAIT) == 0){
             int duty = atoi(tx_buf);
+            //set_motor_direction_forward();
+            set_motor_direction_backward();
             set_pwm_pulse_output_percent(duty);
+
             uint32_t rpm = get_current_rpm();
             printk("Current RPM [%d]\n", rpm);
         };

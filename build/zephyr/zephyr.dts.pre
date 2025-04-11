@@ -868,11 +868,23 @@
 # 1 "/home/elias/zephyrproject/cruise_control/boards/esp32_devkit_wroom.overlay" 1
 /{
 
-    motor:motor{
+    motor: motor{
         compatible = "cruise,motor";
         pwms = <&mcpwm0 0 0 (0 << 0)>,
-         <&mcpwm0 6 0 (0 << 0)>;
+               <&mcpwm0 6 0 (0 << 0)>;
+
+        motor_pins: pins {
+            gpios = <&gpio0 5 (0 << 0)>,
+                    <&gpio0 18 (0 << 0)>;
+            label = "motor_pins";
+        };
+
     };
+
+    aliases {
+        qdec0 = &pcnt;
+    };
+
 };
 
 &pinctrl {
@@ -881,10 +893,13 @@
             pinmux = <(((2 & 0x3FU) << 0U) | ((0x1FFU & 0x1FFU) << 6U) | ((32 & 0x1FFU) << 15U))>;
             input-enable;
         };
-        group2 {
-            pinmux = <(((14 & 0x3FU) << 0U) | ((109 & 0x1FFU) << 6U) | ((0x1FFU & 0x1FFU) << 15U))>;
-            output-enable;
+    };
 
+    pcnt_default: pcnt_default {
+        group1 {
+            pinmux = <(((14 & 0x3FU) << 0U) | ((39 & 0x1FFU) << 6U) | ((0x1FFU & 0x1FFU) << 15U))>,
+                     <(((15 & 0x3FU) << 0U) | ((41 & 0x1FFU) << 6U) | ((0x1FFU & 0x1FFU) << 15U))>;
+            bias-pull-up;
         };
     };
 };
@@ -896,6 +911,28 @@
     prescale = <7>;
     prescale-timer0 = <99>;
     status = "okay";
+};
+
+
+&pcnt {
+    pinctrl-0 = <&pcnt_default>;
+    pinctrl-names = "default";
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+    unit0@0 {
+        reg = <0>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+        filter = <100>;
+        channelA@0 {
+            reg = <0>;
+            sig-pos-mode = <2>;
+            sig-neg-mode = <1>;
+            ctrl-h-mode = <0>;
+            ctrl-l-mode = <1>;
+        };
+    };
 };
 # 0 "<command-line>" 2
 # 1 "/home/elias/zephyrproject/zephyr/misc/empty_file.c"
