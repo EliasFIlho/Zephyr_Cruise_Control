@@ -1,32 +1,30 @@
 # Zephyr - Cruise Control
 
+## Main Goal
 
-# Main Goal
+1. Learn how to use Zephyr RTOS (The best way to do that is by coding and making mistakes).
+2. Improve understanding of control systems, such as configuring sample rates and PID tuning.
 
-1. Learn how to use Zephyr (The better way to do that is coding and failing).
-2. Learn more about control concepts such as configure samples rates and PID tuning
+## The Idea
 
-# The Idea
+The goal of this project is to create a velocity control system similar to the cruise control systems found in vehicles.
 
-The Project idea is to create a velocity control system such in vehicles cruise control system.
+### Cruise Control
 
-## Cruise control
+If you're driving at 60 km/h, you can send this speed value to the cruise control system, and the control algorithm will increase or decrease the vehicle's speed to maintain the target velocity.
 
-If you're dring at 60km/h you can send this velocity value to the cruise control system and the control algorithm
-will incress and decress the car velocity in order to keep the velocity at the seted target.
+## Project Specifications
 
-## Project specifications
+The project is based on Zephyr RTOS. The system receives a target velocity value via UART and sends it to a PID routine, which tries to reach and maintain this value.
 
-The project will be based in Zephyr RTOS, the system will receive a target value from UART and send this value to a PID routine that will try to reach and keep the value.
+The plant controlled by the PID algorithm is a DC motor. Feedback data is provided by a quadrature encoder.
 
-The plant that PID algorithm control is one DC motor and the feedback data comes from a quadrature encoder.
+Since the system is not moving in real space, the measurement unit will be RPM (Revolutions Per Minute).
 
-Since the control is'nt in moviment the measurement unit will be RPM (Revolutions per minute).
+## Roadmap
 
-# Road Map
+This project is planned in three versions:
 
-This project was planned to have three versions
-
-1. Receiving data from UART and control algorithm in the same Microcontroller
-2. Receiving data from UART in one microcontroller then send the data to another through CAN bus the next microcontroller will be responsable to run the PID algorithm.
-3. Receiving data from a mechanic device similar to a cars pedal in one microcontroller then send the data to another through CAN bus the next microcontroller will be responsable to run the PID algorithm.
+1. **Version 1:** Receive data from UART and run the control algorithm on the same microcontroller.
+2. **Version 2:** Receive data from UART on one microcontroller, then send it via CAN bus to another microcontroller that runs the PID algorithm.
+3. **Version 3:** Receive data from a mechanical device (similar to a car's pedal) on one microcontroller, then send it via CAN bus to another microcontroller responsible for running the PID algorithm.
