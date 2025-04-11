@@ -2836,23 +2836,11 @@
 #define DT_N_S_motor_P_pwms_IDX_0_VAL_period_EXISTS 1
 #define DT_N_S_motor_P_pwms_IDX_0_VAL_flags 0
 #define DT_N_S_motor_P_pwms_IDX_0_VAL_flags_EXISTS 1
-#define DT_N_S_motor_P_pwms_IDX_1_EXISTS 1
-#define DT_N_S_motor_P_pwms_IDX_1_PH DT_N_S_soc_S_mcpwm_3ff5e000
-#define DT_N_S_motor_P_pwms_IDX_1_VAL_channel 6
-#define DT_N_S_motor_P_pwms_IDX_1_VAL_channel_EXISTS 1
-#define DT_N_S_motor_P_pwms_IDX_1_VAL_period 0
-#define DT_N_S_motor_P_pwms_IDX_1_VAL_period_EXISTS 1
-#define DT_N_S_motor_P_pwms_IDX_1_VAL_flags 0
-#define DT_N_S_motor_P_pwms_IDX_1_VAL_flags_EXISTS 1
-#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM(fn) fn(DT_N_S_motor, pwms, 0) \
-	fn(DT_N_S_motor, pwms, 1)
-#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_motor, pwms, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_motor, pwms, 1)
-#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_motor, pwms, 0, __VA_ARGS__) \
-	fn(DT_N_S_motor, pwms, 1, __VA_ARGS__)
-#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_motor, pwms, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_motor, pwms, 1, __VA_ARGS__)
-#define DT_N_S_motor_P_pwms_LEN 2
+#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM(fn) fn(DT_N_S_motor, pwms, 0)
+#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_motor, pwms, 0)
+#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_motor, pwms, 0, __VA_ARGS__)
+#define DT_N_S_motor_P_pwms_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_motor, pwms, 0, __VA_ARGS__)
+#define DT_N_S_motor_P_pwms_LEN 1
 #define DT_N_S_motor_P_pwms_EXISTS 1
 
 /*

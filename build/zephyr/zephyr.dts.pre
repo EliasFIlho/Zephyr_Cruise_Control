@@ -870,8 +870,7 @@
 
     motor: motor{
         compatible = "cruise,motor";
-        pwms = <&mcpwm0 0 0 (0 << 0)>,
-               <&mcpwm0 6 0 (0 << 0)>;
+        pwms = <&mcpwm0 0 0 (0 << 0)>;
 
         motor_pins: pins {
             gpios = <&gpio0 5 (0 << 0)>,

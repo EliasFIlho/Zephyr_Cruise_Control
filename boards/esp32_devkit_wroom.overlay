@@ -2,8 +2,7 @@
 
     motor: motor{
         compatible = "cruise,motor";
-        pwms = <&mcpwm0 0 0 PWM_POLARITY_NORMAL>,
-               <&mcpwm0 6 0 PWM_POLARITY_NORMAL>;
+        pwms = <&mcpwm0 0 0 PWM_POLARITY_NORMAL>;
 
         motor_pins: pins {
             gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>,

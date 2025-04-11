@@ -616,7 +616,7 @@
 	};
 	motor: motor {
 		compatible = "cruise,motor";
-		pwms = < &mcpwm0 0x0 0x0 0x0 >, < &mcpwm0 0x6 0x0 0x0 >;
+		pwms = < &mcpwm0 0x0 0x0 0x0 >;
 		motor_pins: pins {
 			gpios = < &gpio0 0x5 0x0 >, < &gpio0 0x12 0x0 >;
 			label = "motor_pins";
