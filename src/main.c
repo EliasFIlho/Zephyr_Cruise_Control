@@ -4,6 +4,7 @@
 #include "serial_handler.h"
 #include "motor.h"
 #include <stdlib.h>
+#include "pid.h"
 
 #define q_msg_size 32
 
@@ -31,21 +32,26 @@ int main(void)
         printk("Error to start pwm");
     }
 
+    //set_motor_direction_forward();
+    set_motor_direction_backward();
     set_pwm_pulse_output_percent(0);
-    uint32_t rpm = 0;
-
+    
+    printk("Call PID start controller");
+    start_pid_controller();
+    int32_t rpm = 0;
+    int target = 0;
+    set_pwm_duty_period(0);
     while (1)
     {
         if (k_msgq_get(&uart_queue, &tx_buf, K_NO_WAIT) == 0)
         {
-            int duty = atoi(tx_buf);
-            set_motor_direction_forward();
-            //set_motor_direction_backward();
-            set_pwm_pulse_output_percent(duty);
+            target = atoi(tx_buf);
+            set_pid_target_rpm(target);
+            //set_pwm_pulse_output_percent(target);
         };
-        rpm = get_current_rpm();
-        printk("%d\n", rpm);
-        k_sleep(K_MSEC(50));
+        //rpm = get_current_rpm();
+        //printk(" RPM %d\n",rpm);
+        k_sleep(K_USEC(50));
     }
 
     return 0;

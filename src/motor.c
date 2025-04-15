@@ -8,8 +8,19 @@ static const struct gpio_dt_spec forward_pin = GPIO_DT_SPEC_GET_BY_IDX(DT_NODELA
 static const struct gpio_dt_spec backward_pin = GPIO_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor_pins),gpios,1);
 const struct device *const dev = DEVICE_DT_GET(DT_ALIAS(qdec0));
 
+
+/* Motor status struct */
+
+struct motor_status motor = {
+    .isForward = false,
+    .rpm = 0,
+    .velocity = 0
+};
+
+
+
 /* Global variables for velocity*/
-static uint32_t current_rpm = 0;
+_Atomic int32_t current_rpm = 0;
 
 static int16_t prev_pulse_count = 0;
 static double velocity = 0.0;
@@ -21,6 +32,8 @@ static struct k_timer calculate_velocity_tim;
 static void calculate_velocity_tim_callback(struct k_timer *tim)
 {
 	struct sensor_value val;
+    int16_t delta_count;
+
 	if (sensor_sample_fetch(dev) != 0)
 	{
 		printk("Failed to fetch sample\n");
@@ -28,10 +41,16 @@ static void calculate_velocity_tim_callback(struct k_timer *tim)
 	else
 	{
 		sensor_channel_get(dev, SENSOR_CHAN_ROTATION, &val);
-		velocity = (((double)(val.val1 - prev_pulse_count))/SHAFT_REVOLUTION_RATIO)*(60.0/TIME_BASIS);
-        current_rpm = (uint32_t)velocity;
+        delta_count = val.val1 - prev_pulse_count;
+        if(delta_count < 0){
+            delta_count *= -1;
+        }else{
+
+        }
+		velocity = ((double)(delta_count))/TIME_BASIS;
+        current_rpm = (int32_t)((velocity/SHAFT_REVOLUTION_RATIO)*60);
 		prev_pulse_count = val.val1;
-        //printk("timer working %f\n",velocity);
+        //printk("Current: | %d | Previous | %d |  Delta | %d | Current RPM: | %d |\n",val.val1,prev_pulse_count,delta_count,current_rpm);
 	}
 }
 
@@ -73,12 +92,14 @@ static bool is_pwm_ready()
 bool set_motor_direction_forward(){
     gpio_pin_set_dt(&backward_pin,GPIO_ACTIVE_LOW);
     gpio_pin_set_dt(&forward_pin,GPIO_ACTIVE_HIGH);
+    motor.isForward = true;
     return true;
 }
 
 bool set_motor_direction_backward(){
     gpio_pin_set_dt(&backward_pin,GPIO_ACTIVE_HIGH);
     gpio_pin_set_dt(&forward_pin,GPIO_ACTIVE_LOW);
+    motor.isForward = false;
     return true;
 }
 
@@ -91,6 +112,7 @@ bool init_motor()
     }
     else
     {
+        printk("PWM Init velicity Timer");
         k_timer_init(&calculate_velocity_tim, calculate_velocity_tim_callback, NULL);
 	    k_timer_start(&calculate_velocity_tim,TIMER_PERIOD_AND_DURATION,TIMER_PERIOD_AND_DURATION);
         return true;
@@ -127,6 +149,7 @@ bool set_pwm_pulse_output_percent(uint8_t pulse_percent)
     }
     else
     {
+        
         pulse_value = (pulse_percent * PWM_SIGNAL_FREQUENCY_NS) / 100;
     }
     int err;
@@ -141,6 +164,6 @@ bool set_pwm_pulse_output_percent(uint8_t pulse_percent)
         return true;
     }
 }
-uint32_t get_current_rpm(){
+int32_t get_current_rpm(){
     return current_rpm;
 }

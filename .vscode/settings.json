@@ -4,6 +4,9 @@
         "kernel.h": "c",
         "device.h": "c",
         "gpio.h": "c",
-        "serial_handler.h": "c"
+        "serial_handler.h": "c",
+        "compare": "c",
+        "cstdint": "c",
+        "pwm.h": "c"
     }
 }

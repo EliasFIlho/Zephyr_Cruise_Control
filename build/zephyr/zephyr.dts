@@ -239,8 +239,8 @@
 			status = "okay";
 			pinctrl-0 = < &mcpwm0_default >;
 			pinctrl-names = "default";
-			prescale = < 0x7 >;
-			prescale-timer0 = < 0x63 >;
+			prescale = < 0x3 >;
+			prescale-timer0 = < 0x3 >;
 			phandle = < 0x10 >;
 		};
 		mcpwm1: mcpwm@3ff6c000 {

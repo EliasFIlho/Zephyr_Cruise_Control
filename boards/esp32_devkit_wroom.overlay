@@ -39,8 +39,8 @@
 &mcpwm0 {
     pinctrl-0 = <&mcpwm0_default>;
     pinctrl-names = "default";
-    prescale = <7>;
-    prescale-timer0 = <99>;
+    prescale = <3>;
+    prescale-timer0 = <3>;
     status = "okay";
 };
 

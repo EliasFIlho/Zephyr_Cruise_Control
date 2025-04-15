@@ -11,4 +11,5 @@ target_sources(app PRIVATE
     src/main.c
     src/serial_handler.c
     src/motor.c
+    src/pid.c
 )

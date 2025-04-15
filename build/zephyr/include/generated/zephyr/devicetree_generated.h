@@ -2659,9 +2659,9 @@
 #define DT_N_S_soc_S_mcpwm_3ff5e000_PINCTRL_NAME_default_IDX_0_PH DT_N_S_pin_controller_S_mcpwm0_default
 
 /* Generic property macros: */
-#define DT_N_S_soc_S_mcpwm_3ff5e000_P_prescale 7
+#define DT_N_S_soc_S_mcpwm_3ff5e000_P_prescale 3
 #define DT_N_S_soc_S_mcpwm_3ff5e000_P_prescale_EXISTS 1
-#define DT_N_S_soc_S_mcpwm_3ff5e000_P_prescale_timer0 99
+#define DT_N_S_soc_S_mcpwm_3ff5e000_P_prescale_timer0 3
 #define DT_N_S_soc_S_mcpwm_3ff5e000_P_prescale_timer0_EXISTS 1
 #define DT_N_S_soc_S_mcpwm_3ff5e000_P_pinctrl_0_IDX_0 DT_N_S_pin_controller_S_mcpwm0_default
 #define DT_N_S_soc_S_mcpwm_3ff5e000_P_pinctrl_0_IDX_0_PH DT_N_S_pin_controller_S_mcpwm0_default
