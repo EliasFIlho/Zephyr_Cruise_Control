@@ -5,7 +5,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/sensor.h>
-
+#include "moving_avg.h"
 
 #define PWM_SIGNAL_FREQUENCY_NS PWM_HZ(1000)
 #define PWM_POLARITY_NORMAL (0 << 0)
@@ -14,8 +14,8 @@
 #define GEAR_RATIO 4.4
 #define SHAFT_REVOLUTION_RATIO (PULSE_REVOLUTION_RATIO*GEAR_RATIO)
 
-#define TIMER_PERIOD_AND_DURATION K_MSEC(10)
-#define TIME_BASIS 0.01
+#define TIMER_PERIOD_AND_DURATION K_MSEC(100)
+#define TIME_BASIS 0.1
 
 
 

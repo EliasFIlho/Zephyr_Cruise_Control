@@ -1,8 +1,8 @@
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/device.h>
-#include "serial_handler.h"
-#include "motor.h"
+#include "serial/serial_handler.h"
+#include "control/motor.h"
 #include <stdlib.h>
 #include "pid.h"
 
@@ -47,10 +47,8 @@ int main(void)
         {
             target = atoi(tx_buf);
             set_pid_target_rpm(target);
-            //set_pwm_pulse_output_percent(target);
+
         };
-        //rpm = get_current_rpm();
-        //printk(" RPM %d\n",rpm);
         k_sleep(K_USEC(50));
     }
 

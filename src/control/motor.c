@@ -17,6 +17,14 @@ struct motor_status motor = {
     .velocity = 0
 };
 
+moving_avg_t filter = {
+    .sample_buffer = {0},
+    .buffer_position = 0,
+    .sample = 0,
+    .filtered_value = 0,
+    .sum = 0
+};
+
 
 
 /* Global variables for velocity*/
@@ -44,13 +52,16 @@ static void calculate_velocity_tim_callback(struct k_timer *tim)
         delta_count = val.val1 - prev_pulse_count;
         if(delta_count < 0){
             delta_count *= -1;
+            filter.sample = delta_count;
         }else{
-
+            filter.sample = delta_count;
         }
-		velocity = ((double)(delta_count))/TIME_BASIS;
+        apply_filter(&filter);
+
+		velocity = ((double)(filter.filtered_value))/TIME_BASIS;
         current_rpm = (int32_t)((velocity/SHAFT_REVOLUTION_RATIO)*60);
 		prev_pulse_count = val.val1;
-        //printk("Current: | %d | Previous | %d |  Delta | %d | Current RPM: | %d |\n",val.val1,prev_pulse_count,delta_count,current_rpm);
+        //printk("Delta | %d | Current RPM: | %d |\n",filter.filtered_value,current_rpm);
 	}
 }
 

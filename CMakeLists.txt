@@ -9,7 +9,8 @@ project(cruise_control)
 
 target_sources(app PRIVATE 
     src/main.c
-    src/serial_handler.c
-    src/motor.c
-    src/pid.c
+    src/serial/serial_handler.c
+    src/control/motor.c
+    src/control/pid.c
+    src/control/moving_avg.c
 )
