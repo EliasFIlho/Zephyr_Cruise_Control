@@ -38,7 +38,8 @@ static void pid_controller()
     set_pwm_duty_period((uint32_t)PID);
     prev_error = error;
 
-    printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f |\n",rpm, target_value ,error, PID);
+    //printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f |\n",rpm, target_value ,error, PID);
+    printk("%d,%d,%d\n",rpm, target_value ,error);
 }
 
 void set_pid_target_rpm(int16_t target)

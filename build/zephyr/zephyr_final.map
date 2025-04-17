@@ -7204,10 +7204,10 @@ log_link_area   0x000000003ffb1a48        0x0 load address 0x000000000000b6a8
                 0x0000000000010000                . = ALIGN (0x10000)
  *fill*         0x000000000000b6a8     0x4958 
                 0x0000000000010000                _image_drom_start = LOADADDR (.flash.rodata)
-                0x00000000000012cc                _image_drom_size = (LOADADDR (.flash.rodata_end) - LOADADDR (.flash.rodata))
+                0x000000000000129c                _image_drom_size = (LOADADDR (.flash.rodata_end) - LOADADDR (.flash.rodata))
                 0x000000003f400000                _image_drom_vaddr = ADDR (.flash.rodata)
 
-.flash.rodata   0x000000003f400000     0x1140 load address 0x0000000000010000
+.flash.rodata   0x000000003f400000     0x1110 load address 0x0000000000010000
                 0x000000003f400000                _rodata_start = ABSOLUTE (.)
                 0x000000003f400000                _rodata_reserved_start = ABSOLUTE (.)
                 0x000000003f400000                . = ALIGN (0x4)
@@ -7277,765 +7277,765 @@ log_link_area   0x000000003ffb1a48        0x0 load address 0x000000000000b6a8
  .rodata.set_pwm_duty_period.str1.1
                 0x000000003f400e55       0x1f app/libapp.a(motor.c.obj)
  .rodata.pid_controller.str1.1
-                0x000000003f400e74       0x3a app/libapp.a(pid.c.obj)
+                0x000000003f400e74        0xa app/libapp.a(pid.c.obj)
  .rodata.start_pid_controller.str1.1
-                0x000000003f400eae       0x16 app/libapp.a(pid.c.obj)
+                0x000000003f400e7e       0x16 app/libapp.a(pid.c.obj)
  .rodata.esp_heap_runtime_init.str1.1
-                0x000000003f400ec4       0x44 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
+                0x000000003f400e94       0x44 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
  .rodata.esp_clk_tree_src_get_freq_hz.str1.1
-                0x000000003f400f08       0xb4 zephyr/libzephyr.a(esp_clk_tree.c.obj)
+                0x000000003f400ed8       0xb4 zephyr/libzephyr.a(esp_clk_tree.c.obj)
  .rodata.__FUNCTION__$0
-                0x000000003f400fbc       0x1d zephyr/libzephyr.a(esp_clk_tree.c.obj)
+                0x000000003f400f8c       0x1d zephyr/libzephyr.a(esp_clk_tree.c.obj)
  .rodata.clk_hal_cpu_get_freq_hz.str1.1
-                0x000000003f400fd9       0x27 zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x000000003f400fa9       0x27 zephyr/libzephyr.a(clk_tree_hal.c.obj)
  .rodata.abort.str1.1
-                0x000000003f401000        0x9 zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
+                0x000000003f400fd0        0x9 zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
  .rodata.str1.1
-                0x000000003f401009       0x23 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x000000003f400fd9       0x23 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
  .rodata.CSWTCH$62
-                0x000000003f40102c        0x6 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x000000003f400ffc        0x6 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
  .rodata.str1.1
-                0x000000003f401032        0xd zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x000000003f401002        0xd zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
  .rodata.str1.1
-                0x000000003f40103f       0x1c zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x000000003f40100f       0x1c zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
  .rodata.str1.1
-                0x000000003f40105b        0xf zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x000000003f40102b        0xf zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
  .rodata.str1.1
-                0x000000003f40106a        0xe zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x000000003f40103a        0xe zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
  .rodata.boot_banner.str1.1
-                0x000000003f401078       0x3b zephyr/kernel/libkernel.a(banner.c.obj)
+                0x000000003f401048       0x3b zephyr/kernel/libkernel.a(banner.c.obj)
  .rodata.vfprintf.str1.1
-                0x000000003f4010b3        0xf /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/../../picolibc/xtensa-espressif_esp32_zephyr-elf/lib/libc.a(libc_tinystdio_vfprintf.c.o)
-                0x000000003f4010c2                _flash_rodata_start = ABSOLUTE (.)
-                0x000000003f4010c2                __rodata_region_start = ABSOLUTE (.)
+                0x000000003f401083        0xf /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/../../picolibc/xtensa-espressif_esp32_zephyr-elf/lib/libc.a(libc_tinystdio_vfprintf.c.o)
+                0x000000003f401092                _flash_rodata_start = ABSOLUTE (.)
+                0x000000003f401092                __rodata_region_start = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.irom1.text))
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
  *(SORT_BY_ALIGNMENT(.rodata1))
-                0x000000003f4010c2                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
+                0x000000003f401092                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.xt_except_table))
  *(SORT_BY_ALIGNMENT(.gcc_except_table) SORT_BY_ALIGNMENT(.gcc_except_table.*))
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.e.*))
  *(SORT_BY_ALIGNMENT(.gnu.version_r))
-                0x000000003f4010c4                . = ((. + 0x3) & 0xfffffffffffffffc)
- *fill*         0x000000003f4010c2        0x2 
-                0x000000003f4010c4                __eh_frame = ABSOLUTE (.)
+                0x000000003f401094                . = ((. + 0x3) & 0xfffffffffffffffc)
+ *fill*         0x000000003f401092        0x2 
+                0x000000003f401094                __eh_frame = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.eh_frame))
- .eh_frame      0x000000003f4010c4       0x28 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_divdi3.o)
- .eh_frame      0x000000003f4010ec       0x28 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_udivdi3.o)
- .eh_frame      0x000000003f401114       0x28 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_umoddi3.o)
-                0x000000003f401140                . = ((. + 0x7) & 0xfffffffffffffffc)
- *fill*         0x000000003f40113c        0x4 
-                0x000000003f401140                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
+ .eh_frame      0x000000003f401094       0x28 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_divdi3.o)
+ .eh_frame      0x000000003f4010bc       0x28 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x000000003f4010e4       0x28 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_umoddi3.o)
+                0x000000003f401110                . = ((. + 0x7) & 0xfffffffffffffffc)
+ *fill*         0x000000003f40110c        0x4 
+                0x000000003f401110                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.xt_except_desc))
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.h.*))
-                0x000000003f401140                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
+                0x000000003f401110                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.xt_except_desc_end))
  *(SORT_BY_ALIGNMENT(.dynamic))
  *(SORT_BY_ALIGNMENT(.gnu.version_d))
-                0x000000003f401140                . = ALIGN (0x4)
-                0x000000003f401140                __rodata_region_end = ABSOLUTE (.)
-                0x000000003f401140                _lit4_start = ABSOLUTE (.)
+                0x000000003f401110                . = ALIGN (0x4)
+                0x000000003f401110                __rodata_region_end = ABSOLUTE (.)
+                0x000000003f401110                _lit4_start = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(*.lit4))
  *(SORT_BY_ALIGNMENT(.lit4.*))
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.lit4.*))
-                0x000000003f401140                _lit4_end = ABSOLUTE (.)
-                0x000000003f401140                . = ALIGN (0x4)
+                0x000000003f401110                _lit4_end = ABSOLUTE (.)
+                0x000000003f401110                . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(.rodata_wlog))
  *(SORT_BY_ALIGNMENT(.rodata_wlog*))
-                0x000000003f401140                . = ALIGN (0x4)
+                0x000000003f401110                . = ALIGN (0x4)
 
-init_array      0x000000003f401140        0x0 load address 0x0000000000011140
+init_array      0x000000003f401110        0x0 load address 0x0000000000011110
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.ctors*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.init_array*)))
                 0x0000000000000001                ASSERT ((SIZEOF (init_array) == 0x0), GNU-style constructors required but STATIC_INIT_GNU not enabled)
 
-initlevel       0x000000003f401140       0x58 load address 0x0000000000011140
-                0x000000003f401140                __init_start = .
-                0x000000003f401140                __init_EARLY_start = .
+initlevel       0x000000003f401110       0x58 load address 0x0000000000011110
+                0x000000003f401110                __init_start = .
+                0x000000003f401110                __init_EARLY_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_EARLY?_*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_EARLY??_*)))
-                0x000000003f401140                __init_PRE_KERNEL_1_start = .
+                0x000000003f401110                __init_PRE_KERNEL_1_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_PRE_KERNEL_1?_*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_PRE_KERNEL_1??_*)))
  .z_init_PRE_KERNEL_130_00006_
-                0x000000003f401140        0x8 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x000000003f401110        0x8 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
  .z_init_PRE_KERNEL_130_0_
-                0x000000003f401148        0x8 zephyr/kernel/libkernel.a(kheap.c.obj)
+                0x000000003f401118        0x8 zephyr/kernel/libkernel.a(kheap.c.obj)
  .z_init_PRE_KERNEL_140_00011_
-                0x000000003f401150        0x8 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x000000003f401120        0x8 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
  .z_init_PRE_KERNEL_140_00088_
-                0x000000003f401158        0x8 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x000000003f401128        0x8 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
  .z_init_PRE_KERNEL_150_00072_
-                0x000000003f401160        0x8 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x000000003f401130        0x8 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
  .z_init_PRE_KERNEL_160_0_
-                0x000000003f401168        0x8 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
-                0x000000003f401170                __init_PRE_KERNEL_2_start = .
+                0x000000003f401138        0x8 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
+                0x000000003f401140                __init_PRE_KERNEL_2_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_PRE_KERNEL_2?_*)))
  .z_init_PRE_KERNEL_20_0_
-                0x000000003f401170        0x8 zephyr/drivers/timer/libdrivers__timer.a(xtensa_sys_timer.c.obj)
+                0x000000003f401140        0x8 zephyr/drivers/timer/libdrivers__timer.a(xtensa_sys_timer.c.obj)
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_PRE_KERNEL_2??_*)))
  .z_init_PRE_KERNEL_250_0_
-                0x000000003f401178        0x8 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
-                0x000000003f401180                __init_POST_KERNEL_start = .
+                0x000000003f401148        0x8 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
+                0x000000003f401150                __init_POST_KERNEL_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_POST_KERNEL?_*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_POST_KERNEL??_*)))
  .z_init_POST_KERNEL35_0_
-                0x000000003f401180        0x8 zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
+                0x000000003f401150        0x8 zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
  .z_init_POST_KERNEL50_00022_
-                0x000000003f401188        0x8 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x000000003f401158        0x8 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
  .z_init_POST_KERNEL50_00089_
-                0x000000003f401190        0x8 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
-                0x000000003f401198                __init_APPLICATION_start = .
+                0x000000003f401160        0x8 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x000000003f401168                __init_APPLICATION_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_APPLICATION?_*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_APPLICATION??_*)))
-                0x000000003f401198                __init_SMP_start = .
+                0x000000003f401168                __init_SMP_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_SMP?_*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_SMP??_*)))
-                0x000000003f401198                __init_end = .
-                0x000000003f401198                __deferred_init_list_start = .
+                0x000000003f401168                __init_end = .
+                0x000000003f401168                __deferred_init_list_start = .
  *(SORT_BY_ALIGNMENT(.z_deferred_init*))
-                0x000000003f401198                __deferred_init_list_end = .
+                0x000000003f401168                __deferred_init_list_end = .
 
-device_area     0x000000003f401198       0x78 load address 0x0000000000011198
-                0x000000003f401198                _device_list_start = .
+device_area     0x000000003f401168       0x78 load address 0x0000000000011168
+                0x000000003f401168                _device_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._device.static.*_?_*)))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._device.static.*_??_*)))
  ._device.static.1_30_
-                0x000000003f401198       0x14 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
-                0x000000003f401198                __device_dts_ord_6
+                0x000000003f401168       0x14 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x000000003f401168                __device_dts_ord_6
  ._device.static.1_40_
-                0x000000003f4011ac       0x28 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
-                0x000000003f4011ac                __device_dts_ord_88
-                0x000000003f4011c0                __device_dts_ord_11
+                0x000000003f40117c       0x28 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x000000003f40117c                __device_dts_ord_88
+                0x000000003f401190                __device_dts_ord_11
  ._device.static.1_50_
-                0x000000003f4011d4       0x14 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
-                0x000000003f4011d4                __device_dts_ord_72
+                0x000000003f4011a4       0x14 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x000000003f4011a4                __device_dts_ord_72
  ._device.static.3_50_
-                0x000000003f4011e8       0x14 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
-                0x000000003f4011e8                __device_dts_ord_22
+                0x000000003f4011b8       0x14 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x000000003f4011b8                __device_dts_ord_22
  ._device.static.3_50_
-                0x000000003f4011fc       0x14 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
-                0x000000003f4011fc                __device_dts_ord_89
-                0x000000003f401210                _device_list_end = .
+                0x000000003f4011cc       0x14 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x000000003f4011cc                __device_dts_ord_89
+                0x000000003f4011e0                _device_list_end = .
 
 initlevel_error
-                0x000000003f401140        0x0
+                0x000000003f401110        0x0
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_init_[_A-Z0-9]*)))
                 0x0000000000000001                ASSERT ((SIZEOF (initlevel_error) == 0x0), Undefined initialization levels used.)
 
 app_shmem_regions
-                0x000000003f401210        0x0 load address 0x0000000000011210
-                0x000000003f401210                __app_shmem_regions_start = .
+                0x000000003f4011e0        0x0 load address 0x00000000000111e0
+                0x000000003f4011e0                __app_shmem_regions_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.app_regions.*)))
-                0x000000003f401210                __app_shmem_regions_end = .
+                0x000000003f4011e0                __app_shmem_regions_end = .
 
 k_p4wq_initparam_area
-                0x000000003f401210        0x0 load address 0x0000000000011210
-                0x000000003f401210                _k_p4wq_initparam_list_start = .
+                0x000000003f4011e0        0x0 load address 0x00000000000111e0
+                0x000000003f4011e0                _k_p4wq_initparam_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_p4wq_initparam.static.*)))
-                0x000000003f401210                _k_p4wq_initparam_list_end = .
+                0x000000003f4011e0                _k_p4wq_initparam_list_end = .
 
 _static_thread_data_area
-                0x000000003f401210        0x0 load address 0x0000000000011210
-                0x000000003f401210                __static_thread_data_list_start = .
+                0x000000003f4011e0        0x0 load address 0x00000000000111e0
+                0x000000003f4011e0                __static_thread_data_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.__static_thread_data.static.*)))
-                0x000000003f401210                __static_thread_data_list_end = .
+                0x000000003f4011e0                __static_thread_data_list_end = .
 
-device_deps     0x000000003f401210        0x0 load address 0x0000000000011210
-                0x000000003f401210                __device_deps_start = .
+device_deps     0x000000003f4011e0        0x0 load address 0x00000000000111e0
+                0x000000003f4011e0                __device_deps_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.__device_deps_pass2*)))
-                0x000000003f401210                __device_deps_end = .
+                0x000000003f4011e0                __device_deps_end = .
 
 gpio_driver_api_area
-                0x000000003f401210       0x24 load address 0x0000000000011210
-                0x000000003f401210                _gpio_driver_api_list_start = .
+                0x000000003f4011e0       0x24 load address 0x00000000000111e0
+                0x000000003f4011e0                _gpio_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._gpio_driver_api.static.*)))
  ._gpio_driver_api.static.gpio_esp32_driver_api_
-                0x000000003f401210       0x24 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
-                0x000000003f401234                _gpio_driver_api_list_end = .
+                0x000000003f4011e0       0x24 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x000000003f401204                _gpio_driver_api_list_end = .
 
 pwm_driver_api_area
-                0x000000003f401234       0x14 load address 0x0000000000011234
-                0x000000003f401234                _pwm_driver_api_list_start = .
+                0x000000003f401204       0x14 load address 0x0000000000011204
+                0x000000003f401204                _pwm_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._pwm_driver_api.static.*)))
  ._pwm_driver_api.static.mcpwm_esp32_api_
-                0x000000003f401234       0x14 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
-                0x000000003f401248                _pwm_driver_api_list_end = .
+                0x000000003f401204       0x14 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x000000003f401218                _pwm_driver_api_list_end = .
 
 sensor_driver_api_area
-                0x000000003f401248       0x1c load address 0x0000000000011248
-                0x000000003f401248                _sensor_driver_api_list_start = .
+                0x000000003f401218       0x1c load address 0x0000000000011218
+                0x000000003f401218                _sensor_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._sensor_driver_api.static.*)))
  ._sensor_driver_api.static.pcnt_esp32_api_
-                0x000000003f401248       0x1c zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
-                0x000000003f401264                _sensor_driver_api_list_end = .
+                0x000000003f401218       0x1c zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x000000003f401234                _sensor_driver_api_list_end = .
 
 shared_irq_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _shared_irq_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _shared_irq_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._shared_irq_driver_api.static.*)))
-                0x000000003f401264                _shared_irq_driver_api_list_end = .
+                0x000000003f401234                _shared_irq_driver_api_list_end = .
 
 crypto_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _crypto_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _crypto_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._crypto_driver_api.static.*)))
-                0x000000003f401264                _crypto_driver_api_list_end = .
+                0x000000003f401234                _crypto_driver_api_list_end = .
 
 adc_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _adc_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _adc_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._adc_driver_api.static.*)))
-                0x000000003f401264                _adc_driver_api_list_end = .
+                0x000000003f401234                _adc_driver_api_list_end = .
 
 auxdisplay_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _auxdisplay_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _auxdisplay_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._auxdisplay_driver_api.static.*)))
-                0x000000003f401264                _auxdisplay_driver_api_list_end = .
+                0x000000003f401234                _auxdisplay_driver_api_list_end = .
 
 bbram_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _bbram_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _bbram_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._bbram_driver_api.static.*)))
-                0x000000003f401264                _bbram_driver_api_list_end = .
+                0x000000003f401234                _bbram_driver_api_list_end = .
 
 bt_hci_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _bt_hci_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _bt_hci_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._bt_hci_driver_api.static.*)))
-                0x000000003f401264                _bt_hci_driver_api_list_end = .
+                0x000000003f401234                _bt_hci_driver_api_list_end = .
 
 can_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _can_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _can_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._can_driver_api.static.*)))
-                0x000000003f401264                _can_driver_api_list_end = .
+                0x000000003f401234                _can_driver_api_list_end = .
 
 cellular_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _cellular_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _cellular_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._cellular_driver_api.static.*)))
-                0x000000003f401264                _cellular_driver_api_list_end = .
+                0x000000003f401234                _cellular_driver_api_list_end = .
 
 charger_driver_api_area
-                0x000000003f401264        0x0 load address 0x0000000000011264
-                0x000000003f401264                _charger_driver_api_list_start = .
+                0x000000003f401234        0x0 load address 0x0000000000011234
+                0x000000003f401234                _charger_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._charger_driver_api.static.*)))
-                0x000000003f401264                _charger_driver_api_list_end = .
+                0x000000003f401234                _charger_driver_api_list_end = .
 
 clock_control_driver_api_area
-                0x000000003f401264       0x1c load address 0x0000000000011264
-                0x000000003f401264                _clock_control_driver_api_list_start = .
+                0x000000003f401234       0x1c load address 0x0000000000011234
+                0x000000003f401234                _clock_control_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._clock_control_driver_api.static.*)))
  ._clock_control_driver_api.static.clock_control_esp32_api_
-                0x000000003f401264       0x1c zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
-                0x000000003f401280                _clock_control_driver_api_list_end = .
+                0x000000003f401234       0x1c zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x000000003f401250                _clock_control_driver_api_list_end = .
 
 comparator_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _comparator_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _comparator_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._comparator_driver_api.static.*)))
-                0x000000003f401280                _comparator_driver_api_list_end = .
+                0x000000003f401250                _comparator_driver_api_list_end = .
 
 coredump_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _coredump_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _coredump_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._coredump_driver_api.static.*)))
-                0x000000003f401280                _coredump_driver_api_list_end = .
+                0x000000003f401250                _coredump_driver_api_list_end = .
 
 counter_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _counter_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _counter_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._counter_driver_api.static.*)))
-                0x000000003f401280                _counter_driver_api_list_end = .
+                0x000000003f401250                _counter_driver_api_list_end = .
 
 dac_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _dac_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _dac_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._dac_driver_api.static.*)))
-                0x000000003f401280                _dac_driver_api_list_end = .
+                0x000000003f401250                _dac_driver_api_list_end = .
 
 dai_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _dai_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _dai_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._dai_driver_api.static.*)))
-                0x000000003f401280                _dai_driver_api_list_end = .
+                0x000000003f401250                _dai_driver_api_list_end = .
 
 display_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _display_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _display_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._display_driver_api.static.*)))
-                0x000000003f401280                _display_driver_api_list_end = .
+                0x000000003f401250                _display_driver_api_list_end = .
 
 dma_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _dma_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _dma_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._dma_driver_api.static.*)))
-                0x000000003f401280                _dma_driver_api_list_end = .
+                0x000000003f401250                _dma_driver_api_list_end = .
 
 edac_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _edac_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _edac_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._edac_driver_api.static.*)))
-                0x000000003f401280                _edac_driver_api_list_end = .
+                0x000000003f401250                _edac_driver_api_list_end = .
 
 eeprom_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _eeprom_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _eeprom_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._eeprom_driver_api.static.*)))
-                0x000000003f401280                _eeprom_driver_api_list_end = .
+                0x000000003f401250                _eeprom_driver_api_list_end = .
 
 emul_bbram_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _emul_bbram_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _emul_bbram_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._emul_bbram_driver_api.static.*)))
-                0x000000003f401280                _emul_bbram_driver_api_list_end = .
+                0x000000003f401250                _emul_bbram_driver_api_list_end = .
 
 fuel_gauge_emul_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _fuel_gauge_emul_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _fuel_gauge_emul_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._fuel_gauge_emul_driver_api.static.*)))
-                0x000000003f401280                _fuel_gauge_emul_driver_api_list_end = .
+                0x000000003f401250                _fuel_gauge_emul_driver_api_list_end = .
 
 emul_sensor_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _emul_sensor_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _emul_sensor_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._emul_sensor_driver_api.static.*)))
-                0x000000003f401280                _emul_sensor_driver_api_list_end = .
+                0x000000003f401250                _emul_sensor_driver_api_list_end = .
 
 entropy_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _entropy_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _entropy_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._entropy_driver_api.static.*)))
-                0x000000003f401280                _entropy_driver_api_list_end = .
+                0x000000003f401250                _entropy_driver_api_list_end = .
 
 espi_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _espi_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _espi_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._espi_driver_api.static.*)))
-                0x000000003f401280                _espi_driver_api_list_end = .
+                0x000000003f401250                _espi_driver_api_list_end = .
 
 espi_saf_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _espi_saf_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _espi_saf_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._espi_saf_driver_api.static.*)))
-                0x000000003f401280                _espi_saf_driver_api_list_end = .
+                0x000000003f401250                _espi_saf_driver_api_list_end = .
 
 flash_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _flash_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _flash_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._flash_driver_api.static.*)))
-                0x000000003f401280                _flash_driver_api_list_end = .
+                0x000000003f401250                _flash_driver_api_list_end = .
 
 fpga_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _fpga_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _fpga_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._fpga_driver_api.static.*)))
-                0x000000003f401280                _fpga_driver_api_list_end = .
+                0x000000003f401250                _fpga_driver_api_list_end = .
 
 fuel_gauge_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _fuel_gauge_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _fuel_gauge_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._fuel_gauge_driver_api.static.*)))
-                0x000000003f401280                _fuel_gauge_driver_api_list_end = .
+                0x000000003f401250                _fuel_gauge_driver_api_list_end = .
 
 gnss_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _gnss_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _gnss_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._gnss_driver_api.static.*)))
-                0x000000003f401280                _gnss_driver_api_list_end = .
+                0x000000003f401250                _gnss_driver_api_list_end = .
 
 haptics_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _haptics_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _haptics_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._haptics_driver_api.static.*)))
-                0x000000003f401280                _haptics_driver_api_list_end = .
+                0x000000003f401250                _haptics_driver_api_list_end = .
 
 hwspinlock_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _hwspinlock_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _hwspinlock_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._hwspinlock_driver_api.static.*)))
-                0x000000003f401280                _hwspinlock_driver_api_list_end = .
+                0x000000003f401250                _hwspinlock_driver_api_list_end = .
 
 i2c_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _i2c_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _i2c_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._i2c_driver_api.static.*)))
-                0x000000003f401280                _i2c_driver_api_list_end = .
+                0x000000003f401250                _i2c_driver_api_list_end = .
 
 i2c_target_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _i2c_target_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _i2c_target_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._i2c_target_driver_api.static.*)))
-                0x000000003f401280                _i2c_target_driver_api_list_end = .
+                0x000000003f401250                _i2c_target_driver_api_list_end = .
 
 i2s_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _i2s_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _i2s_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._i2s_driver_api.static.*)))
-                0x000000003f401280                _i2s_driver_api_list_end = .
+                0x000000003f401250                _i2s_driver_api_list_end = .
 
 i3c_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _i3c_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _i3c_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._i3c_driver_api.static.*)))
-                0x000000003f401280                _i3c_driver_api_list_end = .
+                0x000000003f401250                _i3c_driver_api_list_end = .
 
 ipm_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _ipm_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _ipm_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ipm_driver_api.static.*)))
-                0x000000003f401280                _ipm_driver_api_list_end = .
+                0x000000003f401250                _ipm_driver_api_list_end = .
 
 kscan_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _kscan_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _kscan_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._kscan_driver_api.static.*)))
-                0x000000003f401280                _kscan_driver_api_list_end = .
+                0x000000003f401250                _kscan_driver_api_list_end = .
 
 led_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _led_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _led_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._led_driver_api.static.*)))
-                0x000000003f401280                _led_driver_api_list_end = .
+                0x000000003f401250                _led_driver_api_list_end = .
 
 led_strip_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _led_strip_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _led_strip_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._led_strip_driver_api.static.*)))
-                0x000000003f401280                _led_strip_driver_api_list_end = .
+                0x000000003f401250                _led_strip_driver_api_list_end = .
 
 lora_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _lora_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _lora_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._lora_driver_api.static.*)))
-                0x000000003f401280                _lora_driver_api_list_end = .
+                0x000000003f401250                _lora_driver_api_list_end = .
 
 mbox_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _mbox_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _mbox_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._mbox_driver_api.static.*)))
-                0x000000003f401280                _mbox_driver_api_list_end = .
+                0x000000003f401250                _mbox_driver_api_list_end = .
 
 mdio_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _mdio_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _mdio_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._mdio_driver_api.static.*)))
-                0x000000003f401280                _mdio_driver_api_list_end = .
+                0x000000003f401250                _mdio_driver_api_list_end = .
 
 mipi_dbi_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _mipi_dbi_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _mipi_dbi_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._mipi_dbi_driver_api.static.*)))
-                0x000000003f401280                _mipi_dbi_driver_api_list_end = .
+                0x000000003f401250                _mipi_dbi_driver_api_list_end = .
 
 mipi_dsi_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _mipi_dsi_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _mipi_dsi_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._mipi_dsi_driver_api.static.*)))
-                0x000000003f401280                _mipi_dsi_driver_api_list_end = .
+                0x000000003f401250                _mipi_dsi_driver_api_list_end = .
 
 mspi_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _mspi_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _mspi_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._mspi_driver_api.static.*)))
-                0x000000003f401280                _mspi_driver_api_list_end = .
+                0x000000003f401250                _mspi_driver_api_list_end = .
 
 peci_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _peci_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _peci_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._peci_driver_api.static.*)))
-                0x000000003f401280                _peci_driver_api_list_end = .
+                0x000000003f401250                _peci_driver_api_list_end = .
 
 ps2_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _ps2_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _ps2_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ps2_driver_api.static.*)))
-                0x000000003f401280                _ps2_driver_api_list_end = .
+                0x000000003f401250                _ps2_driver_api_list_end = .
 
 ptp_clock_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _ptp_clock_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _ptp_clock_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ptp_clock_driver_api.static.*)))
-                0x000000003f401280                _ptp_clock_driver_api_list_end = .
+                0x000000003f401250                _ptp_clock_driver_api_list_end = .
 
 regulator_parent_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _regulator_parent_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _regulator_parent_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._regulator_parent_driver_api.static.*)))
-                0x000000003f401280                _regulator_parent_driver_api_list_end = .
+                0x000000003f401250                _regulator_parent_driver_api_list_end = .
 
 regulator_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _regulator_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _regulator_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._regulator_driver_api.static.*)))
-                0x000000003f401280                _regulator_driver_api_list_end = .
+                0x000000003f401250                _regulator_driver_api_list_end = .
 
 reset_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _reset_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _reset_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._reset_driver_api.static.*)))
-                0x000000003f401280                _reset_driver_api_list_end = .
+                0x000000003f401250                _reset_driver_api_list_end = .
 
 retained_mem_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _retained_mem_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _retained_mem_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._retained_mem_driver_api.static.*)))
-                0x000000003f401280                _retained_mem_driver_api_list_end = .
+                0x000000003f401250                _retained_mem_driver_api_list_end = .
 
 rtc_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _rtc_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _rtc_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._rtc_driver_api.static.*)))
-                0x000000003f401280                _rtc_driver_api_list_end = .
+                0x000000003f401250                _rtc_driver_api_list_end = .
 
 sdhc_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _sdhc_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _sdhc_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._sdhc_driver_api.static.*)))
-                0x000000003f401280                _sdhc_driver_api_list_end = .
+                0x000000003f401250                _sdhc_driver_api_list_end = .
 
 smbus_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _smbus_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _smbus_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._smbus_driver_api.static.*)))
-                0x000000003f401280                _smbus_driver_api_list_end = .
+                0x000000003f401250                _smbus_driver_api_list_end = .
 
 spi_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _spi_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _spi_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._spi_driver_api.static.*)))
-                0x000000003f401280                _spi_driver_api_list_end = .
+                0x000000003f401250                _spi_driver_api_list_end = .
 
 stepper_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _stepper_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _stepper_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._stepper_driver_api.static.*)))
-                0x000000003f401280                _stepper_driver_api_list_end = .
+                0x000000003f401250                _stepper_driver_api_list_end = .
 
 syscon_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _syscon_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _syscon_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._syscon_driver_api.static.*)))
-                0x000000003f401280                _syscon_driver_api_list_end = .
+                0x000000003f401250                _syscon_driver_api_list_end = .
 
 tee_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _tee_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _tee_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._tee_driver_api.static.*)))
-                0x000000003f401280                _tee_driver_api_list_end = .
+                0x000000003f401250                _tee_driver_api_list_end = .
 
 video_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _video_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _video_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._video_driver_api.static.*)))
-                0x000000003f401280                _video_driver_api_list_end = .
+                0x000000003f401250                _video_driver_api_list_end = .
 
 w1_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _w1_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _w1_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._w1_driver_api.static.*)))
-                0x000000003f401280                _w1_driver_api_list_end = .
+                0x000000003f401250                _w1_driver_api_list_end = .
 
 wdt_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _wdt_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _wdt_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._wdt_driver_api.static.*)))
-                0x000000003f401280                _wdt_driver_api_list_end = .
+                0x000000003f401250                _wdt_driver_api_list_end = .
 
 can_transceiver_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _can_transceiver_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _can_transceiver_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._can_transceiver_driver_api.static.*)))
-                0x000000003f401280                _can_transceiver_driver_api_list_end = .
+                0x000000003f401250                _can_transceiver_driver_api_list_end = .
 
 nrf_clock_control_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _nrf_clock_control_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _nrf_clock_control_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._nrf_clock_control_driver_api.static.*)))
-                0x000000003f401280                _nrf_clock_control_driver_api_list_end = .
+                0x000000003f401250                _nrf_clock_control_driver_api_list_end = .
 
 i3c_target_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _i3c_target_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _i3c_target_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._i3c_target_driver_api.static.*)))
-                0x000000003f401280                _i3c_target_driver_api_list_end = .
+                0x000000003f401250                _i3c_target_driver_api_list_end = .
 
 its_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _its_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _its_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._its_driver_api.static.*)))
-                0x000000003f401280                _its_driver_api_list_end = .
+                0x000000003f401250                _its_driver_api_list_end = .
 
 vtd_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _vtd_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _vtd_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._vtd_driver_api.static.*)))
-                0x000000003f401280                _vtd_driver_api_list_end = .
+                0x000000003f401250                _vtd_driver_api_list_end = .
 
 tgpio_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _tgpio_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _tgpio_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._tgpio_driver_api.static.*)))
-                0x000000003f401280                _tgpio_driver_api_list_end = .
+                0x000000003f401250                _tgpio_driver_api_list_end = .
 
 pcie_ctrl_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _pcie_ctrl_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _pcie_ctrl_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._pcie_ctrl_driver_api.static.*)))
-                0x000000003f401280                _pcie_ctrl_driver_api_list_end = .
+                0x000000003f401250                _pcie_ctrl_driver_api_list_end = .
 
 pcie_ep_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _pcie_ep_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _pcie_ep_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._pcie_ep_driver_api.static.*)))
-                0x000000003f401280                _pcie_ep_driver_api_list_end = .
+                0x000000003f401250                _pcie_ep_driver_api_list_end = .
 
 svc_driver_api_area
-                0x000000003f401280        0x0 load address 0x0000000000011280
-                0x000000003f401280                _svc_driver_api_list_start = .
+                0x000000003f401250        0x0 load address 0x0000000000011250
+                0x000000003f401250                _svc_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._svc_driver_api.static.*)))
-                0x000000003f401280                _svc_driver_api_list_end = .
+                0x000000003f401250                _svc_driver_api_list_end = .
 
 uart_driver_api_area
-                0x000000003f401280       0x4c load address 0x0000000000011280
-                0x000000003f401280                _uart_driver_api_list_start = .
+                0x000000003f401250       0x4c load address 0x0000000000011250
+                0x000000003f401250                _uart_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._uart_driver_api.static.*)))
  ._uart_driver_api.static.uart_esp32_api_
-                0x000000003f401280       0x4c zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
-                0x000000003f4012cc                _uart_driver_api_list_end = .
+                0x000000003f401250       0x4c zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x000000003f40129c                _uart_driver_api_list_end = .
 
 bc12_emul_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _bc12_emul_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _bc12_emul_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._bc12_emul_driver_api.static.*)))
-                0x000000003f4012cc                _bc12_emul_driver_api_list_end = .
+                0x000000003f40129c                _bc12_emul_driver_api_list_end = .
 
 bc12_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _bc12_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _bc12_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._bc12_driver_api.static.*)))
-                0x000000003f4012cc                _bc12_driver_api_list_end = .
+                0x000000003f40129c                _bc12_driver_api_list_end = .
 
 usbc_ppc_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _usbc_ppc_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _usbc_ppc_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._usbc_ppc_driver_api.static.*)))
-                0x000000003f4012cc                _usbc_ppc_driver_api_list_end = .
+                0x000000003f40129c                _usbc_ppc_driver_api_list_end = .
 
 tcpc_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _tcpc_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _tcpc_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._tcpc_driver_api.static.*)))
-                0x000000003f4012cc                _tcpc_driver_api_list_end = .
+                0x000000003f40129c                _tcpc_driver_api_list_end = .
 
 usbc_vbus_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _usbc_vbus_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _usbc_vbus_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._usbc_vbus_driver_api.static.*)))
-                0x000000003f4012cc                _usbc_vbus_driver_api_list_end = .
+                0x000000003f40129c                _usbc_vbus_driver_api_list_end = .
 
 ivshmem_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _ivshmem_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _ivshmem_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ivshmem_driver_api.static.*)))
-                0x000000003f4012cc                _ivshmem_driver_api_list_end = .
+                0x000000003f40129c                _ivshmem_driver_api_list_end = .
 
 ethphy_driver_api_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _ethphy_driver_api_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _ethphy_driver_api_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ethphy_driver_api.static.*)))
-                0x000000003f4012cc                _ethphy_driver_api_list_end = .
+                0x000000003f40129c                _ethphy_driver_api_list_end = .
 
-ztest           0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _ztest_expected_result_entry_list_start = .
+ztest           0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _ztest_expected_result_entry_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ztest_expected_result_entry.static.*)))
-                0x000000003f4012cc                _ztest_expected_result_entry_list_end = .
-                0x000000003f4012cc                _ztest_suite_node_list_start = .
+                0x000000003f40129c                _ztest_expected_result_entry_list_end = .
+                0x000000003f40129c                _ztest_suite_node_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ztest_suite_node.static.*)))
-                0x000000003f4012cc                _ztest_suite_node_list_end = .
-                0x000000003f4012cc                _ztest_unit_test_list_start = .
+                0x000000003f40129c                _ztest_suite_node_list_end = .
+                0x000000003f40129c                _ztest_unit_test_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ztest_unit_test.static.*)))
-                0x000000003f4012cc                _ztest_unit_test_list_end = .
-                0x000000003f4012cc                _ztest_test_rule_list_start = .
+                0x000000003f40129c                _ztest_unit_test_list_end = .
+                0x000000003f40129c                _ztest_test_rule_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._ztest_test_rule.static.*)))
-                0x000000003f4012cc                _ztest_test_rule_list_end = .
+                0x000000003f40129c                _ztest_test_rule_list_end = .
 
 bt_l2cap_fixed_chan_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _bt_l2cap_fixed_chan_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _bt_l2cap_fixed_chan_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._bt_l2cap_fixed_chan.static.*)))
-                0x000000003f4012cc                _bt_l2cap_fixed_chan_list_end = .
+                0x000000003f40129c                _bt_l2cap_fixed_chan_list_end = .
 
 bt_gatt_service_static_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _bt_gatt_service_static_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _bt_gatt_service_static_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._bt_gatt_service_static.static.*)))
-                0x000000003f4012cc                _bt_gatt_service_static_list_end = .
+                0x000000003f40129c                _bt_gatt_service_static_list_end = .
 
 tracing_backend_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _tracing_backend_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _tracing_backend_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._tracing_backend.static.*)))
-                0x000000003f4012cc                _tracing_backend_list_end = .
+                0x000000003f40129c                _tracing_backend_list_end = .
 
 zephyr_dbg_info
  *(SORT_BY_ALIGNMENT(.dbg_thread_info))
 
-symbol_to_keep  0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                __symbol_to_keep_start = .
+symbol_to_keep  0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                __symbol_to_keep_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.symbol_to_keep*)))
-                0x000000003f4012cc                __symbol_to_keep_end = .
+                0x000000003f40129c                __symbol_to_keep_end = .
 
-shell_area      0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _shell_list_start = .
+shell_area      0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _shell_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._shell.static.*)))
-                0x000000003f4012cc                _shell_list_end = .
+                0x000000003f40129c                _shell_list_end = .
 
 shell_root_cmds_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _shell_root_cmds_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _shell_root_cmds_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._shell_root_cmds.static.*)))
-                0x000000003f4012cc                _shell_root_cmds_list_end = .
+                0x000000003f40129c                _shell_root_cmds_list_end = .
 
 shell_subcmds_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _shell_subcmds_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _shell_subcmds_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._shell_subcmds.static.*)))
-                0x000000003f4012cc                _shell_subcmds_list_end = .
+                0x000000003f40129c                _shell_subcmds_list_end = .
 
 shell_dynamic_subcmds_area
-                0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _shell_dynamic_subcmds_list_start = .
+                0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _shell_dynamic_subcmds_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._shell_dynamic_subcmds.static.*)))
-                0x000000003f4012cc                _shell_dynamic_subcmds_list_end = .
+                0x000000003f40129c                _shell_dynamic_subcmds_list_end = .
 
-cfb_font_area   0x000000003f4012cc        0x0 load address 0x00000000000112cc
-                0x000000003f4012cc                _cfb_font_list_start = .
+cfb_font_area   0x000000003f40129c        0x0 load address 0x000000000001129c
+                0x000000003f40129c                _cfb_font_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._cfb_font.static.*)))
-                0x000000003f4012cc                _cfb_font_list_end = .
+                0x000000003f40129c                _cfb_font_list_end = .
 
 /DISCARD/
  *(SORT_BY_ALIGNMENT(.irq_info*))
  *(SORT_BY_ALIGNMENT(.intList*))
 
 .flash.rodata_end
-                0x000000003f4012cc     0xed34 load address 0x00000000000112cc
+                0x000000003f40129c     0xed64 load address 0x000000000001129c
                 0x000000003f410000                . = ALIGN (0x10000)
- *fill*         0x000000003f4012cc     0xed34 
+ *fill*         0x000000003f40129c     0xed64 
                 0x000000003f410000                _rodata_end = ABSOLUTE (.)
                 0x000000003f410000                _rodata_reserved_end = ABSOLUTE (.)
 
 .flash.text_dummy
-                0x00000000000112cc     0xed34
+                0x000000000001129c     0xed64
                 0x0000000000020000                . = ALIGN (0x10000)
- *fill*         0x00000000000112cc     0xed34 
+ *fill*         0x000000000001129c     0xed64 
                 0x0000000000020000                _image_irom_start = LOADADDR (.flash.text)
-                0x00000000000045a0                _image_irom_size = ((LOADADDR (.flash.text) + SIZEOF (.flash.text)) - _image_irom_start)
+                0x00000000000045a8                _image_irom_size = ((LOADADDR (.flash.text) + SIZEOF (.flash.text)) - _image_irom_start)
                 0x00000000400d0000                _image_irom_vaddr = ADDR (.flash.text)
 
-.flash.text     0x00000000400d0000     0x45a0 load address 0x0000000000020000
+.flash.text     0x00000000400d0000     0x45a8 load address 0x0000000000020000
                 0x00000000400d0000                _stext = .
                 0x00000000400d0000                _instruction_reserved_start = ABSOLUTE (.)
                 0x00000000400d0000                _text_start = ABSOLUTE (.)
@@ -8378,585 +8378,587 @@ cfb_font_area   0x000000003f4012cc        0x0 load address 0x00000000000112cc
                 0x00000000400d0704                get_current_rpm
  *fill*         0x00000000400d0717        0x1 
  .text.pid_controller
-                0x00000000400d0718      0x138 app/libapp.a(pid.c.obj)
-                                        0x13c (size before relaxing)
+                0x00000000400d0718      0x13f app/libapp.a(pid.c.obj)
+                                        0x143 (size before relaxing)
+ *fill*         0x00000000400d0857        0x1 
  .text.set_pid_target_rpm
-                0x00000000400d0850        0xd app/libapp.a(pid.c.obj)
-                0x00000000400d0850                set_pid_target_rpm
- *fill*         0x00000000400d085d        0x3 
+                0x00000000400d0858        0xd app/libapp.a(pid.c.obj)
+                0x00000000400d0858                set_pid_target_rpm
+ *fill*         0x00000000400d0865        0x3 
  .text.start_pid_controller
-                0x00000000400d0860       0x26 app/libapp.a(pid.c.obj)
+                0x00000000400d0868       0x26 app/libapp.a(pid.c.obj)
                                          0x2e (size before relaxing)
-                0x00000000400d0860                start_pid_controller
- *fill*         0x00000000400d0886        0x2 
+                0x00000000400d0868                start_pid_controller
+ *fill*         0x00000000400d088e        0x2 
  .text.free_list_add
-                0x00000000400d0888       0x5b zephyr/libzephyr.a(heap.c.obj)
- *fill*         0x00000000400d08e3        0x1 
+                0x00000000400d0890       0x5b zephyr/libzephyr.a(heap.c.obj)
+ *fill*         0x00000000400d08eb        0x1 
  .text.free_list_remove
-                0x00000000400d08e4       0x1e zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d08ec       0x1e zephyr/libzephyr.a(heap.c.obj)
                                          0x22 (size before relaxing)
- *fill*         0x00000000400d0902        0x2 
+ *fill*         0x00000000400d090a        0x2 
  .text.alloc_chunk
-                0x00000000400d0904       0x77 zephyr/libzephyr.a(heap.c.obj)
- *fill*         0x00000000400d097b        0x1 
+                0x00000000400d090c       0x77 zephyr/libzephyr.a(heap.c.obj)
+ *fill*         0x00000000400d0983        0x1 
  .text.merge_chunks
-                0x00000000400d097c       0x2f zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d0984       0x2f zephyr/libzephyr.a(heap.c.obj)
                                          0x37 (size before relaxing)
- *fill*         0x00000000400d09ab        0x1 
+ *fill*         0x00000000400d09b3        0x1 
  .text.split_chunks
-                0x00000000400d09ac       0x38 zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d09b4       0x38 zephyr/libzephyr.a(heap.c.obj)
                                          0x3c (size before relaxing)
  .text.free_chunk
-                0x00000000400d09e4       0x5e zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d09ec       0x5e zephyr/libzephyr.a(heap.c.obj)
                                          0x76 (size before relaxing)
- *fill*         0x00000000400d0a42        0x2 
+ *fill*         0x00000000400d0a4a        0x2 
  .text.sys_heap_free
-                0x00000000400d0a44       0x24 zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d0a4c       0x24 zephyr/libzephyr.a(heap.c.obj)
                                          0x28 (size before relaxing)
-                0x00000000400d0a44                sys_heap_free
+                0x00000000400d0a4c                sys_heap_free
  .text.sys_heap_alloc
-                0x00000000400d0a68       0x58 zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d0a70       0x58 zephyr/libzephyr.a(heap.c.obj)
                                          0x64 (size before relaxing)
-                0x00000000400d0a68                sys_heap_alloc
+                0x00000000400d0a70                sys_heap_alloc
  .text.sys_heap_aligned_alloc
-                0x00000000400d0ac0       0xc2 zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d0ac8       0xc2 zephyr/libzephyr.a(heap.c.obj)
                                          0xd2 (size before relaxing)
-                0x00000000400d0ac0                sys_heap_aligned_alloc
- *fill*         0x00000000400d0b82        0x2 
+                0x00000000400d0ac8                sys_heap_aligned_alloc
+ *fill*         0x00000000400d0b8a        0x2 
  .text.sys_heap_init
-                0x00000000400d0b84       0x7e zephyr/libzephyr.a(heap.c.obj)
+                0x00000000400d0b8c       0x7e zephyr/libzephyr.a(heap.c.obj)
                                          0x86 (size before relaxing)
-                0x00000000400d0b84                sys_heap_init
- *fill*         0x00000000400d0c02        0x2 
+                0x00000000400d0b8c                sys_heap_init
+ *fill*         0x00000000400d0c0a        0x2 
  .text.__printk_hook_install
-                0x00000000400d0c04        0xa zephyr/libzephyr.a(printk.c.obj)
-                0x00000000400d0c04                __printk_hook_install
- *fill*         0x00000000400d0c0e        0x2 
+                0x00000000400d0c0c        0xa zephyr/libzephyr.a(printk.c.obj)
+                0x00000000400d0c0c                __printk_hook_install
+ *fill*         0x00000000400d0c16        0x2 
  .text.z_thread_entry
-                0x00000000400d0c10       0x14 zephyr/libzephyr.a(thread_entry.c.obj)
+                0x00000000400d0c18       0x14 zephyr/libzephyr.a(thread_entry.c.obj)
                                          0x18 (size before relaxing)
-                0x00000000400d0c10                z_thread_entry
+                0x00000000400d0c18                z_thread_entry
  .text.esp_heap_runtime_init
-                0x00000000400d0c24       0x32 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
+                0x00000000400d0c2c       0x32 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
                                          0x36 (size before relaxing)
- *fill*         0x00000000400d0c56        0x2 
+ *fill*         0x00000000400d0c5e        0x2 
  .text.esp_flash_app_enable_os_functions
-                0x00000000400d0c58       0x1f zephyr/libzephyr.a(spi_flash_os_func_app.c.obj)
-                0x00000000400d0c58                esp_flash_app_enable_os_functions
- *fill*         0x00000000400d0c77        0x1 
+                0x00000000400d0c60       0x1f zephyr/libzephyr.a(spi_flash_os_func_app.c.obj)
+                0x00000000400d0c60                esp_flash_app_enable_os_functions
+ *fill*         0x00000000400d0c7f        0x1 
  .text.uart_hal_get_baudrate
-                0x00000000400d0c78       0x32 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d0c78                uart_hal_get_baudrate
- *fill*         0x00000000400d0caa        0x2 
+                0x00000000400d0c80       0x32 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d0c80                uart_hal_get_baudrate
+ *fill*         0x00000000400d0cb2        0x2 
  .text.uart_hal_set_hw_flow_ctrl
-                0x00000000400d0cac       0x64 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d0cac                uart_hal_set_hw_flow_ctrl
+                0x00000000400d0cb4       0x64 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d0cb4                uart_hal_set_hw_flow_ctrl
  .text.uart_hal_set_txfifo_empty_thr
-                0x00000000400d0d10       0x20 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d0d10                uart_hal_set_txfifo_empty_thr
+                0x00000000400d0d18       0x20 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d0d18                uart_hal_set_txfifo_empty_thr
  .text.uart_hal_set_mode
-                0x00000000400d0d30      0x19b zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d0d30                uart_hal_set_mode
- *fill*         0x00000000400d0ecb        0x1 
+                0x00000000400d0d38      0x19b zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d0d38                uart_hal_set_mode
+ *fill*         0x00000000400d0ed3        0x1 
  .text.uart_hal_inverse_signal
-                0x00000000400d0ecc       0xe3 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d0ecc                uart_hal_inverse_signal
- *fill*         0x00000000400d0faf        0x1 
+                0x00000000400d0ed4       0xe3 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d0ed4                uart_hal_inverse_signal
+ *fill*         0x00000000400d0fb7        0x1 
  .text.uart_hal_set_rx_timeout
-                0x00000000400d0fb0       0x61 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d0fb8       0x61 zephyr/libzephyr.a(uart_hal.c.obj)
                                          0x65 (size before relaxing)
-                0x00000000400d0fb0                uart_hal_set_rx_timeout
- *fill*         0x00000000400d1011        0x3 
+                0x00000000400d0fb8                uart_hal_set_rx_timeout
+ *fill*         0x00000000400d1019        0x3 
  .text.uart_hal_txfifo_rst
-                0x00000000400d1014       0x2f zephyr/libzephyr.a(uart_hal_iram.c.obj)
-                0x00000000400d1014                uart_hal_txfifo_rst
- *fill*         0x00000000400d1043        0x1 
+                0x00000000400d101c       0x2f zephyr/libzephyr.a(uart_hal_iram.c.obj)
+                0x00000000400d101c                uart_hal_txfifo_rst
+ *fill*         0x00000000400d104b        0x1 
  .text.uart_hal_rxfifo_rst
-                0x00000000400d1044       0x56 zephyr/libzephyr.a(uart_hal_iram.c.obj)
-                0x00000000400d1044                uart_hal_rxfifo_rst
- *fill*         0x00000000400d109a        0x2 
+                0x00000000400d104c       0x56 zephyr/libzephyr.a(uart_hal_iram.c.obj)
+                0x00000000400d104c                uart_hal_rxfifo_rst
+ *fill*         0x00000000400d10a2        0x2 
  .text.uart_hal_write_txfifo
-                0x00000000400d109c       0x5a zephyr/libzephyr.a(uart_hal_iram.c.obj)
-                0x00000000400d109c                uart_hal_write_txfifo
- *fill*         0x00000000400d10f6        0x2 
+                0x00000000400d10a4       0x5a zephyr/libzephyr.a(uart_hal_iram.c.obj)
+                0x00000000400d10a4                uart_hal_write_txfifo
+ *fill*         0x00000000400d10fe        0x2 
  .text.uart_hal_read_rxfifo
-                0x00000000400d10f8       0xb9 zephyr/libzephyr.a(uart_hal_iram.c.obj)
-                0x00000000400d10f8                uart_hal_read_rxfifo
- *fill*         0x00000000400d11b1        0x3 
+                0x00000000400d1100       0xb9 zephyr/libzephyr.a(uart_hal_iram.c.obj)
+                0x00000000400d1100                uart_hal_read_rxfifo
+ *fill*         0x00000000400d11b9        0x3 
  .text.pcnt_hal_init
-                0x00000000400d11b4       0x10 zephyr/libzephyr.a(pcnt_hal.c.obj)
-                0x00000000400d11b4                pcnt_hal_init
+                0x00000000400d11bc       0x10 zephyr/libzephyr.a(pcnt_hal.c.obj)
+                0x00000000400d11bc                pcnt_hal_init
  .text.esp_clk_slowclk_cal_set
-                0x00000000400d11c4        0xd zephyr/libzephyr.a(esp_clk.c.obj)
-                0x00000000400d11c4                esp_clk_slowclk_cal_set
- *fill*         0x00000000400d11d1        0x3 
+                0x00000000400d11cc        0xd zephyr/libzephyr.a(esp_clk.c.obj)
+                0x00000000400d11cc                esp_clk_slowclk_cal_set
+ *fill*         0x00000000400d11d9        0x3 
  .text.esp_clk_tree_rc_fast_d256_get_freq_hz
-                0x00000000400d11d4       0x41 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+                0x00000000400d11dc       0x41 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
                                          0x4c (size before relaxing)
-                0x00000000400d11d4                esp_clk_tree_rc_fast_d256_get_freq_hz
- *fill*         0x00000000400d1215        0x3 
+                0x00000000400d11dc                esp_clk_tree_rc_fast_d256_get_freq_hz
+ *fill*         0x00000000400d121d        0x3 
  .text.esp_clk_tree_xtal32k_get_freq_hz
-                0x00000000400d1218       0x44 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+                0x00000000400d1220       0x44 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
                                          0x4c (size before relaxing)
-                0x00000000400d1218                esp_clk_tree_xtal32k_get_freq_hz
+                0x00000000400d1220                esp_clk_tree_xtal32k_get_freq_hz
  .text.esp_clk_tree_lp_slow_get_freq_hz
-                0x00000000400d125c       0x3c zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+                0x00000000400d1264       0x3c zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
                                          0x48 (size before relaxing)
-                0x00000000400d125c                esp_clk_tree_lp_slow_get_freq_hz
+                0x00000000400d1264                esp_clk_tree_lp_slow_get_freq_hz
  .text.esp_clk_tree_rc_fast_get_freq_hz
-                0x00000000400d1298       0x13 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+                0x00000000400d12a0       0x13 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
                                          0x16 (size before relaxing)
-                0x00000000400d1298                esp_clk_tree_rc_fast_get_freq_hz
- *fill*         0x00000000400d12ab        0x1 
+                0x00000000400d12a0                esp_clk_tree_rc_fast_get_freq_hz
+ *fill*         0x00000000400d12b3        0x1 
  .text.esp_clk_tree_lp_fast_get_freq_hz
-                0x00000000400d12ac       0x37 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
-                0x00000000400d12ac                esp_clk_tree_lp_fast_get_freq_hz
- *fill*         0x00000000400d12e3        0x1 
+                0x00000000400d12b4       0x37 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+                0x00000000400d12b4                esp_clk_tree_lp_fast_get_freq_hz
+ *fill*         0x00000000400d12eb        0x1 
  .text.esp_clk_tree_src_get_freq_hz
-                0x00000000400d12e4      0x102 zephyr/libzephyr.a(esp_clk_tree.c.obj)
+                0x00000000400d12ec      0x102 zephyr/libzephyr.a(esp_clk_tree.c.obj)
                                         0x116 (size before relaxing)
-                0x00000000400d12e4                esp_clk_tree_src_get_freq_hz
- *fill*         0x00000000400d13e6        0x2 
+                0x00000000400d12ec                esp_clk_tree_src_get_freq_hz
+ *fill*         0x00000000400d13ee        0x2 
  .text.esp_cpu_intr_get_desc
-                0x00000000400d13e8       0x2a zephyr/libzephyr.a(esp_cpu_intr.c.obj)
-                0x00000000400d13e8                esp_cpu_intr_get_desc
- *fill*         0x00000000400d1412        0x2 
+                0x00000000400d13f0       0x2a zephyr/libzephyr.a(esp_cpu_intr.c.obj)
+                0x00000000400d13f0                esp_cpu_intr_get_desc
+ *fill*         0x00000000400d141a        0x2 
  .text.cache_ll_l1_get_bus$constprop$0
-                0x00000000400d1414       0x6e zephyr/libzephyr.a(esp_mmu_map.c.obj)
- *fill*         0x00000000400d1482        0x2 
+                0x00000000400d141c       0x6e zephyr/libzephyr.a(esp_mmu_map.c.obj)
+ *fill*         0x00000000400d148a        0x2 
  .text.esp_mmu_map_init
-                0x00000000400d1484      0x1d2 zephyr/libzephyr.a(esp_mmu_map.c.obj)
+                0x00000000400d148c      0x1d2 zephyr/libzephyr.a(esp_mmu_map.c.obj)
                                         0x1da (size before relaxing)
-                0x00000000400d1484                esp_mmu_map_init
- *fill*         0x00000000400d1656        0x2 
+                0x00000000400d148c                esp_mmu_map_init
+ *fill*         0x00000000400d165e        0x2 
  .text.esp_reset_reason_get_hint
-                0x00000000400d1658       0x1c zephyr/libzephyr.a(reset_reason.c.obj)
-                0x00000000400d1658                esp_reset_reason_get_hint
+                0x00000000400d1660       0x1c zephyr/libzephyr.a(reset_reason.c.obj)
+                0x00000000400d1660                esp_reset_reason_get_hint
  .text.esp_reset_reason_init
-                0x00000000400d1674       0x98 zephyr/libzephyr.a(reset_reason.c.obj)
+                0x00000000400d167c       0x98 zephyr/libzephyr.a(reset_reason.c.obj)
                                          0x9c (size before relaxing)
-                0x00000000400d1674                esp_reset_reason_init
+                0x00000000400d167c                esp_reset_reason_init
  .text.esp_timer_impl_early_init
-                0x00000000400d170c       0x7a zephyr/libzephyr.a(esp_timer_impl_lac.c.obj)
+                0x00000000400d1714       0x7a zephyr/libzephyr.a(esp_timer_impl_lac.c.obj)
                                          0x7e (size before relaxing)
-                0x00000000400d170c                esp_timer_impl_early_init
- *fill*         0x00000000400d1786        0x2 
+                0x00000000400d1714                esp_timer_impl_early_init
+ *fill*         0x00000000400d178e        0x2 
  .text.esp_timer_early_init
-                0x00000000400d1788        0xa zephyr/libzephyr.a(esp_timer.c.obj)
+                0x00000000400d1790        0xa zephyr/libzephyr.a(esp_timer.c.obj)
                                           0xd (size before relaxing)
-                0x00000000400d1788                esp_timer_early_init
- *fill*         0x00000000400d1792        0x2 
+                0x00000000400d1790                esp_timer_early_init
+ *fill*         0x00000000400d179a        0x2 
  .text.clk_hal_lp_slow_get_freq_hz
-                0x00000000400d1794       0x24 zephyr/libzephyr.a(clk_tree_hal.c.obj)
-                0x00000000400d1794                clk_hal_lp_slow_get_freq_hz
+                0x00000000400d179c       0x24 zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d179c                clk_hal_lp_slow_get_freq_hz
  .text.clk_hal_xtal_get_freq_mhz
-                0x00000000400d17b8       0x26 zephyr/libzephyr.a(clk_tree_hal.c.obj)
-                0x00000000400d17b8                clk_hal_xtal_get_freq_mhz
- *fill*         0x00000000400d17de        0x2 
+                0x00000000400d17c0       0x26 zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d17c0                clk_hal_xtal_get_freq_mhz
+ *fill*         0x00000000400d17e6        0x2 
  .text.clk_hal_apll_get_freq_hz
-                0x00000000400d17e0       0xa4 zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d17e8       0xa4 zephyr/libzephyr.a(clk_tree_hal.c.obj)
                                          0xac (size before relaxing)
-                0x00000000400d17e0                clk_hal_apll_get_freq_hz
+                0x00000000400d17e8                clk_hal_apll_get_freq_hz
  .text.clk_hal_soc_root_get_freq_mhz
-                0x00000000400d1884       0x4f zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d188c       0x4f zephyr/libzephyr.a(clk_tree_hal.c.obj)
                                          0x56 (size before relaxing)
-                0x00000000400d1884                clk_hal_soc_root_get_freq_mhz
- *fill*         0x00000000400d18d3        0x1 
+                0x00000000400d188c                clk_hal_soc_root_get_freq_mhz
+ *fill*         0x00000000400d18db        0x1 
  .text.clk_hal_cpu_get_freq_hz
-                0x00000000400d18d4       0x9a zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d18dc       0x9a zephyr/libzephyr.a(clk_tree_hal.c.obj)
                                          0xa2 (size before relaxing)
-                0x00000000400d18d4                clk_hal_cpu_get_freq_hz
- *fill*         0x00000000400d196e        0x2 
+                0x00000000400d18dc                clk_hal_cpu_get_freq_hz
+ *fill*         0x00000000400d1976        0x2 
  .text.clk_hal_ahb_get_freq_hz
-                0x00000000400d1970       0x32 zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d1978       0x32 zephyr/libzephyr.a(clk_tree_hal.c.obj)
                                          0x36 (size before relaxing)
-                0x00000000400d1970                clk_hal_ahb_get_freq_hz
- *fill*         0x00000000400d19a2        0x2 
+                0x00000000400d1978                clk_hal_ahb_get_freq_hz
+ *fill*         0x00000000400d19aa        0x2 
  .text.clk_hal_apb_get_freq_hz
-                0x00000000400d19a4        0xa zephyr/libzephyr.a(clk_tree_hal.c.obj)
+                0x00000000400d19ac        0xa zephyr/libzephyr.a(clk_tree_hal.c.obj)
                                           0xd (size before relaxing)
-                0x00000000400d19a4                clk_hal_apb_get_freq_hz
- *fill*         0x00000000400d19ae        0x2 
+                0x00000000400d19ac                clk_hal_apb_get_freq_hz
+ *fill*         0x00000000400d19b6        0x2 
  .text.z_isr_install
-                0x00000000400d19b0       0x14 zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
+                0x00000000400d19b8       0x14 zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
                                          0x18 (size before relaxing)
-                0x00000000400d19b0                z_isr_install
+                0x00000000400d19b8                z_isr_install
  .text.arch_irq_connect_dynamic
-                0x00000000400d19c4        0xe zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
+                0x00000000400d19cc        0xe zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
                                          0x12 (size before relaxing)
-                0x00000000400d19c4                arch_irq_connect_dynamic
- *fill*         0x00000000400d19d2        0x2 
- .text.abort    0x00000000400d19d4        0xe zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
+                0x00000000400d19cc                arch_irq_connect_dynamic
+ *fill*         0x00000000400d19da        0x2 
+ .text.abort    0x00000000400d19dc        0xe zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
                                          0x14 (size before relaxing)
-                0x00000000400d19d4                abort
- *fill*         0x00000000400d19e2        0x2 
+                0x00000000400d19dc                abort
+ *fill*         0x00000000400d19ea        0x2 
  .text.malloc_prepare
-                0x00000000400d19e4       0x21 zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
- *fill*         0x00000000400d1a05        0x3 
+                0x00000000400d19ec       0x21 zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
+ *fill*         0x00000000400d1a0d        0x3 
  .text.esp_intr_lock
-                0x00000000400d1a08        0xd zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
- *fill*         0x00000000400d1a15        0x3 
+                0x00000000400d1a10        0xd zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+ *fill*         0x00000000400d1a1d        0x3 
  .text.esp_intr_unlock
-                0x00000000400d1a18       0x10 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x00000000400d1a20       0x10 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
  .text.find_desc_for_int
-                0x00000000400d1a28       0x23 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
- *fill*         0x00000000400d1a4b        0x1 
+                0x00000000400d1a30       0x23 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+ *fill*         0x00000000400d1a53        0x1 
  .text.is_vect_desc_usable
-                0x00000000400d1a4c       0xaa zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
- *fill*         0x00000000400d1af6        0x2 
+                0x00000000400d1a54       0xaa zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+ *fill*         0x00000000400d1afe        0x2 
  .text.get_desc_for_int
-                0x00000000400d1af8       0x94 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x00000000400d1b00       0x94 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
                                          0x98 (size before relaxing)
  .text.set_interrupt_handler
-                0x00000000400d1b8c       0x27 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x00000000400d1b94       0x27 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
                                          0x2b (size before relaxing)
- *fill*         0x00000000400d1bb3        0x1 
+ *fill*         0x00000000400d1bbb        0x1 
  .text.esp_intr_initialize
-                0x00000000400d1bb4       0x1a zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
-                0x00000000400d1bb4                esp_intr_initialize
- *fill*         0x00000000400d1bce        0x2 
+                0x00000000400d1bbc       0x1a zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x00000000400d1bbc                esp_intr_initialize
+ *fill*         0x00000000400d1bd6        0x2 
  .text.esp_intr_alloc_intrstatus
-                0x00000000400d1bd0      0x38f zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x00000000400d1bd8      0x38f zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
                                         0x3bb (size before relaxing)
-                0x00000000400d1bd0                esp_intr_alloc_intrstatus
- *fill*         0x00000000400d1f5f        0x1 
+                0x00000000400d1bd8                esp_intr_alloc_intrstatus
+ *fill*         0x00000000400d1f67        0x1 
  .text.esp_intr_alloc
-                0x00000000400d1f60       0x18 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+                0x00000000400d1f68       0x18 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
                                          0x1c (size before relaxing)
-                0x00000000400d1f60                esp_intr_alloc
+                0x00000000400d1f68                esp_intr_alloc
  .text.clock_control_esp32_get_status
-                0x00000000400d1f78       0x51 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
- *fill*         0x00000000400d1fc9        0x3 
+                0x00000000400d1f80       0x51 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+ *fill*         0x00000000400d1fd1        0x3 
  .text.esp32_select_rtc_slow_clk
-                0x00000000400d1fcc       0x65 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d1fd4       0x65 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                          0x79 (size before relaxing)
- *fill*         0x00000000400d2031        0x3 
+ *fill*         0x00000000400d2039        0x3 
  .text.esp32_cpu_clock_configure
-                0x00000000400d2034       0xf0 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d203c       0xf0 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                         0x10c (size before relaxing)
  .text.clock_control_esp32_off
-                0x00000000400d2124       0x18 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d212c       0x18 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                          0x1c (size before relaxing)
  .text.clock_control_esp32_on
-                0x00000000400d213c       0x2c zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d2144       0x2c zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                          0x30 (size before relaxing)
  .text.clock_control_esp32_configure
-                0x00000000400d2168       0x5d zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d2170       0x5d zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                          0x61 (size before relaxing)
- *fill*         0x00000000400d21c5        0x3 
+ *fill*         0x00000000400d21cd        0x3 
  .text.clock_control_esp32_get_rate
-                0x00000000400d21c8       0x2a zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d21d0       0x2a zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                          0x32 (size before relaxing)
- *fill*         0x00000000400d21f2        0x2 
+ *fill*         0x00000000400d21fa        0x2 
  .text.clock_control_esp32_init
-                0x00000000400d21f4      0x106 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+                0x00000000400d21fc      0x106 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
                                         0x10e (size before relaxing)
- *fill*         0x00000000400d22fa        0x2 
+ *fill*         0x00000000400d2302        0x2 
  .text.uart_console_init
-                0x00000000400d22fc       0x20 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
+                0x00000000400d2304       0x20 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
                                          0x28 (size before relaxing)
  .text.rtcio_ll_set_drive_capability
-                0x00000000400d231c       0x3a zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d2356        0x2 
+                0x00000000400d2324       0x3a zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d235e        0x2 
  .text.gpio_esp32_pin_interrupt_configure
-                0x00000000400d2358      0x120 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x00000000400d2360      0x120 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
  .text.gpio_esp32_init
-                0x00000000400d2478       0x30 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x00000000400d2480       0x30 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
  .text.gpio_esp32_config
-                0x00000000400d24a8      0x39f zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d2847        0x1 
+                0x00000000400d24b0      0x39f zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d284f        0x1 
  .text.pinctrl_configure_pins
-                0x00000000400d2848      0x48e zephyr/drivers/pinctrl/libdrivers__pinctrl.a(pinctrl_esp32.c.obj)
-                0x00000000400d2848                pinctrl_configure_pins
- *fill*         0x00000000400d2cd6        0x2 
+                0x00000000400d2850      0x48e zephyr/drivers/pinctrl/libdrivers__pinctrl.a(pinctrl_esp32.c.obj)
+                0x00000000400d2850                pinctrl_configure_pins
+ *fill*         0x00000000400d2cde        0x2 
  .text.mcpwm_esp32_get_cycles_per_sec
-                0x00000000400d2cd8       0x4c zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x00000000400d2ce0       0x4c zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
  .text.mcpwm_esp32_irq_config_func_0
-                0x00000000400d2d24       0x19 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- *fill*         0x00000000400d2d3d        0x3 
+                0x00000000400d2d2c       0x19 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ *fill*         0x00000000400d2d45        0x3 
  .text.mcpwm_esp32_init
-                0x00000000400d2d40      0x134 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x00000000400d2d48      0x134 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
                                         0x138 (size before relaxing)
-                0x00000000400d2d40                mcpwm_esp32_init
+                0x00000000400d2d48                mcpwm_esp32_init
  .text.mcpwm_esp32_set_cycles
-                0x00000000400d2e74      0x317 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+                0x00000000400d2e7c      0x317 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
                                         0x32f (size before relaxing)
- *fill*         0x00000000400d318b        0x1 
+ *fill*         0x00000000400d3193        0x1 
  .text.pcnt_esp32_trigger_set
-                0x00000000400d318c       0x76 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
- *fill*         0x00000000400d3202        0x2 
+                0x00000000400d3194       0x76 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+ *fill*         0x00000000400d320a        0x2 
  .text.pcnt_esp32_init
-                0x00000000400d3204      0x24d zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x00000000400d320c      0x24d zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
                                         0x259 (size before relaxing)
-                0x00000000400d3204                pcnt_esp32_init
- *fill*         0x00000000400d3451        0x3 
+                0x00000000400d320c                pcnt_esp32_init
+ *fill*         0x00000000400d3459        0x3 
  .text.pcnt_esp32_sample_fetch
-                0x00000000400d3454       0x5e zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x00000000400d345c       0x5e zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
                                          0x62 (size before relaxing)
- *fill*         0x00000000400d34b2        0x2 
+ *fill*         0x00000000400d34ba        0x2 
  .text.pcnt_esp32_channel_get
-                0x00000000400d34b4       0x32 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+                0x00000000400d34bc       0x32 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
                                          0x36 (size before relaxing)
- *fill*         0x00000000400d34e6        0x2 
+ *fill*         0x00000000400d34ee        0x2 
  .text.uart_esp32_irq_is_pending
-                0x00000000400d34e8       0x1a zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d34f0       0x1a zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
                                          0x22 (size before relaxing)
- *fill*         0x00000000400d3502        0x2 
+ *fill*         0x00000000400d350a        0x2 
  .text.uart_esp32_fifo_read
-                0x00000000400d3504       0x96 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d350c       0x96 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
                                          0x9a (size before relaxing)
- *fill*         0x00000000400d359a        0x2 
+ *fill*         0x00000000400d35a2        0x2 
  .text.uart_esp32_poll_in
-                0x00000000400d359c       0x98 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d35a4       0x98 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
  .text.uart_esp32_fifo_fill
-                0x00000000400d3634       0x1e zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d3652        0x2 
+                0x00000000400d363c       0x1e zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d365a        0x2 
  .text.uart_esp32_poll_out
-                0x00000000400d3654       0x32 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d3686        0x2 
+                0x00000000400d365c       0x32 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d368e        0x2 
  .text.uart_esp32_config_get
-                0x00000000400d3688       0xf2 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d3690       0xf2 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
                                         0x10a (size before relaxing)
- *fill*         0x00000000400d377a        0x2 
+ *fill*         0x00000000400d3782        0x2 
  .text.uart_esp32_configure
-                0x00000000400d377c      0x152 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d3784      0x152 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
                                         0x192 (size before relaxing)
- *fill*         0x00000000400d38ce        0x2 
+ *fill*         0x00000000400d38d6        0x2 
  .text.uart_esp32_init
-                0x00000000400d38d0       0x4a zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d391a        0x2 
+                0x00000000400d38d8       0x4a zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d3922        0x2 
  .text._OffsetAbsSyms
-                0x00000000400d391c        0x5 zephyr/CMakeFiles/offsets.dir/./arch/xtensa/core/offsets/offsets.c.obj
-                0x00000000400d391c                _OffsetAbsSyms
- *fill*         0x00000000400d3921        0x0 
- *fill*         0x00000000400d3921        0x0 
- *fill*         0x00000000400d3921        0x0 
- *fill*         0x00000000400d3921        0x3 
+                0x00000000400d3924        0x5 zephyr/CMakeFiles/offsets.dir/./arch/xtensa/core/offsets/offsets.c.obj
+                0x00000000400d3924                _OffsetAbsSyms
+ *fill*         0x00000000400d3929        0x0 
+ *fill*         0x00000000400d3929        0x0 
+ *fill*         0x00000000400d3929        0x0 
+ *fill*         0x00000000400d3929        0x3 
  .text.gpio_pin_configure_dt$constprop$0
-                0x00000000400d3924       0x3d app/libapp.a(motor.c.obj)
- *fill*         0x00000000400d3961        0x0 
- *fill*         0x00000000400d3961        0x3 
+                0x00000000400d392c       0x3d app/libapp.a(motor.c.obj)
+ *fill*         0x00000000400d3969        0x0 
+ *fill*         0x00000000400d3969        0x3 
  .text.gpio_pin_set_dt$isra$0
-                0x00000000400d3964       0x2e app/libapp.a(motor.c.obj)
- *fill*         0x00000000400d3992        0x0 
- *fill*         0x00000000400d3992        0x0 
- *fill*         0x00000000400d3992        0x0 
- *fill*         0x00000000400d3992        0x0 
- *fill*         0x00000000400d3992        0x0 
- *fill*         0x00000000400d3992        0x2 
+                0x00000000400d396c       0x2e app/libapp.a(motor.c.obj)
+ *fill*         0x00000000400d399a        0x0 
+ *fill*         0x00000000400d399a        0x0 
+ *fill*         0x00000000400d399a        0x0 
+ *fill*         0x00000000400d399a        0x0 
+ *fill*         0x00000000400d399a        0x0 
+ *fill*         0x00000000400d399a        0x0 
+ *fill*         0x00000000400d399a        0x2 
  .text.chunk_size
-                0x00000000400d3994        0xe zephyr/libzephyr.a(heap.c.obj)
- *fill*         0x00000000400d39a2        0x2 
+                0x00000000400d399c        0xe zephyr/libzephyr.a(heap.c.obj)
+ *fill*         0x00000000400d39aa        0x2 
  .text.set_chunk_used
-                0x00000000400d39a4       0x1a zephyr/libzephyr.a(heap.c.obj)
- *fill*         0x00000000400d39be        0x0 
- *fill*         0x00000000400d39be        0x2 
+                0x00000000400d39ac       0x1a zephyr/libzephyr.a(heap.c.obj)
+ *fill*         0x00000000400d39c6        0x0 
+ *fill*         0x00000000400d39c6        0x2 
  .text.free_list_remove_bidx
-                0x00000000400d39c0       0x3e zephyr/libzephyr.a(heap.c.obj)
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x0 
- *fill*         0x00000000400d39fe        0x2 
+                0x00000000400d39c8       0x3e zephyr/libzephyr.a(heap.c.obj)
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x0 
+ *fill*         0x00000000400d3a06        0x2 
  .text._ConfigAbsSyms
-                0x00000000400d3a00        0x5 zephyr/libzephyr.a(configs.c.obj)
-                0x00000000400d3a00                _ConfigAbsSyms
- *fill*         0x00000000400d3a05        0x0 
- *fill*         0x00000000400d3a05        0x3 
- .text.sys_trace_idle
-                0x00000000400d3a08        0x5 zephyr/libzephyr.a(tracing_none.c.obj)
-                0x00000000400d3a08                sys_trace_idle
+                0x00000000400d3a08        0x5 zephyr/libzephyr.a(configs.c.obj)
+                0x00000000400d3a08                _ConfigAbsSyms
  *fill*         0x00000000400d3a0d        0x0 
  *fill*         0x00000000400d3a0d        0x3 
+ .text.sys_trace_idle
+                0x00000000400d3a10        0x5 zephyr/libzephyr.a(tracing_none.c.obj)
+                0x00000000400d3a10                sys_trace_idle
+ *fill*         0x00000000400d3a15        0x0 
+ *fill*         0x00000000400d3a15        0x3 
  .text.uart_hal_get_sclk
-                0x00000000400d3a10       0x18 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3a10                uart_hal_get_sclk
- *fill*         0x00000000400d3a28        0x0 
+                0x00000000400d3a18       0x18 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3a18                uart_hal_get_sclk
+ *fill*         0x00000000400d3a30        0x0 
  .text.uart_hal_set_stop_bits
-                0x00000000400d3a28       0x5d zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3a28                uart_hal_set_stop_bits
- *fill*         0x00000000400d3a85        0x3 
+                0x00000000400d3a30       0x5d zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3a30                uart_hal_set_stop_bits
+ *fill*         0x00000000400d3a8d        0x3 
  .text.uart_hal_get_stop_bits
-                0x00000000400d3a88       0x28 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3a88                uart_hal_get_stop_bits
+                0x00000000400d3a90       0x28 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3a90                uart_hal_get_stop_bits
  .text.uart_hal_set_data_bit_num
-                0x00000000400d3ab0       0x1f zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3ab0                uart_hal_set_data_bit_num
- *fill*         0x00000000400d3acf        0x1 
+                0x00000000400d3ab8       0x1f zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3ab8                uart_hal_set_data_bit_num
+ *fill*         0x00000000400d3ad7        0x1 
  .text.uart_hal_get_data_bit_num
-                0x00000000400d3ad0       0x11 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3ad0                uart_hal_get_data_bit_num
- *fill*         0x00000000400d3ae1        0x3 
+                0x00000000400d3ad8       0x11 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3ad8                uart_hal_get_data_bit_num
+ *fill*         0x00000000400d3ae9        0x3 
  .text.uart_hal_set_parity
-                0x00000000400d3ae4       0x35 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3ae4                uart_hal_set_parity
- *fill*         0x00000000400d3b19        0x3 
+                0x00000000400d3aec       0x35 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3aec                uart_hal_set_parity
+ *fill*         0x00000000400d3b21        0x3 
  .text.uart_hal_get_parity
-                0x00000000400d3b1c       0x20 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3b1c                uart_hal_get_parity
+                0x00000000400d3b24       0x20 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3b24                uart_hal_get_parity
  .text.uart_hal_get_hw_flow_ctrl
-                0x00000000400d3b3c       0x24 zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3b3c                uart_hal_get_hw_flow_ctrl
+                0x00000000400d3b44       0x24 zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3b44                uart_hal_get_hw_flow_ctrl
  .text.uart_hal_set_rxfifo_full_thr
-                0x00000000400d3b60       0x1d zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3b60                uart_hal_set_rxfifo_full_thr
- *fill*         0x00000000400d3b7d        0x0 
- *fill*         0x00000000400d3b7d        0x3 
+                0x00000000400d3b68       0x1d zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3b68                uart_hal_set_rxfifo_full_thr
+ *fill*         0x00000000400d3b85        0x0 
+ *fill*         0x00000000400d3b85        0x3 
  .text.uart_hal_is_mode_rs485_half_duplex
-                0x00000000400d3b80       0x1b zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3b80                uart_hal_is_mode_rs485_half_duplex
- *fill*         0x00000000400d3b9b        0x0 
- *fill*         0x00000000400d3b9b        0x1 
+                0x00000000400d3b88       0x1b zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3b88                uart_hal_is_mode_rs485_half_duplex
+ *fill*         0x00000000400d3ba3        0x0 
+ *fill*         0x00000000400d3ba3        0x1 
  .text.uart_hal_get_symb_len
-                0x00000000400d3b9c       0x7b zephyr/libzephyr.a(uart_hal.c.obj)
-                0x00000000400d3b9c                uart_hal_get_symb_len
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x0 
- *fill*         0x00000000400d3c17        0x1 
+                0x00000000400d3ba4       0x7b zephyr/libzephyr.a(uart_hal.c.obj)
+                0x00000000400d3ba4                uart_hal_get_symb_len
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x0 
+ *fill*         0x00000000400d3c1f        0x1 
  .text.z_get_sw_isr_table_idx
-                0x00000000400d3c18        0x5 zephyr/arch/common/libarch__common.a(sw_isr_common.c.obj)
-                0x00000000400d3c18                z_get_sw_isr_table_idx
- *fill*         0x00000000400d3c1d        0x0 
- *fill*         0x00000000400d3c1d        0x0 
- *fill*         0x00000000400d3c1d        0x3 
+                0x00000000400d3c20        0x5 zephyr/arch/common/libarch__common.a(sw_isr_common.c.obj)
+                0x00000000400d3c20                z_get_sw_isr_table_idx
+ *fill*         0x00000000400d3c25        0x0 
+ *fill*         0x00000000400d3c25        0x0 
+ *fill*         0x00000000400d3c25        0x3 
  .text.z_xt_ints_off
-                0x00000000400d3c20       0x16 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x0 
- *fill*         0x00000000400d3c36        0x2 
+                0x00000000400d3c28       0x16 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x0 
+ *fill*         0x00000000400d3c3e        0x2 
  .text.gpio_esp32_port_get_raw
-                0x00000000400d3c38       0x23 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d3c5b        0x1 
+                0x00000000400d3c40       0x23 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d3c63        0x1 
  .text.gpio_esp32_port_set_masked_raw
-                0x00000000400d3c5c       0x55 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d3cb1        0x3 
+                0x00000000400d3c64       0x55 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d3cb9        0x3 
  .text.gpio_esp32_port_set_bits_raw
-                0x00000000400d3cb4       0x2e zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d3ce2        0x2 
+                0x00000000400d3cbc       0x2e zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d3cea        0x2 
  .text.gpio_esp32_port_clear_bits_raw
-                0x00000000400d3ce4       0x2e zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d3d12        0x2 
+                0x00000000400d3cec       0x2e zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d3d1a        0x2 
  .text.gpio_esp32_port_toggle_bits
-                0x00000000400d3d14       0x48 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+                0x00000000400d3d1c       0x48 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
  .text.gpio_esp32_manage_callback
-                0x00000000400d3d5c       0x56 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d3db2        0x2 
+                0x00000000400d3d64       0x56 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d3dba        0x2 
  .text.gpio_esp32_get_pending_int
-                0x00000000400d3db4       0x51 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- *fill*         0x00000000400d3e05        0x0 
- *fill*         0x00000000400d3e05        0x3 
+                0x00000000400d3dbc       0x51 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ *fill*         0x00000000400d3e0d        0x0 
+ *fill*         0x00000000400d3e0d        0x3 
  .text.pinctrl_lookup_state
-                0x00000000400d3e08       0x2a zephyr/drivers/pinctrl/libdrivers__pinctrl.a(common.c.obj)
-                0x00000000400d3e08                pinctrl_lookup_state
- *fill*         0x00000000400d3e32        0x0 
- *fill*         0x00000000400d3e32        0x2 
+                0x00000000400d3e10       0x2a zephyr/drivers/pinctrl/libdrivers__pinctrl.a(common.c.obj)
+                0x00000000400d3e10                pinctrl_lookup_state
+ *fill*         0x00000000400d3e3a        0x0 
+ *fill*         0x00000000400d3e3a        0x2 
  .text.mcpwm_esp32_configure_capture
-                0x00000000400d3e34       0x6a zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- *fill*         0x00000000400d3e9e        0x0 
- *fill*         0x00000000400d3e9e        0x2 
+                0x00000000400d3e3c       0x6a zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ *fill*         0x00000000400d3ea6        0x0 
+ *fill*         0x00000000400d3ea6        0x2 
  .text.mcpwm_esp32_enable_capture
-                0x00000000400d3ea0      0x19e zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- *fill*         0x00000000400d403e        0x2 
+                0x00000000400d3ea8      0x19e zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ *fill*         0x00000000400d4046        0x2 
  .text.mcpwm_ll_generator_set_action_on_compare_event$constprop$0
-                0x00000000400d4040       0x52 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- *fill*         0x00000000400d4092        0x2 
+                0x00000000400d4048       0x52 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ *fill*         0x00000000400d409a        0x2 
  .text.mcpwm_ll_generator_set_action_on_timer_event$constprop$0
-                0x00000000400d4094       0x6d zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- *fill*         0x00000000400d4101        0x3 
+                0x00000000400d409c       0x6d zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ *fill*         0x00000000400d4109        0x3 
  .text.mcpwm_esp32_disable_capture
-                0x00000000400d4104       0x62 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- *fill*         0x00000000400d4166        0x0 
- *fill*         0x00000000400d4166        0x2 
+                0x00000000400d410c       0x62 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ *fill*         0x00000000400d416e        0x0 
+ *fill*         0x00000000400d416e        0x2 
  .text.pcnt_esp32_attr_get
-                0x00000000400d4168       0x3c zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
- *fill*         0x00000000400d41a4        0x0 
- *fill*         0x00000000400d41a4        0x0 
- *fill*         0x00000000400d41a4        0x0 
- *fill*         0x00000000400d41a4        0x0 
+                0x00000000400d4170       0x3c zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+ *fill*         0x00000000400d41ac        0x0 
+ *fill*         0x00000000400d41ac        0x0 
+ *fill*         0x00000000400d41ac        0x0 
+ *fill*         0x00000000400d41ac        0x0 
  .text.pcnt_esp32_attr_set
-                0x00000000400d41a4      0x15e zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
- *fill*         0x00000000400d4302        0x2 
+                0x00000000400d41ac      0x15e zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+ *fill*         0x00000000400d430a        0x2 
  .text.uart_esp32_err_check
-                0x00000000400d4304       0x13 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d4317        0x1 
+                0x00000000400d430c       0x13 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d431f        0x1 
  .text.uart_esp32_irq_tx_enable
-                0x00000000400d4318       0x1f zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d4337        0x1 
+                0x00000000400d4320       0x1f zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d433f        0x1 
  .text.uart_esp32_irq_tx_disable
-                0x00000000400d4338       0x18 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d4340       0x18 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
  .text.uart_esp32_irq_tx_ready
-                0x00000000400d4350       0x28 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d4358       0x28 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
  .text.uart_esp32_irq_rx_disable
-                0x00000000400d4378       0x2a zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d43a2        0x2 
+                0x00000000400d4380       0x2a zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d43aa        0x2 
  .text.uart_esp32_irq_tx_complete
-                0x00000000400d43a4       0x2e zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d43d2        0x2 
+                0x00000000400d43ac       0x2e zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d43da        0x2 
  .text.uart_esp32_irq_rx_ready
-                0x00000000400d43d4       0x8d zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d4461        0x3 
+                0x00000000400d43dc       0x8d zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d4469        0x3 
  .text.uart_esp32_irq_err_enable
-                0x00000000400d4464       0x29 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d448d        0x3 
+                0x00000000400d446c       0x29 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d4495        0x3 
  .text.uart_esp32_irq_err_disable
-                0x00000000400d4490       0x29 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d44b9        0x0 
- *fill*         0x00000000400d44b9        0x3 
+                0x00000000400d4498       0x29 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d44c1        0x0 
+ *fill*         0x00000000400d44c1        0x3 
  .text.uart_esp32_irq_update
-                0x00000000400d44bc       0x23 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d44df        0x1 
+                0x00000000400d44c4       0x23 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d44e7        0x1 
  .text.uart_esp32_irq_callback_set
-                0x00000000400d44e0        0xb zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d44eb        0x1 
+                0x00000000400d44e8        0xb zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d44f3        0x1 
  .text.uart_esp32_irq_rx_enable
-                0x00000000400d44ec       0x38 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+                0x00000000400d44f4       0x38 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
  .text.uart_esp32_isr
-                0x00000000400d4524       0x20 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- *fill*         0x00000000400d4544        0x0 
- *fill*         0x00000000400d4544        0x0 
- *fill*         0x00000000400d4544        0x0 
- *fill*         0x00000000400d4544        0x0 
- *fill*         0x00000000400d4544        0x0 
- *fill*         0x00000000400d4544        0x0 
- .text          0x00000000400d4544       0x59 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_divsf3.o)
-                0x00000000400d4544                __divsf3
-                0x00000000400d45a0                . = ALIGN (0x4)
- *fill*         0x00000000400d459d        0x3 
-                0x00000000400d45a0                _text_end = ABSOLUTE (.)
-                0x00000000400d45a0                _instruction_reserved_end = ABSOLUTE (.)
-                0x00000000400d45a0                __text_region_end = ABSOLUTE (.)
-                0x00000000400d45a0                __rom_region_end = ABSOLUTE (.)
-                0x00000000400d45a0                _etext = .
+                0x00000000400d452c       0x20 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ *fill*         0x00000000400d454c        0x0 
+ *fill*         0x00000000400d454c        0x0 
+ *fill*         0x00000000400d454c        0x0 
+ *fill*         0x00000000400d454c        0x0 
+ *fill*         0x00000000400d454c        0x0 
+ *fill*         0x00000000400d454c        0x0 
+ .text          0x00000000400d454c       0x59 /home/elias/zephyr-sdk-0.17.0/xtensa-espressif_esp32_zephyr-elf/bin/../lib/gcc/xtensa-espressif_esp32_zephyr-elf/12.2.0/libgcc.a(_divsf3.o)
+                0x00000000400d454c                __divsf3
+                0x00000000400d45a8                . = ALIGN (0x4)
+ *fill*         0x00000000400d45a5        0x3 
+                0x00000000400d45a8                _text_end = ABSOLUTE (.)
+                0x00000000400d45a8                _instruction_reserved_end = ABSOLUTE (.)
+                0x00000000400d45a8                __text_region_end = ABSOLUTE (.)
+                0x00000000400d45a8                __rom_region_end = ABSOLUTE (.)
+                0x00000000400d45a8                _etext = .
 
 .stab
  *(SORT_BY_ALIGNMENT(.stab))
@@ -9354,127 +9356,127 @@ cfb_font_area   0x000000003f4012cc        0x0 load address 0x00000000000112cc
 .debug_pubnames
  *(SORT_BY_ALIGNMENT(.debug_pubnames))
 
-.debug_info     0x0000000000000000    0x89272
+.debug_info     0x0000000000000000    0x8926c
  *(SORT_BY_ALIGNMENT(.debug_info) SORT_BY_ALIGNMENT(.gnu.linkonce.wi.*))
  .debug_info    0x0000000000000000      0x10c zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
  .debug_info    0x000000000000010c       0xdc zephyr/CMakeFiles/offsets.dir/./arch/xtensa/core/offsets/offsets.c.obj
  .debug_info    0x00000000000001e8      0x620 app/libapp.a(main.c.obj)
  .debug_info    0x0000000000000808      0xb85 app/libapp.a(serial_handler.c.obj)
  .debug_info    0x000000000000138d     0x2418 app/libapp.a(motor.c.obj)
- .debug_info    0x00000000000037a5      0x682 app/libapp.a(pid.c.obj)
- .debug_info    0x0000000000003e27     0x2f57 zephyr/libzephyr.a(heap.c.obj)
- .debug_info    0x0000000000006d7e      0x541 zephyr/libzephyr.a(printk.c.obj)
- .debug_info    0x00000000000072bf      0x609 zephyr/libzephyr.a(thread_entry.c.obj)
- .debug_info    0x00000000000078c8       0x38 zephyr/libzephyr.a(configs.c.obj)
- .debug_info    0x0000000000007900      0x718 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
- .debug_info    0x0000000000008018     0x35fd zephyr/libzephyr.a(soc.c.obj)
- .debug_info    0x000000000000b615     0x1715 zephyr/libzephyr.a(loader.c.obj)
- .debug_info    0x000000000000cd2a      0x49e zephyr/libzephyr.a(hw_init.c.obj)
- .debug_info    0x000000000000d1c8       0x56 zephyr/libzephyr.a(tracing_none.c.obj)
- .debug_info    0x000000000000d21e       0x24 zephyr/libzephyr.a(windowspill_asm.S.obj)
- .debug_info    0x000000000000d242      0x1c9 zephyr/libzephyr.a(esp_gpio_reserve.c.obj)
- .debug_info    0x000000000000d40b      0x176 zephyr/libzephyr.a(cache_esp32.c.obj)
- .debug_info    0x000000000000d581      0xdf6 zephyr/libzephyr.a(mmu_hal.c.obj)
- .debug_info    0x000000000000e377      0x31e zephyr/libzephyr.a(spi_flash_encrypt_hal_iram.c.obj)
- .debug_info    0x000000000000e695     0x31ea zephyr/libzephyr.a(spi_flash_hal.c.obj)
- .debug_info    0x000000000001187f     0x407c zephyr/libzephyr.a(spi_flash_hal_iram.c.obj)
- .debug_info    0x00000000000158fb      0x395 zephyr/libzephyr.a(cache_hal_esp32.c.obj)
- .debug_info    0x0000000000015c90     0x55f1 zephyr/libzephyr.a(esp_flash_api.c.obj)
- .debug_info    0x000000000001b281     0x48c6 zephyr/libzephyr.a(esp_flash_spi_init.c.obj)
- .debug_info    0x000000000001fb47      0xe05 zephyr/libzephyr.a(flash_mmap.c.obj)
- .debug_info    0x000000000002094c      0x377 zephyr/libzephyr.a(flash_ops.c.obj)
- .debug_info    0x0000000000020cc3     0x375d zephyr/libzephyr.a(memspi_host_driver.c.obj)
- .debug_info    0x0000000000024420      0xc5a zephyr/libzephyr.a(spi_flash_chip_drivers.c.obj)
- .debug_info    0x000000000002507a     0x114b zephyr/libzephyr.a(spi_flash_chip_gd.c.obj)
- .debug_info    0x00000000000261c5     0x27e5 zephyr/libzephyr.a(spi_flash_chip_generic.c.obj)
- .debug_info    0x00000000000289aa     0x1027 zephyr/libzephyr.a(spi_flash_chip_issi.c.obj)
- .debug_info    0x00000000000299d1      0xf75 zephyr/libzephyr.a(spi_flash_chip_mxic.c.obj)
- .debug_info    0x000000000002a946     0x167f zephyr/libzephyr.a(spi_flash_chip_winbond.c.obj)
- .debug_info    0x000000000002bfc5      0x9fc zephyr/libzephyr.a(spi_flash_os_func_noos.c.obj)
- .debug_info    0x000000000002c9c1     0x1033 zephyr/libzephyr.a(spi_flash_os_func_app.c.obj)
- .debug_info    0x000000000002d9f4     0x2b02 zephyr/libzephyr.a(uart_hal.c.obj)
- .debug_info    0x00000000000304f6     0x197f zephyr/libzephyr.a(uart_hal_iram.c.obj)
- .debug_info    0x0000000000031e75      0x9a7 zephyr/libzephyr.a(pcnt_hal.c.obj)
- .debug_info    0x000000000003281c      0x2d0 zephyr/libzephyr.a(bootloader_clock_init.c.obj)
- .debug_info    0x0000000000032aec      0x250 zephyr/libzephyr.a(mpu_hal.c.obj)
- .debug_info    0x0000000000032d3c      0x193 zephyr/libzephyr.a(console_init.c.obj)
- .debug_info    0x0000000000032ecf       0xa6 zephyr/libzephyr.a(flash_init.c.obj)
- .debug_info    0x0000000000032f75     0x36b6 zephyr/libzephyr.a(soc_init.c.obj)
- .debug_info    0x000000000003662b      0x51b zephyr/libzephyr.a(soc_init.c.obj)
- .debug_info    0x0000000000036b46      0x10e zephyr/libzephyr.a(gpio_periph.c.obj)
- .debug_info    0x0000000000036c54      0x1af zephyr/libzephyr.a(rtc_io_periph.c.obj)
- .debug_info    0x0000000000036e03     0x3f92 zephyr/libzephyr.a(bootloader_flash.c.obj)
- .debug_info    0x000000000003ad95      0x6e4 zephyr/libzephyr.a(esp_clk.c.obj)
- .debug_info    0x000000000003b479      0x774 zephyr/libzephyr.a(periph_ctrl.c.obj)
- .debug_info    0x000000000003bbed     0x25fc zephyr/libzephyr.a(rtc_module.c.obj)
- .debug_info    0x000000000003e1e9      0x545 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
- .debug_info    0x000000000003e72e      0x171 zephyr/libzephyr.a(cpu_region_protect.c.obj)
- .debug_info    0x000000000003e89f      0x447 zephyr/libzephyr.a(esp_clk_tree.c.obj)
- .debug_info    0x000000000003ece6      0x27a zephyr/libzephyr.a(esp_cpu_intr.c.obj)
- .debug_info    0x000000000003ef60     0x23b4 zephyr/libzephyr.a(rtc_init.c.obj)
- .debug_info    0x0000000000041314     0x4c66 zephyr/libzephyr.a(rtc_clk.c.obj)
- .debug_info    0x0000000000045f7a      0xc44 zephyr/libzephyr.a(rtc_clk_init.c.obj)
- .debug_info    0x0000000000046bbe      0x93d zephyr/libzephyr.a(rtc_time.c.obj)
- .debug_info    0x00000000000474fb      0x1b3 zephyr/libzephyr.a(ext_mem_layout.c.obj)
- .debug_info    0x00000000000476ae     0x252a zephyr/libzephyr.a(esp_mmu_map.c.obj)
- .debug_info    0x0000000000049bd8      0x156 zephyr/libzephyr.a(esp_rom_sys.c.obj)
- .debug_info    0x0000000000049d2e     0x1530 zephyr/libzephyr.a(esp_rom_uart.c.obj)
- .debug_info    0x000000000004b25e      0xd21 zephyr/libzephyr.a(esp_rom_spiflash.c.obj)
- .debug_info    0x000000000004bf7f      0x3aa zephyr/libzephyr.a(reset_reason.c.obj)
- .debug_info    0x000000000004c329      0xa72 zephyr/libzephyr.a(esp_timer_impl_lac.c.obj)
- .debug_info    0x000000000004cd9b     0x2334 zephyr/libzephyr.a(esp_timer.c.obj)
- .debug_info    0x000000000004f0cf     0x229f zephyr/libzephyr.a(efuse_hal.c.obj)
- .debug_info    0x000000000005136e     0x42e1 zephyr/libzephyr.a(wdt_hal_iram.c.obj)
- .debug_info    0x000000000005564f      0x85c zephyr/libzephyr.a(clk_tree_hal.c.obj)
- .debug_info    0x0000000000055eab     0x258b zephyr/libzephyr.a(efuse_hal.c.obj)
- .debug_info    0x0000000000058436      0x251 zephyr/libzephyr.a(log_noos.c.obj)
- .debug_info    0x0000000000058687      0xb8b zephyr/libzephyr.a(cache_utils.c.obj)
- .debug_info    0x0000000000059212       0xaf zephyr/libzephyr.a(soc_random.c.obj)
- .debug_info    0x00000000000592c1     0x2cee zephyr/libzephyr.a(soc_flash_init.c.obj)
- .debug_info    0x000000000005bfaf       0xba zephyr/arch/common/libarch__common.a(sw_isr_common.c.obj)
- .debug_info    0x000000000005c069      0x1e4 zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
- .debug_info    0x000000000005c24d       0xd4 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(cpu_idle.c.obj)
- .debug_info    0x000000000005c321      0x389 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(fatal.c.obj)
- .debug_info    0x000000000005c6aa       0x24 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(window_vectors.S.obj)
- .debug_info    0x000000000005c6ce       0x22 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_asm2_util.S.obj)
- .debug_info    0x000000000005c6f0      0x37a zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(irq_manage.c.obj)
- .debug_info    0x000000000005ca6a      0x91c zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(thread.c.obj)
- .debug_info    0x000000000005d386     0x1772 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(vector_handlers.c.obj)
- .debug_info    0x000000000005eaf8      0x5cd zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(prep_c.c.obj)
- .debug_info    0x000000000005f0c5      0x75d zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_backtrace.c.obj)
- .debug_info    0x000000000005f822       0x23 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(debug_helpers_asm.S.obj)
- .debug_info    0x000000000005f845       0x93 zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(assert.c.obj)
- .debug_info    0x000000000005f8d8       0xda zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(errno_wrap.c.obj)
- .debug_info    0x000000000005f9b2      0x3bc zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(stdio.c.obj)
- .debug_info    0x000000000005fd6e      0x121 zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
- .debug_info    0x000000000005fe8f      0xdde zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
- .debug_info    0x0000000000060c6d     0x1b71 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
- .debug_info    0x00000000000627de     0x157d zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
- .debug_info    0x0000000000063d5b      0x957 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
- .debug_info    0x00000000000646b2     0x375b zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- .debug_info    0x0000000000067e0d      0x1b2 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(common.c.obj)
- .debug_info    0x0000000000067fbf     0x1890 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(pinctrl_esp32.c.obj)
- .debug_info    0x000000000006984f     0x47f2 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- .debug_info    0x000000000006e041     0x3618 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
- .debug_info    0x0000000000071659     0x39a6 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- .debug_info    0x0000000000074fff      0x88b zephyr/drivers/timer/libdrivers__timer.a(xtensa_sys_timer.c.obj)
- .debug_info    0x000000000007588a      0x311 zephyr/kernel/libkernel.a(device.c.obj)
- .debug_info    0x0000000000075b9b      0x676 zephyr/kernel/libkernel.a(errno.c.obj)
- .debug_info    0x0000000000076211      0x955 zephyr/kernel/libkernel.a(fatal.c.obj)
- .debug_info    0x0000000000076b66     0x1969 zephyr/kernel/libkernel.a(init.c.obj)
- .debug_info    0x00000000000784cf       0x38 zephyr/kernel/libkernel.a(init_static.c.obj)
- .debug_info    0x0000000000078507      0xe2c zephyr/kernel/libkernel.a(kheap.c.obj)
- .debug_info    0x0000000000079333      0x245 zephyr/kernel/libkernel.a(idle.c.obj)
- .debug_info    0x0000000000079578     0x18bc zephyr/kernel/libkernel.a(msg_q.c.obj)
- .debug_info    0x000000000007ae34     0x1494 zephyr/kernel/libkernel.a(mutex.c.obj)
- .debug_info    0x000000000007c2c8     0x10fd zephyr/kernel/libkernel.a(sem.c.obj)
- .debug_info    0x000000000007d3c5     0x154a zephyr/kernel/libkernel.a(thread.c.obj)
- .debug_info    0x000000000007e90f     0x667d zephyr/kernel/libkernel.a(sched.c.obj)
- .debug_info    0x0000000000084f8c      0xd65 zephyr/kernel/libkernel.a(timeslicing.c.obj)
- .debug_info    0x0000000000085cf1     0x15e3 zephyr/kernel/libkernel.a(timeout.c.obj)
- .debug_info    0x00000000000872d4     0x1290 zephyr/kernel/libkernel.a(timer.c.obj)
- .debug_info    0x0000000000088564      0xc49 zephyr/kernel/libkernel.a(mempool.c.obj)
- .debug_info    0x00000000000891ad       0xc5 zephyr/kernel/libkernel.a(banner.c.obj)
+ .debug_info    0x00000000000037a5      0x67c app/libapp.a(pid.c.obj)
+ .debug_info    0x0000000000003e21     0x2f57 zephyr/libzephyr.a(heap.c.obj)
+ .debug_info    0x0000000000006d78      0x541 zephyr/libzephyr.a(printk.c.obj)
+ .debug_info    0x00000000000072b9      0x609 zephyr/libzephyr.a(thread_entry.c.obj)
+ .debug_info    0x00000000000078c2       0x38 zephyr/libzephyr.a(configs.c.obj)
+ .debug_info    0x00000000000078fa      0x718 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
+ .debug_info    0x0000000000008012     0x35fd zephyr/libzephyr.a(soc.c.obj)
+ .debug_info    0x000000000000b60f     0x1715 zephyr/libzephyr.a(loader.c.obj)
+ .debug_info    0x000000000000cd24      0x49e zephyr/libzephyr.a(hw_init.c.obj)
+ .debug_info    0x000000000000d1c2       0x56 zephyr/libzephyr.a(tracing_none.c.obj)
+ .debug_info    0x000000000000d218       0x24 zephyr/libzephyr.a(windowspill_asm.S.obj)
+ .debug_info    0x000000000000d23c      0x1c9 zephyr/libzephyr.a(esp_gpio_reserve.c.obj)
+ .debug_info    0x000000000000d405      0x176 zephyr/libzephyr.a(cache_esp32.c.obj)
+ .debug_info    0x000000000000d57b      0xdf6 zephyr/libzephyr.a(mmu_hal.c.obj)
+ .debug_info    0x000000000000e371      0x31e zephyr/libzephyr.a(spi_flash_encrypt_hal_iram.c.obj)
+ .debug_info    0x000000000000e68f     0x31ea zephyr/libzephyr.a(spi_flash_hal.c.obj)
+ .debug_info    0x0000000000011879     0x407c zephyr/libzephyr.a(spi_flash_hal_iram.c.obj)
+ .debug_info    0x00000000000158f5      0x395 zephyr/libzephyr.a(cache_hal_esp32.c.obj)
+ .debug_info    0x0000000000015c8a     0x55f1 zephyr/libzephyr.a(esp_flash_api.c.obj)
+ .debug_info    0x000000000001b27b     0x48c6 zephyr/libzephyr.a(esp_flash_spi_init.c.obj)
+ .debug_info    0x000000000001fb41      0xe05 zephyr/libzephyr.a(flash_mmap.c.obj)
+ .debug_info    0x0000000000020946      0x377 zephyr/libzephyr.a(flash_ops.c.obj)
+ .debug_info    0x0000000000020cbd     0x375d zephyr/libzephyr.a(memspi_host_driver.c.obj)
+ .debug_info    0x000000000002441a      0xc5a zephyr/libzephyr.a(spi_flash_chip_drivers.c.obj)
+ .debug_info    0x0000000000025074     0x114b zephyr/libzephyr.a(spi_flash_chip_gd.c.obj)
+ .debug_info    0x00000000000261bf     0x27e5 zephyr/libzephyr.a(spi_flash_chip_generic.c.obj)
+ .debug_info    0x00000000000289a4     0x1027 zephyr/libzephyr.a(spi_flash_chip_issi.c.obj)
+ .debug_info    0x00000000000299cb      0xf75 zephyr/libzephyr.a(spi_flash_chip_mxic.c.obj)
+ .debug_info    0x000000000002a940     0x167f zephyr/libzephyr.a(spi_flash_chip_winbond.c.obj)
+ .debug_info    0x000000000002bfbf      0x9fc zephyr/libzephyr.a(spi_flash_os_func_noos.c.obj)
+ .debug_info    0x000000000002c9bb     0x1033 zephyr/libzephyr.a(spi_flash_os_func_app.c.obj)
+ .debug_info    0x000000000002d9ee     0x2b02 zephyr/libzephyr.a(uart_hal.c.obj)
+ .debug_info    0x00000000000304f0     0x197f zephyr/libzephyr.a(uart_hal_iram.c.obj)
+ .debug_info    0x0000000000031e6f      0x9a7 zephyr/libzephyr.a(pcnt_hal.c.obj)
+ .debug_info    0x0000000000032816      0x2d0 zephyr/libzephyr.a(bootloader_clock_init.c.obj)
+ .debug_info    0x0000000000032ae6      0x250 zephyr/libzephyr.a(mpu_hal.c.obj)
+ .debug_info    0x0000000000032d36      0x193 zephyr/libzephyr.a(console_init.c.obj)
+ .debug_info    0x0000000000032ec9       0xa6 zephyr/libzephyr.a(flash_init.c.obj)
+ .debug_info    0x0000000000032f6f     0x36b6 zephyr/libzephyr.a(soc_init.c.obj)
+ .debug_info    0x0000000000036625      0x51b zephyr/libzephyr.a(soc_init.c.obj)
+ .debug_info    0x0000000000036b40      0x10e zephyr/libzephyr.a(gpio_periph.c.obj)
+ .debug_info    0x0000000000036c4e      0x1af zephyr/libzephyr.a(rtc_io_periph.c.obj)
+ .debug_info    0x0000000000036dfd     0x3f92 zephyr/libzephyr.a(bootloader_flash.c.obj)
+ .debug_info    0x000000000003ad8f      0x6e4 zephyr/libzephyr.a(esp_clk.c.obj)
+ .debug_info    0x000000000003b473      0x774 zephyr/libzephyr.a(periph_ctrl.c.obj)
+ .debug_info    0x000000000003bbe7     0x25fc zephyr/libzephyr.a(rtc_module.c.obj)
+ .debug_info    0x000000000003e1e3      0x545 zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+ .debug_info    0x000000000003e728      0x171 zephyr/libzephyr.a(cpu_region_protect.c.obj)
+ .debug_info    0x000000000003e899      0x447 zephyr/libzephyr.a(esp_clk_tree.c.obj)
+ .debug_info    0x000000000003ece0      0x27a zephyr/libzephyr.a(esp_cpu_intr.c.obj)
+ .debug_info    0x000000000003ef5a     0x23b4 zephyr/libzephyr.a(rtc_init.c.obj)
+ .debug_info    0x000000000004130e     0x4c66 zephyr/libzephyr.a(rtc_clk.c.obj)
+ .debug_info    0x0000000000045f74      0xc44 zephyr/libzephyr.a(rtc_clk_init.c.obj)
+ .debug_info    0x0000000000046bb8      0x93d zephyr/libzephyr.a(rtc_time.c.obj)
+ .debug_info    0x00000000000474f5      0x1b3 zephyr/libzephyr.a(ext_mem_layout.c.obj)
+ .debug_info    0x00000000000476a8     0x252a zephyr/libzephyr.a(esp_mmu_map.c.obj)
+ .debug_info    0x0000000000049bd2      0x156 zephyr/libzephyr.a(esp_rom_sys.c.obj)
+ .debug_info    0x0000000000049d28     0x1530 zephyr/libzephyr.a(esp_rom_uart.c.obj)
+ .debug_info    0x000000000004b258      0xd21 zephyr/libzephyr.a(esp_rom_spiflash.c.obj)
+ .debug_info    0x000000000004bf79      0x3aa zephyr/libzephyr.a(reset_reason.c.obj)
+ .debug_info    0x000000000004c323      0xa72 zephyr/libzephyr.a(esp_timer_impl_lac.c.obj)
+ .debug_info    0x000000000004cd95     0x2334 zephyr/libzephyr.a(esp_timer.c.obj)
+ .debug_info    0x000000000004f0c9     0x229f zephyr/libzephyr.a(efuse_hal.c.obj)
+ .debug_info    0x0000000000051368     0x42e1 zephyr/libzephyr.a(wdt_hal_iram.c.obj)
+ .debug_info    0x0000000000055649      0x85c zephyr/libzephyr.a(clk_tree_hal.c.obj)
+ .debug_info    0x0000000000055ea5     0x258b zephyr/libzephyr.a(efuse_hal.c.obj)
+ .debug_info    0x0000000000058430      0x251 zephyr/libzephyr.a(log_noos.c.obj)
+ .debug_info    0x0000000000058681      0xb8b zephyr/libzephyr.a(cache_utils.c.obj)
+ .debug_info    0x000000000005920c       0xaf zephyr/libzephyr.a(soc_random.c.obj)
+ .debug_info    0x00000000000592bb     0x2cee zephyr/libzephyr.a(soc_flash_init.c.obj)
+ .debug_info    0x000000000005bfa9       0xba zephyr/arch/common/libarch__common.a(sw_isr_common.c.obj)
+ .debug_info    0x000000000005c063      0x1e4 zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
+ .debug_info    0x000000000005c247       0xd4 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(cpu_idle.c.obj)
+ .debug_info    0x000000000005c31b      0x389 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(fatal.c.obj)
+ .debug_info    0x000000000005c6a4       0x24 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(window_vectors.S.obj)
+ .debug_info    0x000000000005c6c8       0x22 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_asm2_util.S.obj)
+ .debug_info    0x000000000005c6ea      0x37a zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(irq_manage.c.obj)
+ .debug_info    0x000000000005ca64      0x91c zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(thread.c.obj)
+ .debug_info    0x000000000005d380     0x1772 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(vector_handlers.c.obj)
+ .debug_info    0x000000000005eaf2      0x5cd zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(prep_c.c.obj)
+ .debug_info    0x000000000005f0bf      0x75d zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_backtrace.c.obj)
+ .debug_info    0x000000000005f81c       0x23 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(debug_helpers_asm.S.obj)
+ .debug_info    0x000000000005f83f       0x93 zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(assert.c.obj)
+ .debug_info    0x000000000005f8d2       0xda zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(errno_wrap.c.obj)
+ .debug_info    0x000000000005f9ac      0x3bc zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(stdio.c.obj)
+ .debug_info    0x000000000005fd68      0x121 zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
+ .debug_info    0x000000000005fe89      0xdde zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
+ .debug_info    0x0000000000060c67     0x1b71 zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+ .debug_info    0x00000000000627d8     0x157d zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+ .debug_info    0x0000000000063d55      0x957 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
+ .debug_info    0x00000000000646ac     0x375b zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ .debug_info    0x0000000000067e07      0x1b2 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(common.c.obj)
+ .debug_info    0x0000000000067fb9     0x1890 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(pinctrl_esp32.c.obj)
+ .debug_info    0x0000000000069849     0x47f2 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ .debug_info    0x000000000006e03b     0x3618 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+ .debug_info    0x0000000000071653     0x39a6 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ .debug_info    0x0000000000074ff9      0x88b zephyr/drivers/timer/libdrivers__timer.a(xtensa_sys_timer.c.obj)
+ .debug_info    0x0000000000075884      0x311 zephyr/kernel/libkernel.a(device.c.obj)
+ .debug_info    0x0000000000075b95      0x676 zephyr/kernel/libkernel.a(errno.c.obj)
+ .debug_info    0x000000000007620b      0x955 zephyr/kernel/libkernel.a(fatal.c.obj)
+ .debug_info    0x0000000000076b60     0x1969 zephyr/kernel/libkernel.a(init.c.obj)
+ .debug_info    0x00000000000784c9       0x38 zephyr/kernel/libkernel.a(init_static.c.obj)
+ .debug_info    0x0000000000078501      0xe2c zephyr/kernel/libkernel.a(kheap.c.obj)
+ .debug_info    0x000000000007932d      0x245 zephyr/kernel/libkernel.a(idle.c.obj)
+ .debug_info    0x0000000000079572     0x18bc zephyr/kernel/libkernel.a(msg_q.c.obj)
+ .debug_info    0x000000000007ae2e     0x1494 zephyr/kernel/libkernel.a(mutex.c.obj)
+ .debug_info    0x000000000007c2c2     0x10fd zephyr/kernel/libkernel.a(sem.c.obj)
+ .debug_info    0x000000000007d3bf     0x154a zephyr/kernel/libkernel.a(thread.c.obj)
+ .debug_info    0x000000000007e909     0x667d zephyr/kernel/libkernel.a(sched.c.obj)
+ .debug_info    0x0000000000084f86      0xd65 zephyr/kernel/libkernel.a(timeslicing.c.obj)
+ .debug_info    0x0000000000085ceb     0x15e3 zephyr/kernel/libkernel.a(timeout.c.obj)
+ .debug_info    0x00000000000872ce     0x1290 zephyr/kernel/libkernel.a(timer.c.obj)
+ .debug_info    0x000000000008855e      0xc49 zephyr/kernel/libkernel.a(mempool.c.obj)
+ .debug_info    0x00000000000891a7       0xc5 zephyr/kernel/libkernel.a(banner.c.obj)
 
 .debug_abbrev   0x0000000000000000    0x14f00
  *(SORT_BY_ALIGNMENT(.debug_abbrev))
@@ -9598,127 +9600,127 @@ cfb_font_area   0x000000003f4012cc        0x0 load address 0x00000000000112cc
  .debug_abbrev  0x0000000000014aad      0x3c7 zephyr/kernel/libkernel.a(mempool.c.obj)
  .debug_abbrev  0x0000000000014e74       0x8c zephyr/kernel/libkernel.a(banner.c.obj)
 
-.debug_line     0x0000000000000000    0x5a5f6
+.debug_line     0x0000000000000000    0x5a626
  *(SORT_BY_ALIGNMENT(.debug_line) SORT_BY_ALIGNMENT(.debug_line.*) SORT_BY_ALIGNMENT(.debug_line_end))
  .debug_line    0x0000000000000000       0xa6 zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
  .debug_line    0x00000000000000a6      0x277 zephyr/CMakeFiles/offsets.dir/./arch/xtensa/core/offsets/offsets.c.obj
  .debug_line    0x000000000000031d      0x4c5 app/libapp.a(main.c.obj)
  .debug_line    0x00000000000007e2      0x774 app/libapp.a(serial_handler.c.obj)
  .debug_line    0x0000000000000f56      0xed9 app/libapp.a(motor.c.obj)
- .debug_line    0x0000000000001e2f      0x4ad app/libapp.a(pid.c.obj)
- .debug_line    0x00000000000022dc     0x20e6 zephyr/libzephyr.a(heap.c.obj)
- .debug_line    0x00000000000043c2      0x50e zephyr/libzephyr.a(printk.c.obj)
- .debug_line    0x00000000000048d0      0x43a zephyr/libzephyr.a(thread_entry.c.obj)
- .debug_line    0x0000000000004d0a      0x831 zephyr/libzephyr.a(configs.c.obj)
- .debug_line    0x000000000000553b      0x534 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
- .debug_line    0x0000000000005a6f      0x9be zephyr/libzephyr.a(soc.c.obj)
- .debug_line    0x000000000000642d     0x1220 zephyr/libzephyr.a(loader.c.obj)
- .debug_line    0x000000000000764d      0x7d4 zephyr/libzephyr.a(hw_init.c.obj)
- .debug_line    0x0000000000007e21       0xae zephyr/libzephyr.a(tracing_none.c.obj)
- .debug_line    0x0000000000007ecf      0x335 zephyr/libzephyr.a(windowspill_asm.S.obj)
- .debug_line    0x0000000000008204      0x23b zephyr/libzephyr.a(esp_gpio_reserve.c.obj)
- .debug_line    0x000000000000843f      0x228 zephyr/libzephyr.a(cache_esp32.c.obj)
- .debug_line    0x0000000000008667     0x136f zephyr/libzephyr.a(mmu_hal.c.obj)
- .debug_line    0x00000000000099d6      0x40a zephyr/libzephyr.a(spi_flash_encrypt_hal_iram.c.obj)
- .debug_line    0x0000000000009de0      0x8ac zephyr/libzephyr.a(spi_flash_hal.c.obj)
- .debug_line    0x000000000000a68c     0x1af0 zephyr/libzephyr.a(spi_flash_hal_iram.c.obj)
- .debug_line    0x000000000000c17c      0x52b zephyr/libzephyr.a(cache_hal_esp32.c.obj)
- .debug_line    0x000000000000c6a7     0x3d2b zephyr/libzephyr.a(esp_flash_api.c.obj)
- .debug_line    0x00000000000103d2     0x11c9 zephyr/libzephyr.a(esp_flash_spi_init.c.obj)
- .debug_line    0x000000000001159b     0x10bd zephyr/libzephyr.a(flash_mmap.c.obj)
- .debug_line    0x0000000000012658      0x585 zephyr/libzephyr.a(flash_ops.c.obj)
- .debug_line    0x0000000000012bdd      0xf26 zephyr/libzephyr.a(memspi_host_driver.c.obj)
- .debug_line    0x0000000000013b03      0x3bf zephyr/libzephyr.a(spi_flash_chip_drivers.c.obj)
- .debug_line    0x0000000000013ec2      0x61a zephyr/libzephyr.a(spi_flash_chip_gd.c.obj)
- .debug_line    0x00000000000144dc     0x24d4 zephyr/libzephyr.a(spi_flash_chip_generic.c.obj)
- .debug_line    0x00000000000169b0      0x4ee zephyr/libzephyr.a(spi_flash_chip_issi.c.obj)
- .debug_line    0x0000000000016e9e      0x57b zephyr/libzephyr.a(spi_flash_chip_mxic.c.obj)
- .debug_line    0x0000000000017419      0xba1 zephyr/libzephyr.a(spi_flash_chip_winbond.c.obj)
- .debug_line    0x0000000000017fba      0x592 zephyr/libzephyr.a(spi_flash_os_func_noos.c.obj)
- .debug_line    0x000000000001854c      0xc44 zephyr/libzephyr.a(spi_flash_os_func_app.c.obj)
- .debug_line    0x0000000000019190     0x1819 zephyr/libzephyr.a(uart_hal.c.obj)
- .debug_line    0x000000000001a9a9      0x868 zephyr/libzephyr.a(uart_hal_iram.c.obj)
- .debug_line    0x000000000001b211      0x25e zephyr/libzephyr.a(pcnt_hal.c.obj)
- .debug_line    0x000000000001b46f      0x4c3 zephyr/libzephyr.a(bootloader_clock_init.c.obj)
- .debug_line    0x000000000001b932      0x31d zephyr/libzephyr.a(mpu_hal.c.obj)
- .debug_line    0x000000000001bc4f      0x29b zephyr/libzephyr.a(console_init.c.obj)
- .debug_line    0x000000000001beea       0xb2 zephyr/libzephyr.a(flash_init.c.obj)
- .debug_line    0x000000000001bf9c      0x9fc zephyr/libzephyr.a(soc_init.c.obj)
- .debug_line    0x000000000001c998      0x5d3 zephyr/libzephyr.a(soc_init.c.obj)
- .debug_line    0x000000000001cf6b      0x1b2 zephyr/libzephyr.a(gpio_periph.c.obj)
- .debug_line    0x000000000001d11d      0x1b6 zephyr/libzephyr.a(rtc_io_periph.c.obj)
- .debug_line    0x000000000001d2d3     0x1f19 zephyr/libzephyr.a(bootloader_flash.c.obj)
- .debug_line    0x000000000001f1ec      0x924 zephyr/libzephyr.a(esp_clk.c.obj)
- .debug_line    0x000000000001fb10      0xb17 zephyr/libzephyr.a(periph_ctrl.c.obj)
- .debug_line    0x0000000000020627      0xcdc zephyr/libzephyr.a(rtc_module.c.obj)
- .debug_line    0x0000000000021303      0x81f zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
- .debug_line    0x0000000000021b22      0x23b zephyr/libzephyr.a(cpu_region_protect.c.obj)
- .debug_line    0x0000000000021d5d      0x837 zephyr/libzephyr.a(esp_clk_tree.c.obj)
- .debug_line    0x0000000000022594      0x301 zephyr/libzephyr.a(esp_cpu_intr.c.obj)
- .debug_line    0x0000000000022895      0xe16 zephyr/libzephyr.a(rtc_init.c.obj)
- .debug_line    0x00000000000236ab     0x2c4f zephyr/libzephyr.a(rtc_clk.c.obj)
- .debug_line    0x00000000000262fa      0xc70 zephyr/libzephyr.a(rtc_clk_init.c.obj)
- .debug_line    0x0000000000026f6a     0x1016 zephyr/libzephyr.a(rtc_time.c.obj)
- .debug_line    0x0000000000027f80      0x2c5 zephyr/libzephyr.a(ext_mem_layout.c.obj)
- .debug_line    0x0000000000028245     0x313b zephyr/libzephyr.a(esp_mmu_map.c.obj)
- .debug_line    0x000000000002b380      0x1df zephyr/libzephyr.a(esp_rom_sys.c.obj)
- .debug_line    0x000000000002b55f      0x470 zephyr/libzephyr.a(esp_rom_uart.c.obj)
- .debug_line    0x000000000002b9cf     0x21ce zephyr/libzephyr.a(esp_rom_spiflash.c.obj)
- .debug_line    0x000000000002db9d      0x5ea zephyr/libzephyr.a(reset_reason.c.obj)
- .debug_line    0x000000000002e187      0xf39 zephyr/libzephyr.a(esp_timer_impl_lac.c.obj)
- .debug_line    0x000000000002f0c0     0x27e2 zephyr/libzephyr.a(esp_timer.c.obj)
- .debug_line    0x00000000000318a2      0x461 zephyr/libzephyr.a(efuse_hal.c.obj)
- .debug_line    0x0000000000031d03     0x16d7 zephyr/libzephyr.a(wdt_hal_iram.c.obj)
- .debug_line    0x00000000000333da      0x9a7 zephyr/libzephyr.a(clk_tree_hal.c.obj)
- .debug_line    0x0000000000033d81      0xd08 zephyr/libzephyr.a(efuse_hal.c.obj)
- .debug_line    0x0000000000034a89      0x42f zephyr/libzephyr.a(log_noos.c.obj)
- .debug_line    0x0000000000034eb8      0x8ac zephyr/libzephyr.a(cache_utils.c.obj)
- .debug_line    0x0000000000035764      0x8a1 zephyr/libzephyr.a(soc_random.c.obj)
- .debug_line    0x0000000000036005     0x12ad zephyr/libzephyr.a(soc_flash_init.c.obj)
- .debug_line    0x00000000000372b2       0x9f zephyr/arch/common/libarch__common.a(sw_isr_common.c.obj)
- .debug_line    0x0000000000037351      0x265 zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
- .debug_line    0x00000000000375b6       0xfd zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(cpu_idle.c.obj)
- .debug_line    0x00000000000376b3      0x380 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(fatal.c.obj)
- .debug_line    0x0000000000037a33      0x224 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(window_vectors.S.obj)
- .debug_line    0x0000000000037c57      0x390 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_asm2_util.S.obj)
- .debug_line    0x0000000000037fe7      0x38a zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(irq_manage.c.obj)
- .debug_line    0x0000000000038371      0x5de zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(thread.c.obj)
- .debug_line    0x000000000003894f     0x15c8 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(vector_handlers.c.obj)
- .debug_line    0x0000000000039f17      0x374 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(prep_c.c.obj)
- .debug_line    0x000000000003a28b      0x87b zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_backtrace.c.obj)
- .debug_line    0x000000000003ab06       0xad zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(debug_helpers_asm.S.obj)
- .debug_line    0x000000000003abb3       0x87 zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(assert.c.obj)
- .debug_line    0x000000000003ac3a      0x17d zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(errno_wrap.c.obj)
- .debug_line    0x000000000003adb7      0x39b zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(stdio.c.obj)
- .debug_line    0x000000000003b152      0x1b8 zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
- .debug_line    0x000000000003b30a      0x91d zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
- .debug_line    0x000000000003bc27     0x259d zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
- .debug_line    0x000000000003e1c4     0x10b8 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
- .debug_line    0x000000000003f27c      0x545 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
- .debug_line    0x000000000003f7c1     0x2175 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
- .debug_line    0x0000000000041936      0x268 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(common.c.obj)
- .debug_line    0x0000000000041b9e     0x1108 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(pinctrl_esp32.c.obj)
- .debug_line    0x0000000000042ca6     0x20d2 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
- .debug_line    0x0000000000044d78     0x1d95 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
- .debug_line    0x0000000000046b0d     0x1d16 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
- .debug_line    0x0000000000048823      0x878 zephyr/drivers/timer/libdrivers__timer.a(xtensa_sys_timer.c.obj)
- .debug_line    0x000000000004909b      0x4a8 zephyr/kernel/libkernel.a(device.c.obj)
- .debug_line    0x0000000000049543      0x3c0 zephyr/kernel/libkernel.a(errno.c.obj)
- .debug_line    0x0000000000049903      0x6b5 zephyr/kernel/libkernel.a(fatal.c.obj)
- .debug_line    0x0000000000049fb8     0x1216 zephyr/kernel/libkernel.a(init.c.obj)
- .debug_line    0x000000000004b1ce       0x6f zephyr/kernel/libkernel.a(init_static.c.obj)
- .debug_line    0x000000000004b23d      0xbc3 zephyr/kernel/libkernel.a(kheap.c.obj)
- .debug_line    0x000000000004be00      0x31c zephyr/kernel/libkernel.a(idle.c.obj)
- .debug_line    0x000000000004c11c     0x1809 zephyr/kernel/libkernel.a(msg_q.c.obj)
- .debug_line    0x000000000004d925     0x1137 zephyr/kernel/libkernel.a(mutex.c.obj)
- .debug_line    0x000000000004ea5c      0xd81 zephyr/kernel/libkernel.a(sem.c.obj)
- .debug_line    0x000000000004f7dd     0x10fb zephyr/kernel/libkernel.a(thread.c.obj)
- .debug_line    0x00000000000508d8     0x619c zephyr/kernel/libkernel.a(sched.c.obj)
- .debug_line    0x0000000000056a74      0x941 zephyr/kernel/libkernel.a(timeslicing.c.obj)
- .debug_line    0x00000000000573b5     0x18a1 zephyr/kernel/libkernel.a(timeout.c.obj)
- .debug_line    0x0000000000058c56      0xfa0 zephyr/kernel/libkernel.a(timer.c.obj)
- .debug_line    0x0000000000059bf6      0x94b zephyr/kernel/libkernel.a(mempool.c.obj)
- .debug_line    0x000000000005a541       0xb5 zephyr/kernel/libkernel.a(banner.c.obj)
+ .debug_line    0x0000000000001e2f      0x4dd app/libapp.a(pid.c.obj)
+ .debug_line    0x000000000000230c     0x20e6 zephyr/libzephyr.a(heap.c.obj)
+ .debug_line    0x00000000000043f2      0x50e zephyr/libzephyr.a(printk.c.obj)
+ .debug_line    0x0000000000004900      0x43a zephyr/libzephyr.a(thread_entry.c.obj)
+ .debug_line    0x0000000000004d3a      0x831 zephyr/libzephyr.a(configs.c.obj)
+ .debug_line    0x000000000000556b      0x534 zephyr/libzephyr.a(esp_heap_runtime.c.obj)
+ .debug_line    0x0000000000005a9f      0x9be zephyr/libzephyr.a(soc.c.obj)
+ .debug_line    0x000000000000645d     0x1220 zephyr/libzephyr.a(loader.c.obj)
+ .debug_line    0x000000000000767d      0x7d4 zephyr/libzephyr.a(hw_init.c.obj)
+ .debug_line    0x0000000000007e51       0xae zephyr/libzephyr.a(tracing_none.c.obj)
+ .debug_line    0x0000000000007eff      0x335 zephyr/libzephyr.a(windowspill_asm.S.obj)
+ .debug_line    0x0000000000008234      0x23b zephyr/libzephyr.a(esp_gpio_reserve.c.obj)
+ .debug_line    0x000000000000846f      0x228 zephyr/libzephyr.a(cache_esp32.c.obj)
+ .debug_line    0x0000000000008697     0x136f zephyr/libzephyr.a(mmu_hal.c.obj)
+ .debug_line    0x0000000000009a06      0x40a zephyr/libzephyr.a(spi_flash_encrypt_hal_iram.c.obj)
+ .debug_line    0x0000000000009e10      0x8ac zephyr/libzephyr.a(spi_flash_hal.c.obj)
+ .debug_line    0x000000000000a6bc     0x1af0 zephyr/libzephyr.a(spi_flash_hal_iram.c.obj)
+ .debug_line    0x000000000000c1ac      0x52b zephyr/libzephyr.a(cache_hal_esp32.c.obj)
+ .debug_line    0x000000000000c6d7     0x3d2b zephyr/libzephyr.a(esp_flash_api.c.obj)
+ .debug_line    0x0000000000010402     0x11c9 zephyr/libzephyr.a(esp_flash_spi_init.c.obj)
+ .debug_line    0x00000000000115cb     0x10bd zephyr/libzephyr.a(flash_mmap.c.obj)
+ .debug_line    0x0000000000012688      0x585 zephyr/libzephyr.a(flash_ops.c.obj)
+ .debug_line    0x0000000000012c0d      0xf26 zephyr/libzephyr.a(memspi_host_driver.c.obj)
+ .debug_line    0x0000000000013b33      0x3bf zephyr/libzephyr.a(spi_flash_chip_drivers.c.obj)
+ .debug_line    0x0000000000013ef2      0x61a zephyr/libzephyr.a(spi_flash_chip_gd.c.obj)
+ .debug_line    0x000000000001450c     0x24d4 zephyr/libzephyr.a(spi_flash_chip_generic.c.obj)
+ .debug_line    0x00000000000169e0      0x4ee zephyr/libzephyr.a(spi_flash_chip_issi.c.obj)
+ .debug_line    0x0000000000016ece      0x57b zephyr/libzephyr.a(spi_flash_chip_mxic.c.obj)
+ .debug_line    0x0000000000017449      0xba1 zephyr/libzephyr.a(spi_flash_chip_winbond.c.obj)
+ .debug_line    0x0000000000017fea      0x592 zephyr/libzephyr.a(spi_flash_os_func_noos.c.obj)
+ .debug_line    0x000000000001857c      0xc44 zephyr/libzephyr.a(spi_flash_os_func_app.c.obj)
+ .debug_line    0x00000000000191c0     0x1819 zephyr/libzephyr.a(uart_hal.c.obj)
+ .debug_line    0x000000000001a9d9      0x868 zephyr/libzephyr.a(uart_hal_iram.c.obj)
+ .debug_line    0x000000000001b241      0x25e zephyr/libzephyr.a(pcnt_hal.c.obj)
+ .debug_line    0x000000000001b49f      0x4c3 zephyr/libzephyr.a(bootloader_clock_init.c.obj)
+ .debug_line    0x000000000001b962      0x31d zephyr/libzephyr.a(mpu_hal.c.obj)
+ .debug_line    0x000000000001bc7f      0x29b zephyr/libzephyr.a(console_init.c.obj)
+ .debug_line    0x000000000001bf1a       0xb2 zephyr/libzephyr.a(flash_init.c.obj)
+ .debug_line    0x000000000001bfcc      0x9fc zephyr/libzephyr.a(soc_init.c.obj)
+ .debug_line    0x000000000001c9c8      0x5d3 zephyr/libzephyr.a(soc_init.c.obj)
+ .debug_line    0x000000000001cf9b      0x1b2 zephyr/libzephyr.a(gpio_periph.c.obj)
+ .debug_line    0x000000000001d14d      0x1b6 zephyr/libzephyr.a(rtc_io_periph.c.obj)
+ .debug_line    0x000000000001d303     0x1f19 zephyr/libzephyr.a(bootloader_flash.c.obj)
+ .debug_line    0x000000000001f21c      0x924 zephyr/libzephyr.a(esp_clk.c.obj)
+ .debug_line    0x000000000001fb40      0xb17 zephyr/libzephyr.a(periph_ctrl.c.obj)
+ .debug_line    0x0000000000020657      0xcdc zephyr/libzephyr.a(rtc_module.c.obj)
+ .debug_line    0x0000000000021333      0x81f zephyr/libzephyr.a(esp_clk_tree_common.c.obj)
+ .debug_line    0x0000000000021b52      0x23b zephyr/libzephyr.a(cpu_region_protect.c.obj)
+ .debug_line    0x0000000000021d8d      0x837 zephyr/libzephyr.a(esp_clk_tree.c.obj)
+ .debug_line    0x00000000000225c4      0x301 zephyr/libzephyr.a(esp_cpu_intr.c.obj)
+ .debug_line    0x00000000000228c5      0xe16 zephyr/libzephyr.a(rtc_init.c.obj)
+ .debug_line    0x00000000000236db     0x2c4f zephyr/libzephyr.a(rtc_clk.c.obj)
+ .debug_line    0x000000000002632a      0xc70 zephyr/libzephyr.a(rtc_clk_init.c.obj)
+ .debug_line    0x0000000000026f9a     0x1016 zephyr/libzephyr.a(rtc_time.c.obj)
+ .debug_line    0x0000000000027fb0      0x2c5 zephyr/libzephyr.a(ext_mem_layout.c.obj)
+ .debug_line    0x0000000000028275     0x313b zephyr/libzephyr.a(esp_mmu_map.c.obj)
+ .debug_line    0x000000000002b3b0      0x1df zephyr/libzephyr.a(esp_rom_sys.c.obj)
+ .debug_line    0x000000000002b58f      0x470 zephyr/libzephyr.a(esp_rom_uart.c.obj)
+ .debug_line    0x000000000002b9ff     0x21ce zephyr/libzephyr.a(esp_rom_spiflash.c.obj)
+ .debug_line    0x000000000002dbcd      0x5ea zephyr/libzephyr.a(reset_reason.c.obj)
+ .debug_line    0x000000000002e1b7      0xf39 zephyr/libzephyr.a(esp_timer_impl_lac.c.obj)
+ .debug_line    0x000000000002f0f0     0x27e2 zephyr/libzephyr.a(esp_timer.c.obj)
+ .debug_line    0x00000000000318d2      0x461 zephyr/libzephyr.a(efuse_hal.c.obj)
+ .debug_line    0x0000000000031d33     0x16d7 zephyr/libzephyr.a(wdt_hal_iram.c.obj)
+ .debug_line    0x000000000003340a      0x9a7 zephyr/libzephyr.a(clk_tree_hal.c.obj)
+ .debug_line    0x0000000000033db1      0xd08 zephyr/libzephyr.a(efuse_hal.c.obj)
+ .debug_line    0x0000000000034ab9      0x42f zephyr/libzephyr.a(log_noos.c.obj)
+ .debug_line    0x0000000000034ee8      0x8ac zephyr/libzephyr.a(cache_utils.c.obj)
+ .debug_line    0x0000000000035794      0x8a1 zephyr/libzephyr.a(soc_random.c.obj)
+ .debug_line    0x0000000000036035     0x12ad zephyr/libzephyr.a(soc_flash_init.c.obj)
+ .debug_line    0x00000000000372e2       0x9f zephyr/arch/common/libarch__common.a(sw_isr_common.c.obj)
+ .debug_line    0x0000000000037381      0x265 zephyr/arch/common/libarch__common.a(dynamic_isr.c.obj)
+ .debug_line    0x00000000000375e6       0xfd zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(cpu_idle.c.obj)
+ .debug_line    0x00000000000376e3      0x380 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(fatal.c.obj)
+ .debug_line    0x0000000000037a63      0x224 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(window_vectors.S.obj)
+ .debug_line    0x0000000000037c87      0x390 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_asm2_util.S.obj)
+ .debug_line    0x0000000000038017      0x38a zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(irq_manage.c.obj)
+ .debug_line    0x00000000000383a1      0x5de zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(thread.c.obj)
+ .debug_line    0x000000000003897f     0x15c8 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(vector_handlers.c.obj)
+ .debug_line    0x0000000000039f47      0x374 zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(prep_c.c.obj)
+ .debug_line    0x000000000003a2bb      0x87b zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(xtensa_backtrace.c.obj)
+ .debug_line    0x000000000003ab36       0xad zephyr/arch/arch/xtensa/core/libarch__xtensa__core.a(debug_helpers_asm.S.obj)
+ .debug_line    0x000000000003abe3       0x87 zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(assert.c.obj)
+ .debug_line    0x000000000003ac6a      0x17d zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(errno_wrap.c.obj)
+ .debug_line    0x000000000003ade7      0x39b zephyr/lib/libc/picolibc/liblib__libc__picolibc.a(stdio.c.obj)
+ .debug_line    0x000000000003b182      0x1b8 zephyr/lib/libc/common/liblib__libc__common.a(abort.c.obj)
+ .debug_line    0x000000000003b33a      0x91d zephyr/lib/libc/common/liblib__libc__common.a(malloc.c.obj)
+ .debug_line    0x000000000003bc57     0x259d zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a(intc_esp32.c.obj)
+ .debug_line    0x000000000003e1f4     0x10b8 zephyr/drivers/clock_control/libdrivers__clock_control.a(clock_control_esp32.c.obj)
+ .debug_line    0x000000000003f2ac      0x545 zephyr/drivers/console/libdrivers__console.a(uart_console.c.obj)
+ .debug_line    0x000000000003f7f1     0x2175 zephyr/drivers/gpio/libdrivers__gpio.a(gpio_esp32.c.obj)
+ .debug_line    0x0000000000041966      0x268 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(common.c.obj)
+ .debug_line    0x0000000000041bce     0x1108 zephyr/drivers/pinctrl/libdrivers__pinctrl.a(pinctrl_esp32.c.obj)
+ .debug_line    0x0000000000042cd6     0x20d2 zephyr/drivers/pwm/libdrivers__pwm.a(pwm_mc_esp32.c.obj)
+ .debug_line    0x0000000000044da8     0x1d95 zephyr/drivers/sensor/espressif/pcnt_esp32/libdrivers__sensor__espressif__pcnt_esp32.a(pcnt_esp32.c.obj)
+ .debug_line    0x0000000000046b3d     0x1d16 zephyr/drivers/serial/libdrivers__serial.a(uart_esp32.c.obj)
+ .debug_line    0x0000000000048853      0x878 zephyr/drivers/timer/libdrivers__timer.a(xtensa_sys_timer.c.obj)
+ .debug_line    0x00000000000490cb      0x4a8 zephyr/kernel/libkernel.a(device.c.obj)
+ .debug_line    0x0000000000049573      0x3c0 zephyr/kernel/libkernel.a(errno.c.obj)
+ .debug_line    0x0000000000049933      0x6b5 zephyr/kernel/libkernel.a(fatal.c.obj)
+ .debug_line    0x0000000000049fe8     0x1216 zephyr/kernel/libkernel.a(init.c.obj)
+ .debug_line    0x000000000004b1fe       0x6f zephyr/kernel/libkernel.a(init_static.c.obj)
+ .debug_line    0x000000000004b26d      0xbc3 zephyr/kernel/libkernel.a(kheap.c.obj)
+ .debug_line    0x000000000004be30      0x31c zephyr/kernel/libkernel.a(idle.c.obj)
+ .debug_line    0x000000000004c14c     0x1809 zephyr/kernel/libkernel.a(msg_q.c.obj)
+ .debug_line    0x000000000004d955     0x1137 zephyr/kernel/libkernel.a(mutex.c.obj)
+ .debug_line    0x000000000004ea8c      0xd81 zephyr/kernel/libkernel.a(sem.c.obj)
+ .debug_line    0x000000000004f80d     0x10fb zephyr/kernel/libkernel.a(thread.c.obj)
+ .debug_line    0x0000000000050908     0x619c zephyr/kernel/libkernel.a(sched.c.obj)
+ .debug_line    0x0000000000056aa4      0x941 zephyr/kernel/libkernel.a(timeslicing.c.obj)
+ .debug_line    0x00000000000573e5     0x18a1 zephyr/kernel/libkernel.a(timeout.c.obj)
+ .debug_line    0x0000000000058c86      0xfa0 zephyr/kernel/libkernel.a(timer.c.obj)
+ .debug_line    0x0000000000059c26      0x94b zephyr/kernel/libkernel.a(mempool.c.obj)
+ .debug_line    0x000000000005a571       0xb5 zephyr/kernel/libkernel.a(banner.c.obj)
 
 .debug_frame    0x0000000000000000     0x5210
  *(SORT_BY_ALIGNMENT(.debug_frame))
