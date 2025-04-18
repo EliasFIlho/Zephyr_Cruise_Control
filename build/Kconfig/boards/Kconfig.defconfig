@@ -1,2 +1,0 @@
-# Load Zephyr board defconfig descriptions.
-osource "/home/elias/zephyrproject/zephyr/boards/espressif/esp32_devkitc_wroom/Kconfig.defconfig"

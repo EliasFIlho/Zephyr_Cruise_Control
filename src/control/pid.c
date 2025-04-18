@@ -21,13 +21,19 @@ static void pid_controller()
     error = target_value - rpm;
     if(error == 0 && target_value == 0){
         PID = 0.0;
+        integral_value = 0.0;
     }else{
-        integral_value += (error * INTERVAL_PERIOD_FP);
+        if(target_value == 0){
+            integral_value = 0;    
+        }else{
+            integral_value += (error * INTERVAL_PERIOD_FP);
+        }
+
         derivative_value = (error - prev_error) / INTERVAL_PERIOD_FP;
         PID = (KP * error) + (KI * integral_value) + (KD * derivative_value);
-        //PID *= (double)PWM_SIGNAL_FREQUENCY_NS;
         if(PID >= MAX_OUTPUT){
             PID = MAX_OUTPUT;
+            // This windup clamp may not be the better way to do that but for now it will need to work
             integral_value = INTEGRAL_WINDUP_LIMIT;
         }else if(PID <= MIN_OUTPUT){
             PID = MIN_OUTPUT;
@@ -39,8 +45,8 @@ static void pid_controller()
     set_pwm_duty_period((uint32_t)PID);
     prev_error = error;
 
-    printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f | Integral Value | %f |\n",rpm, target_value ,error, PID,integral_value);
-    //printk("%d,%d,%d\n",rpm, target_value ,error);
+    //printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f | Integral Value | %f |\n",rpm, target_value ,error, PID,integral_value);
+    printk("%d,%d,%d\n",rpm, target_value ,error);
 }
 
 void set_pid_target_rpm(int16_t target)

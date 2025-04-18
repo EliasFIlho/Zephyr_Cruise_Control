@@ -6,9 +6,9 @@
 #include <math.h>
 
 
-#define KP 300
-#define KI 50
-#define KD 0.02
+#define KP 900.00
+#define KI 90.00
+#define KD 50.00
 
 #define INTEGRAL_WINDUP_LIMIT 5000
 
