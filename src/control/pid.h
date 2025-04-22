@@ -23,8 +23,8 @@
 
 struct pid
 {
-    double integral;
-    double derivative;
+    float integral;
+    float derivative;
     int32_t error;
     int32_t prev_error;
     uint32_t target;

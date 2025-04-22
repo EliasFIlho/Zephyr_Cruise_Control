@@ -23,44 +23,41 @@ static void pid_controller()
         {
             PID.integral = 0;
         }
-        else
+        else if (abs(PID.error) > ERROR_TOLERANCE)
         {
-            if (PID.error <= (ERROR_TOLERANCE) && PID.error >= (-ERROR_TOLERANCE))
-            {
-                // Stop increment integral
-            }
-            else
-            {
-                PID.integral += (PID.error * INTERVAL_PERIOD_FP);
-            }
-        }
-
-        PID.proportional = (KP * PID.error);
-        PID.derivative = (PID.error - PID.prev_error) / INTERVAL_PERIOD_FP;
-        PID.pid_output = ((PID.proportional) + (KI * PID.integral) + (KD * PID.derivative));
-        if (PID.pid_output >= MAX_OUTPUT)
-        {
-
-            PID.pid_output = MAX_OUTPUT;
-        }
-        else if (PID.pid_output <= MIN_OUTPUT)
-        {
-            PID.pid_output = MIN_OUTPUT;
+            PID.integral += (PID.error * INTERVAL_PERIOD_FP);
         }
         else
         {
+            // Stop increment integral
         }
     }
-    set_pwm_duty_period(PID.pid_output);
-    PID.prev_error = PID.error;
 
-    printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %d | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
-    // printk("%d,%d,%d\n", rpm, PID.target, PID.error);
+    PID.proportional = (KP * PID.error);
+    PID.derivative = (PID.error - PID.prev_error) / INTERVAL_PERIOD_FP;
+    PID.pid_output = ((PID.proportional) + (KI * PID.integral) + (KD * PID.derivative));
+    if (PID.pid_output >= MAX_OUTPUT)
+    {
+
+        PID.pid_output = MAX_OUTPUT;
+    }
+    else if (PID.pid_output <= MIN_OUTPUT)
+    {
+        PID.pid_output = MIN_OUTPUT;
+    }
+    else
+    {
+    }
+}
+set_pwm_duty_period(PID.pid_output);
+PID.prev_error = PID.error;
+
+printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %d | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
+// printk("%d,%d,%d\n", rpm, PID.target, PID.error);
 }
 
 void set_pid_target_rpm(uint32_t target)
 {
-    // printk("PID set target check");
     PID.target = target;
 }
 
