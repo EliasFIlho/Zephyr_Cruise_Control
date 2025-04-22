@@ -23,7 +23,7 @@ static void pid_controller()
         {
             PID.integral = 0;
         }
-        else if (abs(PID.error) > ERROR_TOLERANCE)
+        else if (abs(PID.error) > ERROR_TOLERANCE && (!PID.saturation))
         {
             PID.integral += (PID.error * INTERVAL_PERIOD_FP);
         }
@@ -33,13 +33,16 @@ static void pid_controller()
         }
     }
 
-    PID.proportional = (KP * PID.error);
+    PID.proportional = (KP * (float)PID.error);
     PID.derivative = (PID.error - PID.prev_error) / INTERVAL_PERIOD_FP;
     PID.pid_output = ((PID.proportional) + (KI * PID.integral) + (KD * PID.derivative));
+
+
     if (PID.pid_output >= MAX_OUTPUT)
     {
 
         PID.pid_output = MAX_OUTPUT;
+        PID.saturation = true;
     }
     else if (PID.pid_output <= MIN_OUTPUT)
     {
@@ -47,13 +50,14 @@ static void pid_controller()
     }
     else
     {
+        PID.saturation = false;
     }
-}
-set_pwm_duty_period(PID.pid_output);
-PID.prev_error = PID.error;
 
-printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %d | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
-// printk("%d,%d,%d\n", rpm, PID.target, PID.error);
+    set_pwm_duty_period((uint32_t)PID.pid_output);
+    PID.prev_error = PID.error;
+
+    printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
+    // printk("%d,%d,%d\n", rpm, PID.target, PID.error);
 }
 
 void set_pid_target_rpm(uint32_t target)

@@ -6,14 +6,14 @@
 #include <math.h>
 
 
-#define KP 900.00
-#define KI 90.00
-#define KD 50.00
+#define KP 10.0f
+#define KI 5.0f
+#define KD 0.01f
 
 #define INTEGRAL_WINDUP_LIMIT 5000
 
 #define INTERVAL_PERIOD K_MSEC(10)
-#define INTERVAL_PERIOD_FP 0.01
+#define INTERVAL_PERIOD_FP 0.01f
 
 #define MAX_OUTPUT PWM_SIGNAL_FREQUENCY_NS
 #define MIN_OUTPUT 0
@@ -25,11 +25,12 @@ struct pid
 {
     float integral;
     float derivative;
+    float proportional;
+    float pid_output;
     int32_t error;
     int32_t prev_error;
     uint32_t target;
-    uint32_t pid_output;
-    uint16_t proportional;
+    bool saturation;
 };
 
 

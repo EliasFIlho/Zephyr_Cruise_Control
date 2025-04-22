@@ -7,7 +7,7 @@
 #include <zephyr/drivers/sensor.h>
 #include "moving_avg.h"
 
-#define PWM_SIGNAL_FREQUENCY_NS PWM_HZ(1000)
+#define PWM_SIGNAL_FREQUENCY_NS PWM_HZ(50000)
 #define PWM_POLARITY_NORMAL (0 << 0)
 
 #define PULSE_REVOLUTION_RATIO 11
