@@ -1,15 +1,8 @@
 #include "pid.h"
 
 /* Global Variables*/
-static int32_t error = 0;
-static double prev_error = 0.0;
-static int32_t target_value = 0;
-static double integral_value = 0.0;
-static double derivative_value = 0.0;
-static double PID = 0;
-//static uint32_t output = 0;
 
-
+static struct pid PID = {0};
 
 /* Timer struct */
 
@@ -18,41 +11,57 @@ static struct k_timer pid_controller_tim;
 static void pid_controller()
 {
     int32_t rpm = get_current_rpm();
-    error = target_value - rpm;
-    if(error == 0 && target_value == 0){
-        PID = 0.0;
-        integral_value = 0.0;
-    }else{
-        if(target_value == 0){
-            integral_value = 0;    
-        }else{
-            integral_value += (error * INTERVAL_PERIOD_FP);
-        }
-
-        derivative_value = (error - prev_error) / INTERVAL_PERIOD_FP;
-        PID = (KP * error) + (KI * integral_value) + (KD * derivative_value);
-        if(PID >= MAX_OUTPUT){
-            PID = MAX_OUTPUT;
-            // This windup clamp may not be the better way to do that but for now it will need to work
-            integral_value = INTEGRAL_WINDUP_LIMIT;
-        }else if(PID <= MIN_OUTPUT){
-            PID = MIN_OUTPUT;
-        }else{
-            
-        }
-
+    PID.error = PID.target - rpm;
+    if (PID.error == 0 && PID.target == 0)
+    {
+        PID.pid_output = 0.0;
+        PID.integral = 0.0;
     }
-    set_pwm_duty_period((uint32_t)PID);
-    prev_error = error;
+    else
+    {
+        if (PID.target == 0)
+        {
+            PID.integral = 0;
+        }
+        else
+        {
+            if (PID.error <= (ERROR_TOLERANCE) && PID.error >= (-ERROR_TOLERANCE))
+            {
+                // Stop increment integral
+            }
+            else
+            {
+                PID.integral += (PID.error * INTERVAL_PERIOD_FP);
+            }
+        }
 
-    //printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f | Integral Value | %f |\n",rpm, target_value ,error, PID,integral_value);
-    printk("%d,%d,%d\n",rpm, target_value ,error);
+        PID.proportional = (KP * PID.error);
+        PID.derivative = (PID.error - PID.prev_error) / INTERVAL_PERIOD_FP;
+        PID.pid_output = ((PID.proportional) + (KI * PID.integral) + (KD * PID.derivative));
+        if (PID.pid_output >= MAX_OUTPUT)
+        {
+
+            PID.pid_output = MAX_OUTPUT;
+        }
+        else if (PID.pid_output <= MIN_OUTPUT)
+        {
+            PID.pid_output = MIN_OUTPUT;
+        }
+        else
+        {
+        }
+    }
+    set_pwm_duty_period(PID.pid_output);
+    PID.prev_error = PID.error;
+
+    printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %d | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
+    // printk("%d,%d,%d\n", rpm, PID.target, PID.error);
 }
 
-void set_pid_target_rpm(int16_t target)
+void set_pid_target_rpm(uint32_t target)
 {
-    //printk("PID set target check");
-    target_value = target;
+    // printk("PID set target check");
+    PID.target = target;
 }
 
 void start_pid_controller()

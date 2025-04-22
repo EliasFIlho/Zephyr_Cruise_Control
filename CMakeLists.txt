@@ -8,9 +8,9 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(cruise_control)
 
 target_sources(app PRIVATE 
-    src/main.c
     src/serial/serial_handler.c
     src/control/motor.c
     src/control/pid.c
     src/control/moving_avg.c
+    src/main.c
 )

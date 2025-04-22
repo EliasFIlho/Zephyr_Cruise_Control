@@ -18,5 +18,27 @@
 #define MAX_OUTPUT PWM_SIGNAL_FREQUENCY_NS
 #define MIN_OUTPUT 0
 
-void set_pid_target_rpm(int16_t target);
+#define ERROR_TOLERANCE 2
+
+
+struct pid
+{
+    double integral;
+    double derivative;
+    int32_t error;
+    int32_t prev_error;
+    uint32_t target;
+    uint32_t pid_output;
+    uint16_t proportional;
+};
+
+
+
+
+
+
+
+
+
+void set_pid_target_rpm(uint32_t target);
 void start_pid_controller();

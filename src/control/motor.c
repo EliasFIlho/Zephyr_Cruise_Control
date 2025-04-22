@@ -28,8 +28,7 @@ moving_avg_t filter = {
 
 
 /* Global variables for velocity*/
-_Atomic int32_t current_rpm = 0;
-
+volatile _Atomic int32_t current_rpm = 0;
 static int16_t prev_pulse_count = 0;
 static double velocity = 0.0;
 

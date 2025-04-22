@@ -38,7 +38,6 @@ int main(void)
     
     printk("Call PID start controller");
     start_pid_controller();
-    int32_t rpm = 0;
     int target = 0;
     set_pwm_duty_period(0);
     while (1)
@@ -46,8 +45,10 @@ int main(void)
         if (k_msgq_get(&uart_queue, &tx_buf, K_NO_WAIT) == 0)
         {
             target = atoi(tx_buf);
+            if(target < 0){
+                target *= -1;
+            }
             set_pid_target_rpm(target);
-
         };
         k_sleep(K_USEC(50));
     }
