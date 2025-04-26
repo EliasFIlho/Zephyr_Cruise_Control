@@ -21,10 +21,8 @@ The plant controlled by the PID algorithm is a DC motor. Feedback data is provid
 
 Since the system is not moving in real space, the measurement unit will be RPM (Revolutions Per Minute).
 
-## Roadmap
+## Version 1
 
-This project is planned in three versions:
+The image bellow shows a basic representation of the system.
 
-1. **Version 1:** Receive data from UART and run the control algorithm on the same microcontroller.
-2. **Version 2:** Receive data from UART on one microcontroller, then send it via CAN bus to another microcontroller that runs the PID algorithm.
-3. **Version 3:** Receive data from a mechanical device (similar to a car's pedal) on one microcontroller, then send it via CAN bus to another microcontroller responsible for running the PID algorithm.
+![System](./images/version1.png)
