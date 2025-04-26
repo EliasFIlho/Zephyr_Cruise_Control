@@ -55,19 +55,19 @@ static void pid_controller()
 
     set_pwm_duty_period((uint32_t)PID.pid_output);
     PID.prev_error = PID.error;
-
     printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
     // printk("%d,%d,%d\n", rpm, PID.target, PID.error);
 }
 
-void set_pid_target_rpm(uint32_t target)
+void set_pid_target_rpm(uint16_t target)
 {
     PID.target = target;
 }
 
 void start_pid_controller()
 {
-    printk("PID start timer check");
+    printk("PID start timer check\n");
     k_timer_init(&pid_controller_tim, pid_controller, NULL);
+    printk("PID TIMER INIT\n");
     k_timer_start(&pid_controller_tim, INTERVAL_PERIOD, INTERVAL_PERIOD);
 }

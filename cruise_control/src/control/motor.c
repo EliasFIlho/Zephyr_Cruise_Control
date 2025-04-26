@@ -14,7 +14,6 @@ const struct device *const dev = DEVICE_DT_GET(DT_ALIAS(qdec0));
 struct motor_status motor = {
     .isForward = false,
     .rpm = 0,
-    .velocity = 0
 };
 
 moving_avg_t filter = {
@@ -59,6 +58,7 @@ static void calculate_velocity_tim_callback(struct k_timer *tim)
 
 		velocity = ((double)(filter.filtered_value))/TIME_BASIS;
         current_rpm = (int32_t)((velocity/SHAFT_REVOLUTION_RATIO)*60);
+        motor.rpm = current_rpm;
 		prev_pulse_count = val.val1;
         //printk("Delta | %d | Current RPM: | %d |\n",filter.filtered_value,current_rpm);
 	}
@@ -174,6 +174,9 @@ bool set_pwm_pulse_output_percent(uint8_t pulse_percent)
         return true;
     }
 }
+
+
+
 int32_t get_current_rpm(){
     return current_rpm;
 }

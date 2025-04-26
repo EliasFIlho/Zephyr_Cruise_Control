@@ -34,12 +34,5 @@ struct pid
 };
 
 
-
-
-
-
-
-
-
-void set_pid_target_rpm(uint32_t target);
+void set_pid_target_rpm(uint16_t target);
 void start_pid_controller();
