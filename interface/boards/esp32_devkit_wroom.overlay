@@ -1,0 +1,45 @@
+
+/{
+    leds {
+        compatible = "gpio-leds";
+        led_0:led_0 {
+            gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    chosen{
+        zephyr,canbus = &mcp2515;
+    };
+};
+
+
+&pinctrl {
+    spi2_default:spi2_default{
+        group1{
+            pinmux = <SPIM2_SCLK_GPIO27>,
+                     <SPIM2_MISO_GPIO26>,
+                     <SPIM2_MOSI_GPIO25>;
+        };
+    };
+};
+
+
+&spi2 {
+    status = "okay";
+    pinctrl-0 = <&spi2_default>;
+    cs-gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
+
+    mcp2515: can@0  {
+        compatible = "microchip,mcp2515";
+        osc-freq = <8000000>;
+        spi-max-frequency = <8000000>;
+        int-gpios = <&gpio0 23 GPIO_ACTIVE_LOW>;
+        sample-point = <875>;
+        reg = <0x0>;
+        tja1050{
+            min-bitrate = <40000>;
+            max-bitrate = <1000000>;
+        };
+    };
+
+};
