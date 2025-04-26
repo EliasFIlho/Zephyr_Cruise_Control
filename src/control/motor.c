@@ -6,11 +6,13 @@
 static const struct pwm_dt_spec pwm = PWM_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor), 0);
 static const struct gpio_dt_spec forward_pin = GPIO_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor_pins),gpios,0);
 static const struct gpio_dt_spec backward_pin = GPIO_DT_SPEC_GET_BY_IDX(DT_NODELABEL(motor_pins),gpios,1);
-const struct device *const dev = DEVICE_DT_GET(DT_ALIAS(qdec0));
+static const struct device *const dev = DEVICE_DT_GET(DT_ALIAS(qdec0));
 
 
 /* Motor status struct */
 
+
+// Work in progress
 struct motor_status motor = {
     .isForward = false,
     .rpm = 0,

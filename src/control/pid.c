@@ -57,7 +57,7 @@ static void pid_controller()
     PID.prev_error = PID.error;
 
     printk("RPM VALUE | %d | Target | %d | | Error | %d | PID | %f | Integral Value | %f |\n", rpm, PID.target, PID.error, PID.pid_output, PID.integral);
-    // printk("%d,%d,%d\n", rpm, PID.target, PID.error);
+    // printk("%d,%d,%d\n", rpm, PID.target, PID.error); // Print for Serial Studio plot
 }
 
 void set_pid_target_rpm(uint32_t target)
@@ -67,7 +67,7 @@ void set_pid_target_rpm(uint32_t target)
 
 void start_pid_controller()
 {
-    printk("PID start timer check");
+    printk("PID start timer check\n");
     k_timer_init(&pid_controller_tim, pid_controller, NULL);
     k_timer_start(&pid_controller_tim, INTERVAL_PERIOD, INTERVAL_PERIOD);
 }

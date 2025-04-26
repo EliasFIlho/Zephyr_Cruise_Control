@@ -34,12 +34,9 @@ int main(void)
 
     //set_motor_direction_forward();
     set_motor_direction_backward();
-    set_pwm_pulse_output_percent(0);
-    
-    printk("Call PID start controller");
+    set_pwm_duty_period(0);
     start_pid_controller();
     int target = 0;
-    set_pwm_duty_period(0);
     while (1)
     {
         if (k_msgq_get(&uart_queue, &tx_buf, K_NO_WAIT) == 0)
