@@ -52,7 +52,6 @@ static void calculate_velocity_tim_callback(struct k_timer *tim)
 
 void init_encoder_tim()
 {
-    printk("PWM Init velicity Timer");
     k_timer_init(&calculate_velocity_tim, calculate_velocity_tim_callback, NULL);
     k_timer_start(&calculate_velocity_tim, TIMER_PERIOD_AND_DURATION, TIMER_PERIOD_AND_DURATION);
 }

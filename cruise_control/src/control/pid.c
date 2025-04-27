@@ -66,8 +66,6 @@ void set_pid_target_rpm(uint16_t target)
 
 void init_pid_controller()
 {
-    printk("PID start timer check\n");
     k_timer_init(&pid_controller_tim, pid_controller, NULL);
-    printk("PID TIMER INIT\n");
     k_timer_start(&pid_controller_tim, INTERVAL_PERIOD, INTERVAL_PERIOD);
 }

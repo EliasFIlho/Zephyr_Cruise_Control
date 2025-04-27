@@ -20,8 +20,8 @@ int main(void)
     // init services
     init_motor(); 
     init_encoder_tim();
-    start_pid_controller();
-    init_can(can_dev);
+    //init_pid_controller();
+    //init_can(can_dev);
 
 
     uint16_t target = 0;

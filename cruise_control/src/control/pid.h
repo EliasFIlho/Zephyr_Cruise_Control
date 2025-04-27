@@ -28,7 +28,7 @@ struct control_info{
     uint32_t rpm;
     int32_t error;
     uint16_t target;
-}
+};
 
 struct pid
 {

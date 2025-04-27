@@ -11,19 +11,16 @@ static bool is_direction_pins_ready()
 {
     if ((!device_is_ready(forward_pin.port)) || (!device_is_ready(forward_pin.port)))
     {
-        printk("Error to config direction pin");
         return false;
     }
     else
     {
         if ((gpio_pin_configure_dt(&forward_pin, GPIO_OUTPUT) != 0) || (gpio_pin_configure_dt(&backward_pin, GPIO_OUTPUT) != 0))
         {
-            printk("Error to config direction pin output");
             return false;
         }
         else
         {
-            printk("Direction pin enabled");
             return true;
         }
     }
@@ -33,12 +30,10 @@ static bool is_pwm_ready()
 {
     if (device_is_ready(pwm.dev))
     {
-        printk("Looks like he is ready!!\nDevice channel: {%d}\nDevice period: {%d}\n", pwm.channel, pwm.period);
         return true;
     }
     else
     {
-        printk("F is not ready yet\n");
         return false;
     }
 }
