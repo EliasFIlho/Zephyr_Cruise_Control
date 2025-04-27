@@ -10,7 +10,7 @@ static const struct device *uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
 static const struct device *const can_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_canbus));
 
 
-K_MSGQ_DEFINE(uart_queue, q_msg_size, 10, 4);
+K_MSGQ_DEFINE(uart_queue, q_msg_size, 10, 1);
 
 int main(void)
 {

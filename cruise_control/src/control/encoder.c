@@ -18,6 +18,11 @@ static int16_t prev_pulse_count = 0;
 static struct k_timer calculate_velocity_tim;
 
 /* Velocity calc timer*/
+
+
+// This timer runs in an ISR background and i cant fetch/get sensor data due to mutex operation so...
+// TODO: Change this SW Timer to a dedicated thread
+// I've only see this issue bcs of the CONFIG_ASSERT in prj.conf
 static void calculate_velocity_tim_callback(struct k_timer *tim)
 {
     struct sensor_value val;
@@ -26,7 +31,7 @@ static void calculate_velocity_tim_callback(struct k_timer *tim)
 
     if (sensor_sample_fetch(dev) != 0)
     {
-        printk("Failed to fetch sample\n");
+        //printk("Failed to fetch sample\n");
     }
     else
     {
