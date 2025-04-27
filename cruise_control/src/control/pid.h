@@ -3,6 +3,7 @@
 #include "motor.h"
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
+#include "encoder.h"
 #include <math.h>
 
 
@@ -20,6 +21,14 @@
 
 #define ERROR_TOLERANCE 2
 
+extern struct k_msgq can_tx_queue; 
+
+
+struct control_info{
+    uint32_t rpm;
+    int32_t error;
+    uint16_t target;
+}
 
 struct pid
 {
@@ -35,4 +44,4 @@ struct pid
 
 
 void set_pid_target_rpm(uint16_t target);
-void start_pid_controller();
+void init_pid_controller();

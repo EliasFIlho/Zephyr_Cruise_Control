@@ -11,6 +11,7 @@ target_sources(app PRIVATE
     src/control/motor.c
     src/control/pid.c
     src/control/moving_avg.c
+    src/control/encoder.c
     src/can/can.c
     src/main.c
 )

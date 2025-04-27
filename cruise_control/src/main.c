@@ -5,36 +5,37 @@
 #include <stdlib.h>
 #include "pid.h"
 #include "can/can.h"
+#include "control/encoder.h"
 
 
 
-//static const struct device *can_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_canbus));
+static const struct device *can_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_canbus));
+
+
+K_MSGQ_DEFINE(can_rx_queue, q_msg_rx_size, 3, 1);
+K_MSGQ_DEFINE(can_tx_queue, q_msg_tx_size, 3, 1);
 
 int main(void)
 {
-
-    if (init_motor())
-    {
-        printk("PWM started");
-    }
-    else
-    {
-        printk("Error to start pwm");
-    }
-
-    //set_motor_direction_forward();
-    set_motor_direction_backward();
-    set_pwm_pulse_output_percent(0);
-    
-    printk("Call PID start controller");
+    // init services
+    init_motor(); 
+    init_encoder_tim();
     start_pid_controller();
-    set_pwm_duty_period(0);
-    //init_can(can_dev);
+    init_can(can_dev);
+
+
+    uint16_t target = 0;
 
 
     while (1)
     {
-        k_sleep(K_USEC(50));
+        if(k_msgq_get(&can_rx_queue, &target, K_NO_WAIT) == 0){
+            set_pid_target_rpm(target);
+        }
+
+
+        // Perform general application code herer
+        k_sleep(K_MSEC(5));
     }
 
     return 0;

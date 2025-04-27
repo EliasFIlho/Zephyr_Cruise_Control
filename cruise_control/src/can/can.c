@@ -19,26 +19,9 @@ void rx_callback_function(const struct device *dev, struct can_frame *frame, voi
     printk("FRAME DLC: [%d]\n", frame->dlc);
     uint16_t target = (frame->data[0] << 8) | (frame->data[1]);
     printk("Target: [%d]\n",target);
-    //set_pid_target_rpm(target);
-    for (int i = 0; i < frame->dlc; i++)
-    {
-        printk("Frame[%d]: %d ", i, frame->data[i]);
-    }
+    k_msgq_put(&can_rx_queue,&target,K_NO_WAIT);
 }
 
-// bool send_can_motor_data(struct device *can_iface, uint16_t target)
-// {
-//     control_can_frame.data[0] = (uint8_t)(target >> 8);
-//     control_can_frame.data[1] = (uint8_t)(target & 0xFF);
-
-//     int ret = can_send(can_iface, &motor_info_frame, K_MSEC(100), NULL, NULL);
-//     if (ret != 0)
-//     {
-//         printk("Sending failed [%d]", ret);
-//         return false;
-//     }
-//     return true;
-// }
 
 void enable_rx_callback_filter(struct device *can_iface,uint16_t ID)
 {
