@@ -19,8 +19,8 @@ int main(void)
 {
     // init services
     init_motor(); 
-    init_encoder_tim();
-    //init_pid_controller();
+    init_encoder_read();
+    init_pid_controller();
     //init_can(can_dev);
 
 

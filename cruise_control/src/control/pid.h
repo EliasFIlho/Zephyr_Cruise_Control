@@ -21,6 +21,12 @@
 
 #define ERROR_TOLERANCE 2
 
+#define PID_THREAD_PRIORITY 5
+#define PID_THREAD_STACK 1024
+#define PID_THREAD_OPTIONS (K_FP_REGS | K_ESSENTIAL)
+#define PID_THREAD_PERIOD_MS 10
+
+
 extern struct k_msgq can_tx_queue; 
 
 
@@ -44,4 +50,4 @@ struct pid
 
 
 void set_pid_target_rpm(uint16_t target);
-void init_pid_controller();
+k_tid_t init_pid_controller();
