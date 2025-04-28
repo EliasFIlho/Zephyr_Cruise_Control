@@ -3,18 +3,23 @@
 /* Global Variables*/
 static struct pid PID = {0};
 
+/*RPM VALUE SETED BY CONTROLLER*/
+static volatile _Atomic int32_t rpm = 0;
 
 
 K_THREAD_STACK_DEFINE(PID_STACK_AREA, PID_THREAD_STACK);
 struct k_thread pid_thread;
 
+
+
+/*PID Thread Function*/
+//TODO: Use can_tx_queue to send a control_info_frame
 static void pid_controller()
 {
-    int32_t rpm;
     while (1)
     {
 
-        rpm = get_current_rpm();
+        //rpm = get_current_rpm();
         PID.error = PID.target - rpm;
         if (PID.error == 0 && PID.target == 0)
         {
@@ -67,6 +72,10 @@ static void pid_controller()
 void set_pid_target_rpm(uint16_t target)
 {
     PID.target = target;
+}
+
+void set_pid_current_rpm(int32_t current_rpm){
+    rpm = current_rpm;
 }
 
 k_tid_t init_pid_controller()

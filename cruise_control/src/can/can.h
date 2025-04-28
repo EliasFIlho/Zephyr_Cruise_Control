@@ -23,3 +23,6 @@ extern struct k_msgq can_rx_queue;
 void rx_callback_function(const struct device *dev, struct can_frame *frame, void *user_data);
 void enable_rx_callback_filter(struct device *can_iface,uint16_t ID);
 void init_can(struct device *can_iface);
+
+// TODO: The function logic
+void send_motor_info_frame();

@@ -48,6 +48,6 @@ struct pid
     bool saturation;
 };
 
-
+void set_pid_current_rpm(int32_t current_rpm);
 void set_pid_target_rpm(uint16_t target);
 k_tid_t init_pid_controller();

@@ -9,20 +9,19 @@ moving_avg_t filter = {
     .filtered_value = 0,
     .sum = 0};
 
-/* Global variables for velocity*/
-volatile _Atomic int32_t current_rpm = 0;
 
-/* Timer struct*/
-static struct k_timer calculate_velocity_tim;
 
 K_THREAD_STACK_DEFINE(ENCODER_STACK_AREA, ENCODER_READ_THREAD_STACK);
 struct k_thread encoder_thread;
 
 
 
+/*Encoder thread function*/
 
+//TODO: Create a queue to send current velocity to main
 static void calculate_velocity_thread(void *, void *, void *)
 {
+    int32_t current_rpm = 0;
     struct sensor_value val;
     int16_t delta_count;
     double velocity = 0.0;
@@ -34,7 +33,7 @@ static void calculate_velocity_thread(void *, void *, void *)
 
         if (sensor_sample_fetch(dev) != 0)
         {
-            // printk("Failed to fetch sample\n");
+            printk("Failed to fetch sample\n");
         }
         else
         {
@@ -53,6 +52,7 @@ static void calculate_velocity_thread(void *, void *, void *)
 
             velocity = ((double)(filter.filtered_value)) / TIME_BASIS;
             current_rpm = (int32_t)((velocity / SHAFT_REVOLUTION_RATIO) * 60);
+            k_msgq_put(&encoder_rpm_queue,&current_rpm,K_NO_WAIT);
             prev_pulse_count = val.val1;
         }
 
@@ -72,7 +72,4 @@ k_tid_t init_encoder_read()
                     ENCODER_READ_THREAD_PRIORITY, ENCODER_THREAD_OPTIONS, K_NO_WAIT);
 }
 
-int32_t get_current_rpm()
-{
-    return current_rpm;
-}
+

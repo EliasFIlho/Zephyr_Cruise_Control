@@ -20,5 +20,9 @@
 #define ENCODER_THREAD_PERIOD_MS 100
 #define ENCODER_THREAD_OPTIONS (K_FP_REGS | K_ESSENTIAL)
 
+
+#define q_msg_rpm_size 32
+
+extern struct k_msgq encoder_rpm_queue; 
 k_tid_t init_encoder_read();
 int32_t get_current_rpm();

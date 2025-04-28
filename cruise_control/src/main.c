@@ -14,6 +14,7 @@ static const struct device *can_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_canbus));
 
 K_MSGQ_DEFINE(can_rx_queue, q_msg_rx_size, 3, 1);
 K_MSGQ_DEFINE(can_tx_queue, q_msg_tx_size, 3, 1);
+K_MSGQ_DEFINE(encoder_rpm_queue, q_msg_rpm_size, 3, 1);
 
 int main(void)
 {
@@ -25,16 +26,22 @@ int main(void)
 
 
     uint16_t target = 0;
-
+    uint16_t rpm = 0;
 
     while (1)
     {
+        // Read for incoming control values from CAN bus
         if(k_msgq_get(&can_rx_queue, &target, K_NO_WAIT) == 0){
             set_pid_target_rpm(target);
         }
+        // Read for current rpm value from encoder thread
+        // Send rpm value to PID thread (This will be a test to select a msg queue or a shared memory block between encoder and PID)
+        if(k_msgq_get(&encoder_rpm_queue,&rpm,K_NO_WAIT) == 0){
+            set_pid_current_rpm(rpm);
+        }
+        // Read for incoming control infos to be send through CAN bus
 
 
-        // Perform general application code herer
         k_sleep(K_MSEC(5));
     }
 
