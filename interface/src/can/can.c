@@ -19,17 +19,16 @@ static struct can_frame control_can_frame = {
     .data = {0}};
 
 
+
 void rx_callback_function(const struct device *dev, struct can_frame *frame, void *user_data)
 {
     printk("\nFRAME ID: [%d]\n", frame->id);
     printk("FRAME DLC: [%d]\n", frame->dlc);
-    uint16_t target = (frame->data[0] << 8) | (frame->data[1]);
-    printk("Target: [%d]\n",target);
+    uint16_t rpm = (frame->data[0] << 8) | (frame->data[1]);
+    uint16_t target = (frame->data[2] << 8) | (frame->data[3]);
+    uint16_t error = (frame->data[4] << 8) | (frame->data[5]);
+    printk("RPM: [%d] - Target: [%d] - Error: [%d]\n",rpm,target,error);
 
-    for (int i = 0; i < frame->dlc; i++)
-    {
-        printk("Frame[%d]: %d ", i, frame->data[i]);
-    }
 }
 
 bool send_can_control_data(struct device *can_iface, uint16_t target)
@@ -48,13 +47,13 @@ bool send_can_control_data(struct device *can_iface, uint16_t target)
 
 void enable_rx_callback_filter(struct device *can_iface,uint16_t ID)
 {
-    can_add_rx_filter(can_iface, rx_callback_function, NULL, &target_control_filter);
+    can_add_rx_filter(can_iface, rx_callback_function, NULL, &motor_info_filter);
 }
 
 void init_can(struct device *can_iface)
 {
     __ASSERT(device_is_ready(can_iface) == true, "Cant initialize CAN device");
-    __ASSERT(can_set_mode(can_iface, CAN_MODE_LOOPBACK) == 0, "Cant select CAN mode");
+    __ASSERT(can_set_mode(can_iface, CAN_MODE_NORMAL) == 0, "Cant select CAN mode");
     __ASSERT(can_start(can_iface) == 0, "Cant start CAN stack");
     printk("CAN device and stack init ok\n");
 }

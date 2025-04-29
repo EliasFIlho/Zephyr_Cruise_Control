@@ -31,8 +31,8 @@ extern struct k_msgq can_tx_queue;
 
 
 struct control_info{
-    uint32_t rpm;
-    int32_t error;
+    uint16_t rpm;
+    uint16_t error_abs;
     uint16_t target;
 };
 

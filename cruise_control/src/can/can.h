@@ -14,15 +14,10 @@
 
 #define q_msg_rx_size 16
 
-// TODO: CREATE CAN TX QUEUE FRAME AND SET FRAME SIZE TO QUEUE DATA SIZE
-#define q_msg_tx_size 16
 
 extern struct k_msgq can_rx_queue; 
 
 
 void rx_callback_function(const struct device *dev, struct can_frame *frame, void *user_data);
-void enable_rx_callback_filter(struct device *can_iface,uint16_t ID);
 void init_can(struct device *can_iface);
-
-// TODO: The function logic
-void send_motor_info_frame();
+bool send_motor_info_frame(struct device *can_iface, struct control_info *motor_info);
