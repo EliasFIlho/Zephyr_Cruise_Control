@@ -45,7 +45,7 @@ int main(void)
         {
             printk("%d,%d\n", data.rpm, data.target);
         }
-        k_msleep(50);
+        k_msleep(10);
     }
 
     return 0;

@@ -18,7 +18,7 @@ struct plot_print
     uint16_t error;
 };
 
-void rx_callback_function(const struct device *dev, struct can_frame *frame, void *user_data);
+void rx_callback_function(struct device *dev, struct can_frame *frame, void *user_data);
 bool send_can_control_data(struct device *can_iface, uint16_t target);
 void enable_rx_callback_filter(struct device *can_iface, uint16_t ID);
 void init_can(struct device *can_iface);

@@ -1,10 +1,5 @@
 #include "can.h"
 
-static const struct can_filter target_control_filter = {
-    .flags = 0,
-    .id = TARGET_CONTROL_ID,
-    .mask = 0};
-
 static const struct can_filter motor_info_filter = {
     .flags = 0,
     .id = MOTOR_INFO_ID,
@@ -18,7 +13,7 @@ static struct can_frame control_can_frame = {
 
 static struct plot_print data = {0};
 
-void rx_callback_function(const struct device *dev, struct can_frame *frame, void *user_data)
+void rx_callback_function(struct device *dev, struct can_frame *frame, void *user_data)
 {
     data.rpm = (frame->data[0] << 8) | (frame->data[1]);
     data.target = (frame->data[2] << 8) | (frame->data[3]);
