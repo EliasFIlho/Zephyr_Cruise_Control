@@ -1,6 +1,6 @@
 #include "encoder.h"
 
-const struct device *const dev = DEVICE_DT_GET(DT_ALIAS(qdec0));
+static struct device const *encoder_device = DEVICE_DT_GET(DT_ALIAS(qdec0));
 
 moving_avg_t filter = {
     .sample_buffer = {0},
@@ -18,7 +18,6 @@ struct k_thread encoder_thread;
 
 /*Encoder thread function*/
 
-//TODO: Create a queue to send current velocity to main
 static void calculate_velocity_thread(void *, void *, void *)
 {
     int32_t current_rpm = 0;
@@ -31,13 +30,13 @@ static void calculate_velocity_thread(void *, void *, void *)
     while (1)
     {
 
-        if (sensor_sample_fetch(dev) != 0)
+        if (sensor_sample_fetch(encoder_device) != 0)
         {
             printk("Failed to fetch sample\n");
         }
         else
         {
-            sensor_channel_get(dev, SENSOR_CHAN_ROTATION, &val);
+            sensor_channel_get(encoder_device, SENSOR_CHAN_ROTATION, &val);
             delta_count = val.val1 - prev_pulse_count;
             if (delta_count < 0)
             {
